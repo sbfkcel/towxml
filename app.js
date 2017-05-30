@@ -1,4 +1,4 @@
-const Towxml = require('./lib/towxml');
+const Towxml = require('/md2wx/towxml');
 
 App({
   onLaunch:()=>{
@@ -40,7 +40,7 @@ App({
     });
   },
   config:{
-    request:'https://raw.githubusercontent.com/sbfkcel/md2wx/master/'
+    request:'https://raw.githubusercontent.com/sbfkcel/md2wx/master/testDoc/'
   }
 });
 

@@ -29,5 +29,8 @@
 
 文字
 
+<code id="aaa" class="bbb">aaa</code>
+
+<video class="vidoe" id="v">视频</video>
 
 ---

@@ -1,0 +1,45 @@
+<import src="m3.wxml"/>
+<template name="m2">
+    <!--文字-->
+    <block wx:if="{{item.node === 'text'}}">
+      {{item.text}}
+    </block>
+    
+    <!--视图-->
+    <view
+      wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+      class="{{item.attr.class}}"
+      width="{{item.attr.width}}"
+      height="{{item.attr.height}}"
+      data="{{item.attr.data}}"
+      src="{{item.attr.src}}"
+      id="{{item.attr.id}}"
+      style="{{item.attr.style}}"
+    >
+      <block wx:if="{{item.child}}" wx:for="{{item.child}}" wx:key="{{item}}">
+        <template is="m3" data="{{item}}"/>
+      </block>
+      
+      <!--
+      <block wx:for="{{item.child}}" wx:key="{{index}}">
+        <template is="m2" data="{{item}}"/>
+      </block>
+      -->
+    </view>
+
+    <!--按钮-->
+    <!--
+    <button
+      wx:if="{{item.tag === 'button'}}"
+      class="{{item.attr.class}}"
+      width="{{item.attr.width}}"
+      height="{{item.attr.height}}"
+      data="{{item.attr.data}}"
+      src="{{item.attr.src}}"
+      id="{{item.attr.id}}"
+      style="{{item.attr.style}}"
+    >
+      {{item.text}}
+    </button>
+    -->
+</template>

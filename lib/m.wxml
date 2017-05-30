@@ -1,0 +1,801 @@
+
+        <template name="m0">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m1" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m1" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m1">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m2" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m2" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m2">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m3" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m3" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m3">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m4" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m4" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m4">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m5" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m5" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m5">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m6" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m6" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m6">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m7" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m7" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m7">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m8" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m8" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m8">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m9" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m9" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m9">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m10" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m10" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m10">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m11" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m11" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m11">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m12" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m12" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m12">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m13" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m13" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m13">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m14" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m14" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m14">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m15" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m15" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m15">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m16" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m16" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m16">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m17" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m17" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m17">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m18" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m18" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m18">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m19" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m19" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    
+        <template name="m19">
+            <!--文字-->
+            <block wx:if="{{item.node === 'text'}}">
+                {{item.text}}
+            </block>
+            
+            <!--视图-->
+            <view
+                wx:if="{{item.node === 'element' && item.tag === 'view'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m19" data="{{item}}"/>
+                </block>
+            </view>
+
+            <!--按钮-->
+            <button
+                wx:if="{{item.tag === 'button'}}"
+                class="{{item.attr.class}}"
+                width="{{item.attr.width}}"
+                height="{{item.attr.height}}"
+                data="{{item.attr.data}}"
+                src="{{item.attr.src}}"
+                id="{{item.attr.id}}"
+                style="{{item.attr.style}}"
+            >
+                <block wx:for="{{item.child}}" wx:key="{{item}}">
+                    <template is="m19" data="{{item}}"/>
+                </block>
+            </button>
+            
+        </template>
+    

@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="article">
+  <import src="/lib/m.wxml"/>
+
+  <block wx:for="{{article.child}}" wx:key="{{index}}">
+    <template is="m0" data="{{item}}"/>
+  </block>
+</view>

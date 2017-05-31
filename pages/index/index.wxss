@@ -1,6 +1,2 @@
 /**index.wxss**/
-.article {
-  font-family:"Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
-  margin:0 10pt;
-}
-.h2w_span {display:inline-block;}
+@import '/md2wx/wxss/github.wxss';

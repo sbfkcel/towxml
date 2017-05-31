@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="article">
+<view class="h2w markdown-body">
   <import src="/md2wx/m.wxml"/>
 
   <block wx:for="{{article.child}}" wx:key="{{index}}">

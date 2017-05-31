@@ -53,10 +53,9 @@ class towxml{
 					let delWordBbrackets = word.substr(1,word.length - 2),	//剔除首尾尖括号
 					wordSplit = delWordBbrackets.split(' '),				//得到元素标签与属性
 					labelName = wordSplit[0].toLowerCase(),					//取得tagName
-					className_htmlTag = 'h2w_'+labelName;					
+					className_htmlTag = 'h2w__'+labelName;					
 
 					if(_ts.isConversion(labelName)){
-						//labelName = 'h2w_'+labelName
 						
 						wordSplit.splice(0,1);								//剔除元素的标签
 

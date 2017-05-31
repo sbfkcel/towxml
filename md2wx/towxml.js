@@ -52,7 +52,8 @@ class towxml{
 				else{
 					let delWordBbrackets = word.substr(1,word.length - 2),	//剔除首尾尖括号
 					wordSplit = delWordBbrackets.split(' '),				//得到元素标签与属性
-					labelName = wordSplit[0].toLowerCase();					//取得tagName
+					labelName = wordSplit[0].toLowerCase(),					//取得tagName
+					className_htmlTag = 'h2w_'+labelName;					
 
 					if(_ts.isConversion(labelName)){
 						//labelName = 'h2w_'+labelName
@@ -68,7 +69,7 @@ class towxml{
 											re = /class="/ig;
 										if(re.test(item)){
 											wordSplit[i] = item.replace(re,(word)=>{
-												return word + 'h2w_'+labelName + ' ';
+												return word + className_htmlTag + ' ';
 											});
 											return true;
 										};
@@ -79,7 +80,7 @@ class towxml{
 
 						//如果元素没有className，则新加上className
 						if(!isClassExist){
-							wordSplit.unshift('class="h2w_'+labelName+'"');
+							wordSplit.unshift('class="'+className_htmlTag+'"');
 						};
 
 						//组合属性

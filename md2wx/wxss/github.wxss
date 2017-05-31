@@ -26,6 +26,20 @@
     border-bottom-style:solid;
 }
 
+/**表格**/
+.h2w__table {
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    display:table;
+}
+.h2w__th,
+.h2w__td {
+    border-width:1px;
+    border-style:solid;
+    display:table-cell;
+}
+
 
 
 .h2w__span {display:inline-block;}

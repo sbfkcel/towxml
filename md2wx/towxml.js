@@ -5,12 +5,14 @@ class towxml{
 		_ts.m = {};
 
 		if(global){
-			_ts.m.marked = require('marked');
-			_ts.m.html2json = require('html2json');
+			_ts.m.marked = require('./marked');
+			_ts.m.html2json = require('./html2json');
 		}else if(window){
 			_ts.m.marked = window.marked;
 			_ts.m.html2json = window.html2json;
 		};
+
+		_ts.wxmlTag = ['view','video','swiper','block','swiper-item','button','slider','scroll-view','movable-area','movable-view','text','progress','checkbox-group','label','checkbox','form','switch','input','radio-group','radio','picker','picker-view','switch','textarea','navigator','audio','image','map','canvas','contact-button'];
 	}
 
 	//markdown转html
@@ -103,7 +105,7 @@ class towxml{
 			deCode = (str)=>{
 				let s = '';
 				if(str.length === 0){
-					return "";
+					return '';
 				};
 				s = str.replace(/&amp;/g,"&");
 				s = s.replace(/&lt;/g,"<");
@@ -119,9 +121,7 @@ class towxml{
 	//检查标签是否需要转换
 	isConversion(labelName){
 		const _ts = this;
-		let aIgnore = ['video','swiper','block','swiper-item','button','slider','scroll-view','movable-area','movable-view','text','progress','checkbox-group','label','checkbox','form','switch','input','radio-group','radio','picker','picker-view','switch','textarea','navigator','audio','image','map','canvas','contact-button'];
-
-		return !aIgnore.some((item,index)=>{
+		return !_ts.wxmlTag.some((item,index)=>{
 			return labelName === item;
 		});
 	}
@@ -131,8 +131,8 @@ class towxml{
 		let arr = ['hr','br'],
 			s = '',
 			closeTag = arr.some((item,index)=>{
-			return labelName === item;
-		});
+				return labelName === item;
+			});
 
 		if(closeTag){
 			s = '</view>';
@@ -145,7 +145,7 @@ class towxml{
 		let temp = 'view';
 		switch (labelName) {
 			case 'a':
-				temp = 'button';
+				temp = 'navigator';
 			break;
 			case 'span':
 			case 'strong':

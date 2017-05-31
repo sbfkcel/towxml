@@ -47,6 +47,7 @@ class towxml{
 					labelName = wordSplit[0].toLowerCase();					//取得tagName
 
 					if(_ts.isConversion(labelName)){
+						labelName = 'h2w_'+labelName
 						
 						wordSplit.splice(0,1);								//剔除元素的标签
 
@@ -148,8 +149,10 @@ class towxml{
 				temp = 'navigator';
 			break;
 			case 'span':
-			case 'strong':
 			case 'b':
+			case 'strong':			
+			case 'i':
+			case 'em':			
 				temp = 'text';
 			break;
 		};
@@ -159,7 +162,28 @@ class towxml{
 	//html2json
 	html2json(html){
 		const _ts = this;
-		return _ts.m.html2json(html);
+		let json = _ts.m.html2json(html),
+			sortOutJson;
+
+			//遍历json将多个class属性合为一个
+			(sortOutJson = (json)=>{
+				for(let i in json){					
+					if(i === 'child' && typeof json[i] === 'object' && json[i].length){						
+						json[i].forEach((item,index)=>{
+							sortOutJson(item);
+						});						
+					};
+					if(i === 'attr'){
+						if(typeof json[i].class === 'string'){
+							json[i].className = json[i].class;
+						}else if(typeof json[i].class === 'object' && json[i].class.length){
+							json[i].className = json[i].class.toString().replace(',',' ');
+						};						
+					};
+				};
+			})(json);
+			
+		return json;
 	}
 };
 

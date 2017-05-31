@@ -63,7 +63,7 @@ Page({
           article: app.towxml.html2json(wxml)
         });
 
-        console.log(app.towxml.html2json(wxml),wxml);
+        //console.log(app.towxml.html2json(wxml),wxml);
       };
     });
   }

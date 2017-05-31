@@ -46,7 +46,11 @@ class outwxml{
         let s = '',
             attr = ['class','width','height','data','src','id','style'];
         attr.forEach((item,index)=>{
-            s += `${item}="{{item.attr.${item}}}" `;
+            if(item === 'class'){
+                s += `${item}="{{item.attr.className}}"`;
+            }else{
+                s += `${item}="{{item.attr.${item}}}"`;
+            };                    
         });
 
         return s;

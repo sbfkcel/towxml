@@ -7,10 +7,18 @@ class towxml{
 		if(global){
 			_ts.m.marked = require('./marked');
 			_ts.m.html2json = require('./html2json');
+			_ts.m.highlight = require('./hljs/index');
 		}else if(window){
 			_ts.m.marked = window.marked;
 			_ts.m.html2json = window.html2json;
 		};
+
+
+		_ts.m.marked.setOptions({
+			highlight: function (code, lang, callback) {
+				return _ts.m.highlight.highlightAuto(code).value;
+			}
+		});
 
 		_ts.wxmlTag = ['view','video','swiper','block','swiper-item','button','slider','scroll-view','movable-area','movable-view','text','progress','checkbox-group','label','checkbox','form','switch','input','radio-group','radio','picker','picker-view','switch','textarea','navigator','audio','image','map','canvas','contact-button'];
 	}
@@ -47,7 +55,7 @@ class towxml{
 					labelName = wordSplit[0].toLowerCase();					//取得tagName
 
 					if(_ts.isConversion(labelName)){
-						labelName = 'h2w_'+labelName
+						//labelName = 'h2w_'+labelName
 						
 						wordSplit.splice(0,1);								//剔除元素的标签
 
@@ -60,7 +68,7 @@ class towxml{
 											re = /class="/ig;
 										if(re.test(item)){
 											wordSplit[i] = item.replace(re,(word)=>{
-												return word + labelName + ' ';
+												return word + 'h2w_'+labelName + ' ';
 											});
 											return true;
 										};
@@ -71,7 +79,7 @@ class towxml{
 
 						//如果元素没有className，则新加上className
 						if(!isClassExist){
-							wordSplit.unshift('class="'+labelName+'"');
+							wordSplit.unshift('class="h2w_'+labelName+'"');
 						};
 
 						//组合属性

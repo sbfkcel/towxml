@@ -5,9 +5,6 @@
 		- Red
 		- Green
 		- Blue
-			- Red
-			- Green
-			- Blue
 2. McHale
 3. Parish
 

@@ -11,9 +11,11 @@
 *   Green
 *   Blue
 
+
 +   Red
 +   Green
 +   Blue
+
 
 -   Red
 	1.  Bird
@@ -27,6 +29,7 @@
 			3.  Parish
 -   Green
 -   Blue
+
 
 1.  Bird
 	-   Red
@@ -46,6 +49,7 @@
 		2.  McHale
 		3.  Parish
 3.  Parish
+
 
 ### 表格
 | Item      |    Value | Qty  |

@@ -148,6 +148,6 @@ Bob-->Alice: I am good thanks!
 
 <code id="aaa" class="bbb">aaa</code>
 
-<video class="vidoe" id="v">视频</video>
+<video class="vidoe" id="v" src="http://v.mifile.cn/b2c-mimall-media/acdf959034bad716e851ec2f22483661.mp4">视频</video>
 
 ---

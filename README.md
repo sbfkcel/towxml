@@ -1,4 +1,4 @@
-<div><img src="https://raw.githubusercontent.com/sbfkcel/towxml/master/logo.svg"/></div>
+<div><img src="https://raw.githubusercontent.com/sbfkcel/towxml/master/docs/logo.svg"/></div>
 
 # towxml
 

@@ -1,4 +1,4 @@
-<a style="display:block; text-align:center;"><img width="240" src="https://cdn.rawgit.com/sbfkcel/towxml/78b0886d/logo.svg"/><a>
+<div align="center"><img width="240" src="https://cdn.rawgit.com/sbfkcel/towxml/78b0886d/logo.svg"/></div>
 
 # towxml
 

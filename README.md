@@ -15,5 +15,4 @@ ToWXML是一个可将HTML、markdown转换为WXML(WeiXin Markup Language)的渲�
 ## API接口
 
 ## License
-
 MIT

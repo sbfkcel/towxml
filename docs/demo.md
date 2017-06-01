@@ -18,7 +18,7 @@
 
 正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为**粗体**或者*斜体*，创建一个[链接](http://www.example.com)或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按`Ctrl + /`查看帮助。 
 
-![alt](https://raw.githubusercontent.com/sbfkcel/towxml/master/testDoc/img.jpeg)
+![alt](https://raw.githubusercontent.com/sbfkcel/towxml/master/docs/img.jpeg)
 
 ### 代码块
 ``` python

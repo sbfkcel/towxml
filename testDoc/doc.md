@@ -1,15 +1,15 @@
--   Red
-	1.  Bird
-	2.  McHale
-	3.  Parish
-		1.  Bird
-		2.  McHale
-		3.  Parish
-			1.  Bird
-			2.  McHale
-			3.  Parish
--   Green
--   Blue
+1. Bird
+	- Red
+	- Green
+	- Blue
+		- Red
+		- Green
+		- Blue
+			- Red
+			- Green
+			- Blue
+2. McHale
+3. Parish
 
 换行一
 

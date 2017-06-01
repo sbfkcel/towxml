@@ -18,7 +18,7 @@
 
 正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为**粗体**或者*斜体*，创建一个[链接](http://www.example.com)或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按`Ctrl + /`查看帮助。 
 
-![风景](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496312554280&di=cdc505a9e547e42b4a295a1c2f34bb36&imgtype=0&src=http%3A%2F%2Fh5.86.cc%2Fwalls%2F20150409%2F1024x768_3a22888cc9be474.jpg "风景")
+![alt](https://raw.githubusercontent.com/sbfkcel/towxml/master/testDoc/img.jpeg)
 
 ### 代码块
 ``` python

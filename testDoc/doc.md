@@ -125,7 +125,7 @@ Bob-->Alice: I am good thanks!
 
 ## 反馈与建议
 - 微博：[@马克飞象](http://weibo.com/u/2788354117)，[@GGock](http://weibo.com/ggock "开发者个人账号")
-- 邮箱：[hustgock@gmail.com](mailto:hustgock@gmail.com)
+- 邮箱：[hustgock@gmail.com]()
 
 ---------
 感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。

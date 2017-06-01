@@ -7,12 +7,11 @@ class towxml{
 		if(global){
 			_ts.m.marked = require('./lib/marked');
 			_ts.m.html2json = require('./lib/html2json');
-			_ts.m.highlight = require('./plugins/hljs/index');
+			_ts.m.highlight = require('./plugin/hljs/index');
 		}else if(window){
 			_ts.m.marked = window.marked;
 			_ts.m.html2json = window.html2json;
 		};
-
 
 		_ts.m.marked.setOptions({
 			highlight: function (code, lang, callback) {

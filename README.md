@@ -1,3 +1,5 @@
+<div><img src="https://raw.githubusercontent.com/sbfkcel/towxml/master/logo.svg"/></div>
+
 # towxml
 
 ToWXML是一个可将HTML、markdown转换为WXML(WeiXin Markup Language)的渲染库。

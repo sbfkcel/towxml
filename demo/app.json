@@ -1,12 +1,30 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "TOWXML",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "TOWXML演示",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#fff",
+    "selectedColor":"#04b129",
+    "backgroundColor":"#000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "白色",
+        "iconPath": "images/sun--default.png",
+        "selectedIconPath": "images/sun--current.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "黑色",
+        "iconPath": "images/sun--default.png",
+        "selectedIconPath": "images/sun--current.png"
+      }
+    ]
   }
 }

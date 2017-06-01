@@ -1,8 +1,3 @@
 <!--index.wxml-->
-<view class="h2w markdown-body">
-  <import src="/md2wx/m.wxml"/>
-
-  <block wx:for="{{article.child}}" wx:key="{{index}}">
-    <template is="m0" data="{{item}}"/>
-  </block>
-</view>
+<import src="/towxml/entry.wxml"/>
+<template is="entry" data="{{...article}}"/>

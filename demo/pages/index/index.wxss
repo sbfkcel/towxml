@@ -1,11 +1,9 @@
 /**index.wxss**/
-
 /**基础风格样式**/
-@import '/md2wx/wxss/main.wxss';
+@import '/towxml/style/main.wxss';
 
 /**主题配色**/
-@import '/md2wx/wxss/theme_default.wxss';
+@import '/towxml/style/theme/default.wxss';
 
 /**代码高亮样式**/
-@import '/md2wx/hljs/style/github.wxss';
-
+@import '/towxml/plugins/hljs/style/github.wxss';

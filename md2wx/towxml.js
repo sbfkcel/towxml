@@ -14,11 +14,11 @@ class towxml{
 		};
 
 
-		// _ts.m.marked.setOptions({
-		// 	highlight: function (code, lang, callback) {
-		// 		return _ts.m.highlight.highlightAuto(code).value;
-		// 	}
-		// });
+		_ts.m.marked.setOptions({
+			highlight: function (code, lang, callback) {
+				return _ts.m.highlight.highlightAuto(code).value;
+			}
+		});
 
 		_ts.wxmlTag = ['view','video','swiper','block','swiper-item','button','slider','scroll-view','movable-area','movable-view','text','progress','checkbox-group','label','checkbox','form','switch','input','radio-group','radio','picker','picker-view','switch','textarea','navigator','audio','image','map','canvas','contact-button'];
 	}
@@ -158,9 +158,10 @@ class towxml{
 			break;
 			case 'span':
 			case 'b':
-			case 'strong':			
+			case 'strong':
 			case 'i':
-			case 'em':			
+			case 'em':
+			case 'code':
 				temp = 'text';
 			break;
 		};

@@ -1,2 +1,11 @@
 /**index.wxss**/
-@import '/md2wx/wxss/github.wxss';
+
+/**基础风格样式**/
+@import '/md2wx/wxss/main.wxss';
+
+/**主题配色**/
+@import '/md2wx/wxss/theme_default.wxss';
+
+/**代码高亮样式**/
+@import '/md2wx/hljs/style/github.wxss';
+

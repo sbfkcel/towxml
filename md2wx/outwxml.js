@@ -63,13 +63,7 @@ class outwxml{
         let s = '';
         for(let i = 0, len = 20; i<len; i++){
             let c = i < len - 1 ? i+1 : i;
-            let temp = `<template name="m${i}">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-${_ts.outtag(c)}
-</template>
-`;
+            let temp = `<template name="m${i}"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>${_ts.outtag(c)}</template>`;
             // let temp = `<template name="m${i}">
             //         <!--文字-->
             //         <block wx:if="{{item.node === 'text'}}">

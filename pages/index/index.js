@@ -59,6 +59,8 @@ Page({
     app.getText(app.config.request + 'doc.md', (res) => {
       if (res.data) {
         let wxml = app.towxml.md2wxml(res.data);
+        //console.log(wxml);
+        console.log(app.towxml.md2html(res.data));
         _ts.setData({
           article: app.towxml.html2json(wxml)
         });

@@ -1,8 +1,4 @@
-<template name="m0">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+<template name="m0"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m1" data="{{item}}"/>
@@ -182,13 +178,7 @@
                             <template is="m1" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m1">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m1"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m2" data="{{item}}"/>
@@ -368,13 +358,7 @@
                             <template is="m2" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m2">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m2"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m3" data="{{item}}"/>
@@ -554,13 +538,7 @@
                             <template is="m3" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m3">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m3"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m4" data="{{item}}"/>
@@ -740,13 +718,7 @@
                             <template is="m4" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m4">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m4"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m5" data="{{item}}"/>
@@ -926,13 +898,7 @@
                             <template is="m5" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m5">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m5"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m6" data="{{item}}"/>
@@ -1112,13 +1078,7 @@
                             <template is="m6" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m6">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m6"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m7" data="{{item}}"/>
@@ -1298,13 +1258,7 @@
                             <template is="m7" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m7">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m7"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m8" data="{{item}}"/>
@@ -1484,13 +1438,7 @@
                             <template is="m8" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m8">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m8"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m9" data="{{item}}"/>
@@ -1670,13 +1618,7 @@
                             <template is="m9" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m9">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m9"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m10" data="{{item}}"/>
@@ -1856,13 +1798,7 @@
                             <template is="m10" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m10">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m10"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m11" data="{{item}}"/>
@@ -2042,13 +1978,7 @@
                             <template is="m11" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m11">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m11"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m12" data="{{item}}"/>
@@ -2228,13 +2158,7 @@
                             <template is="m12" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m12">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m12"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m13" data="{{item}}"/>
@@ -2414,13 +2338,7 @@
                             <template is="m13" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m13">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m13"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m14" data="{{item}}"/>
@@ -2600,13 +2518,7 @@
                             <template is="m14" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m14">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m14"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m15" data="{{item}}"/>
@@ -2786,13 +2698,7 @@
                             <template is="m15" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m15">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m15"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m16" data="{{item}}"/>
@@ -2972,13 +2878,7 @@
                             <template is="m16" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m16">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m16"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m17" data="{{item}}"/>
@@ -3158,13 +3058,7 @@
                             <template is="m17" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m17">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m17"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m18" data="{{item}}"/>
@@ -3344,13 +3238,7 @@
                             <template is="m18" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m18">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m18"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m19" data="{{item}}"/>
@@ -3530,13 +3418,7 @@
                             <template is="m19" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
-<template name="m19">
-<block wx:if="{{item.node === 'text'}}">
-{{item.text}}
-</block>
-
+            </template><template name="m19"><block wx:if="{{item.node === 'text'}}">{{item.text}}</block>
                     <view wx:if="{{item.node === 'element' && item.tag === 'view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m19" data="{{item}}"/>
@@ -3716,5 +3598,4 @@
                             <template is="m19" data="{{item}}"/>
                         </block>
                     </contact-button>
-            
-</template>
+            </template>

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-<div><img src="https://raw.githubusercontent.com/sbfkcel/towxml/master/docs/logo.svg"/></div>
-=======
 <div align="center"><img width="240" src="https://cdn.rawgit.com/sbfkcel/towxml/78b0886d/logo.svg"/></div>
->>>>>>> 315c3f66d2c71b845f749e5b58928a8b47ab8492
+
 
 # towxml
 

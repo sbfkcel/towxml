@@ -1,0 +1,70 @@
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+
+.h2w-black .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #272822; color: #ddd;
+}
+
+.h2w-black .hljs-tag,
+.h2w-black .hljs-keyword,
+.h2w-black .hljs-selector-tag,
+.h2w-black .hljs-literal,
+.h2w-black .hljs-strong,
+.h2w-black .hljs-name {
+  color: #f92672;
+}
+
+.h2w-black .hljs-code {
+  color: #66d9ef;
+}
+
+.h2w-black .hljs-class .hljs-title {
+  color: white;
+}
+
+.h2w-black .hljs-attribute,
+.h2w-black .hljs-symbol,
+.h2w-black .hljs-regexp,
+.h2w-black .hljs-link {
+  color: #bf79db;
+}
+
+.h2w-black .hljs-string,
+.h2w-black .hljs-bullet,
+.h2w-black .hljs-subst,
+.h2w-black .hljs-title,
+.h2w-black .hljs-section,
+.h2w-black .hljs-emphasis,
+.h2w-black .hljs-type,
+.h2w-black .hljs-built_in,
+.h2w-black .hljs-builtin-name,
+.h2w-black .hljs-selector-attr,
+.h2w-black .hljs-selector-pseudo,
+.h2w-black .hljs-addition,
+.h2w-black .hljs-variable,
+.h2w-black .hljs-template-tag,
+.h2w-black .hljs-template-variable {
+  color: #a6e22e;
+}
+
+.h2w-black .hljs-comment,
+.h2w-black .hljs-quote,
+.h2w-black .hljs-deletion,
+.h2w-black .hljs-meta {
+  color: #75715e;
+}
+
+.h2w-black .hljs-keyword,
+.h2w-black .hljs-selector-tag,
+.h2w-black .hljs-literal,
+.h2w-black .hljs-doctag,
+.h2w-black .hljs-title,
+.h2w-black .hljs-section,
+.h2w-black .hljs-type,
+.h2w-black .hljs-selector-id {
+  font-weight: bold;
+}

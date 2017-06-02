@@ -168,28 +168,39 @@ class towxml{
 	}
 
 	//html2json
-	html2json(html){
+  //content html、markdown字符串
+  //type 'html|markdown'
+	toJson(content,type){
 		const _ts = this;
-		let json = _ts.m.html2json(html),
-			sortOutJson;
+    type = type || 'html';
 
-			//遍历json将多个class属性合为一个
-			(sortOutJson = (json)=>{
-				for(let i in json){					
-					if(i === 'child' && typeof json[i] === 'object' && json[i].length){						
-						json[i].forEach((item,index)=>{
-							sortOutJson(item);
-						});						
-					};
-					if(i === 'attr'){
-						if(typeof json[i].class === 'string'){
-							json[i].className = json[i].class;
-						}else if(typeof json[i].class === 'object' && json[i].class.length){
-							json[i].className = json[i].class.toString().replace(',',' ');
-						};						
-					};
-				};
-			})(json);
+    let json = '',
+      sortOutJson;
+
+    if(type === 'markdown'){
+      json = _ts.m.html2json(_ts.md2wxml(content));
+    }else if(type === 'html'){
+      json = _ts.m.html2json(content);
+    };
+
+    //遍历json将多个class属性合为一个
+    (sortOutJson = (json)=>{
+      for(let i in json){					
+        if(i === 'child' && typeof json[i] === 'object' && json[i].length){						
+          json[i].forEach((item,index)=>{
+            sortOutJson(item);
+          });						
+        };
+        if(i === 'attr'){
+          if(typeof json[i].class === 'string'){
+            json[i].className = json[i].class;
+          }else if(typeof json[i].class === 'object' && json[i].class.length){
+            json[i].className = json[i].class.toString().replace(',',' ');
+          };						
+        };
+      };
+    })(json);
+    json.theme = 'default';
 			
 		return json;
 	}

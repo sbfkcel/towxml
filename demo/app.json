@@ -1,6 +1,7 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index",
+    "pages/theme_black/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,20 +11,20 @@
   },
   "tabBar": {
     "color":"#fff",
-    "selectedColor":"#04b129",
+    "selectedColor":"#fff",
     "backgroundColor":"#000",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "白色",
+        "text": "White",
         "iconPath": "images/sun--default.png",
         "selectedIconPath": "images/sun--current.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "黑色",
-        "iconPath": "images/sun--default.png",
-        "selectedIconPath": "images/sun--current.png"
+        "pagePath": "pages/theme_black/index",
+        "text": "Black",
+        "iconPath": "images/moon--default.png",
+        "selectedIconPath": "images/moon--current.png"
       }
     ]
   }

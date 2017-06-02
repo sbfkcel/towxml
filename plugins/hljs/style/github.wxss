@@ -4,7 +4,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 
-.hljs {
+.h2w-default .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
@@ -12,88 +12,88 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   background: #f8f8f8;
 }
 
-.hljs-comment,
-.hljs-quote {
+.h2w-default .hljs-comment,
+.h2w-default .hljs-quote {
   color: #998;
   font-style: italic;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
+.h2w-default .hljs-keyword,
+.h2w-default .hljs-selector-tag,
+.h2w-default .hljs-subst {
   color: #333;
   font-weight: bold;
 }
 
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
+.h2w-default .hljs-number,
+.h2w-default .hljs-literal,
+.h2w-default .hljs-variable,
+.h2w-default .hljs-template-variable,
+.h2w-default .hljs-tag .hljs-attr {
   color: #008080;
 }
 
-.hljs-string,
-.hljs-doctag {
+.h2w-default .hljs-string,
+.h2w-default .hljs-doctag {
   color: #d14;
 }
 
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
+.h2w-default .hljs-title,
+.h2w-default .hljs-section,
+.h2w-default .hljs-selector-id {
   color: #900;
   font-weight: bold;
 }
 
-.hljs-subst {
+.h2w-default .hljs-subst {
   font-weight: normal;
 }
 
-.hljs-type,
-.hljs-class .hljs-title {
+.h2w-default .hljs-type,
+.h2w-default .hljs-class .hljs-title {
   color: #458;
   font-weight: bold;
 }
 
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
+.h2w-default .hljs-tag,
+.h2w-default .hljs-name,
+.h2w-default .hljs-attribute {
   color: #000080;
   font-weight: normal;
 }
 
-.hljs-regexp,
-.hljs-link {
+.h2w-default .hljs-regexp,
+.h2w-default .hljs-link {
   color: #009926;
 }
 
-.hljs-symbol,
-.hljs-bullet {
+.h2w-default .hljs-symbol,
+.h2w-default .hljs-bullet {
   color: #990073;
 }
 
-.hljs-built_in,
-.hljs-builtin-name {
+.h2w-default .hljs-built_in,
+.h2w-default .hljs-builtin-name {
   color: #0086b3;
 }
 
-.hljs-meta {
+.h2w-default .hljs-meta {
   color: #999;
   font-weight: bold;
 }
 
-.hljs-deletion {
+.h2w-default .hljs-deletion {
   background: #fdd;
 }
 
-.hljs-addition {
+.h2w-default .hljs-addition {
   background: #dfd;
 }
 
-.hljs-emphasis {
+.h2w-default .hljs-emphasis {
   font-style: italic;
 }
 
-.hljs-strong {
+.h2w-default .hljs-strong {
   font-weight: bold;
 }

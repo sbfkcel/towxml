@@ -3,6 +3,7 @@
 const app = getApp();
 Page({
   data: {
+    isloading:true,
     article:{}
   },
   docDir: 'https://raw.githubusercontent.com/sbfkcel/towxml/master/docs/',
@@ -23,9 +24,11 @@ Page({
     const _ts = this;
     _ts.getText(_ts.docDir + 'demo.md', (res) => {
       if (res.data) {
-        let wxml = app.towxml.md2wxml(res.data);
+        let d = app.towxml.toJson(res.data,'markdown');
+        //d.theme = 'black';
         _ts.setData({
-          article: app.towxml.html2json(wxml)
+          article: d,
+          isloading: false
         });
       };
     });

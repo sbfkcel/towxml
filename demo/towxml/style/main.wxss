@@ -240,5 +240,5 @@
 
 /**内置元素**/
 video,image {
-    width:100%; margin:0 auto 20rpx auto;
+    width:100%; height:auto; margin:0 auto 20rpx auto;
 }

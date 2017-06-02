@@ -33,8 +33,12 @@ class outwxml{
             wxmlTag = _ts.m.towxml.wxmlTag;
         
         wxmlTag.forEach((item,index)=>{
+	        let imgMode = ''
+	        if(item === 'image'){
+		        imgMode = 'mode="widthFix"';
+	        };
             s+= `
-                    <${item} wx:if="{{item.node === 'element' && item.tag === '${item}'}}" ${attr}>
+                    <${item} wx:if="{{item.node === 'element' && item.tag === '${item}'}}" ${attr} ${imgMode}>
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m${id}" data="{{item}}"/>
                         </block>
@@ -58,7 +62,6 @@ class outwxml{
                 s += `${item}="{{item.attr.${item}}}"`;
             };                    
         });
-
         return s;
     }
 

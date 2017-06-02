@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/theme_black/index"
+    "pages/light/index",
+    "pages/dark/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "TOWXML演示",
+    "navigationBarTitleText": "Towxml Demo",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
@@ -15,14 +15,14 @@
     "backgroundColor":"#000",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "White",
+        "pagePath": "pages/light/index",
+        "text": "Light",
         "iconPath": "images/sun--default.png",
         "selectedIconPath": "images/sun--current.png"
       },
       {
-        "pagePath": "pages/theme_black/index",
-        "text": "Black",
+        "pagePath": "pages/dark/index",
+        "text": "Dark",
         "iconPath": "images/moon--default.png",
         "selectedIconPath": "images/moon--current.png"
       }

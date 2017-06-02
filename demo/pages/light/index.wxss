@@ -1,0 +1,4 @@
+/**index.wxss**/
+
+/**主题配色**/
+@import '/towxml/style/theme/light.wxss';

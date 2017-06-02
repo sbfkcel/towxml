@@ -200,7 +200,7 @@ class towxml{
         };
       };
     })(json);
-    json.theme = 'default';
+    json.theme = 'light';
 			
 		return json;
 	}

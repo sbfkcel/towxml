@@ -12,6 +12,9 @@
 }
 
 .loading__icon {
-  width:100rpx;
-  height:100rpx;
+  width:80rpx;
+  height:80rpx;
 }
+
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';

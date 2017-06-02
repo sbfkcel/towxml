@@ -1,0 +1,53 @@
+.h2w-dark {
+  color:#ddd;
+  background-color:#1a1a1a;
+}
+
+/**标题**/
+.h2w-dark .h2w__h1,
+.h2w-dark .h2w__h2 {
+    border-color:#303030;
+}
+
+
+/**表格**/
+.h2w-dark .h2w__thead .h2w__tr {
+    background-color:#0d0d0d;
+}
+.h2w-dark .h2w__table .h2w__tr:nth-child(2n){
+    background-color:#090909;
+}
+.h2w-dark .h2w__th,
+.h2w-dark .h2w__td {
+    border-color:#242424;
+}
+
+
+/**代码块**/
+.h2w-dark .h2w__pre {
+    background-color:#272822;
+    border-color:#1b1c18;
+}
+
+.h2w-dark .h2w__code {
+    background-color:#272822;
+    border-color:#1b1c18;
+}
+
+
+/**块元素**/
+.h2w-dark .h2w__blockquote {
+    border-left-color:#242424;
+}
+
+/**内连元素**/
+.h2w-dark .h2w__a {
+    color:#1aad16; border-color:#b9d9b8;
+}
+
+.h2w-dark .h2w__hr {
+    background-color:#242424;
+}
+
+/**代码高亮样式**/
+@import '/towxml/plugins/hljs/style/monokai.wxss';

@@ -4,7 +4,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 
-.h2w-default .hljs {
+.h2w-light .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
@@ -12,88 +12,88 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   background: #f8f8f8;
 }
 
-.h2w-default .hljs-comment,
-.h2w-default .hljs-quote {
+.h2w-light .hljs-comment,
+.h2w-light .hljs-quote {
   color: #998;
   font-style: italic;
 }
 
-.h2w-default .hljs-keyword,
-.h2w-default .hljs-selector-tag,
-.h2w-default .hljs-subst {
+.h2w-light .hljs-keyword,
+.h2w-light .hljs-selector-tag,
+.h2w-light .hljs-subst {
   color: #333;
   font-weight: bold;
 }
 
-.h2w-default .hljs-number,
-.h2w-default .hljs-literal,
-.h2w-default .hljs-variable,
-.h2w-default .hljs-template-variable,
-.h2w-default .hljs-tag .hljs-attr {
+.h2w-light .hljs-number,
+.h2w-light .hljs-literal,
+.h2w-light .hljs-variable,
+.h2w-light .hljs-template-variable,
+.h2w-light .hljs-tag .hljs-attr {
   color: #008080;
 }
 
-.h2w-default .hljs-string,
-.h2w-default .hljs-doctag {
+.h2w-light .hljs-string,
+.h2w-light .hljs-doctag {
   color: #d14;
 }
 
-.h2w-default .hljs-title,
-.h2w-default .hljs-section,
-.h2w-default .hljs-selector-id {
+.h2w-light .hljs-title,
+.h2w-light .hljs-section,
+.h2w-light .hljs-selector-id {
   color: #900;
   font-weight: bold;
 }
 
-.h2w-default .hljs-subst {
+.h2w-light .hljs-subst {
   font-weight: normal;
 }
 
-.h2w-default .hljs-type,
-.h2w-default .hljs-class .hljs-title {
+.h2w-light .hljs-type,
+.h2w-light .hljs-class .hljs-title {
   color: #458;
   font-weight: bold;
 }
 
-.h2w-default .hljs-tag,
-.h2w-default .hljs-name,
-.h2w-default .hljs-attribute {
+.h2w-light .hljs-tag,
+.h2w-light .hljs-name,
+.h2w-light .hljs-attribute {
   color: #000080;
   font-weight: normal;
 }
 
-.h2w-default .hljs-regexp,
-.h2w-default .hljs-link {
+.h2w-light .hljs-regexp,
+.h2w-light .hljs-link {
   color: #009926;
 }
 
-.h2w-default .hljs-symbol,
-.h2w-default .hljs-bullet {
+.h2w-light .hljs-symbol,
+.h2w-light .hljs-bullet {
   color: #990073;
 }
 
-.h2w-default .hljs-built_in,
-.h2w-default .hljs-builtin-name {
+.h2w-light .hljs-built_in,
+.h2w-light .hljs-builtin-name {
   color: #0086b3;
 }
 
-.h2w-default .hljs-meta {
+.h2w-light .hljs-meta {
   color: #999;
   font-weight: bold;
 }
 
-.h2w-default .hljs-deletion {
+.h2w-light .hljs-deletion {
   background: #fdd;
 }
 
-.h2w-default .hljs-addition {
+.h2w-light .hljs-addition {
   background: #dfd;
 }
 
-.h2w-default .hljs-emphasis {
+.h2w-light .hljs-emphasis {
   font-style: italic;
 }
 
-.h2w-default .hljs-strong {
+.h2w-light .hljs-strong {
   font-weight: bold;
 }

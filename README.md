@@ -70,8 +70,8 @@
                     //将markdown内容转换为towxml数据
                     let data = app.towxml.toJson(res.data,'markdown');
 
-                    //设置文档显示主题，默认'default'
-                    data.theme = 'black';
+                    //设置文档显示主题，默认'light'
+                    data.theme = 'dark';
 
                     //设置数据
                     _ts.setData({
@@ -94,10 +94,10 @@
     /**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
 
     /**主题配色（浅色样式）**/
-    @import '/towxml/style/theme/default.wxss';
+    @import '/towxml/style/theme/light.wxss';
 
     /**主题配色（深色样式）**/
-    @import '/towxml/style/theme/black.wxss';
+    @import '/towxml/style/theme/dark.wxss';
 ```
 
 OK，大功告成~~

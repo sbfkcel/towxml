@@ -228,7 +228,7 @@
     margin:0 8rpx;
     border-bottom-width:1rpx;
     border-bottom-style:solid;
-    line-height:1.5;
+    line-height:1;
 }
 
 .h2w__hr {

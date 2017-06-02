@@ -1,6 +1,6 @@
 # TOWXML
 
-![alt](http://link)
+![towxml](https://cdn.rawgit.com/sbfkcel/towxml/8820fb31/docs/logo--horizontal.svg)
 
 **towxml** 是一个可将`HTML`、`markdown`转换为`WXML`(WeiXin Markup Language)的渲染库。
 

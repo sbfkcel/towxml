@@ -1,6 +1,6 @@
 /**index.wxss**/
 page {
-  background-color: #1a1a1a;
+  background-color: #000;
 }
 
 /**主题配色**/

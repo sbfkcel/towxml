@@ -238,10 +238,13 @@
 
 
 /**内置元素**/
-video,image {
+image,video {
     width:100%; margin:0 auto 20rpx auto;
 }
 
 image {
 	height:auto;
+}
+video {
+	height:220px;
 }

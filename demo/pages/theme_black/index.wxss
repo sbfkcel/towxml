@@ -1,0 +1,10 @@
+/**index.wxss**/
+page {
+  background-color: black;
+}
+
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';
+
+/**主题配色**/
+@import '/towxml/style/theme/black.wxss';

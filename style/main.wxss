@@ -252,8 +252,7 @@
 
 /**荧光标记**/
 .h2w__mark {
-    background:yellow;
-    color:black;
+    border-radius:4rpx;
 }
 
 /**上标、下标**/

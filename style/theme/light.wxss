@@ -49,5 +49,10 @@
     background-color:#eee;
 }
 
+.h2w-light .h2w__mark {
+    background:yellow;
+    color:black;
+}
+
 /**代码高亮样式**/
 @import '/towxml/plugins/hljs/style/github.wxss';

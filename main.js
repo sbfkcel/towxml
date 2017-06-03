@@ -14,6 +14,8 @@ class towxml{
 		_ts.m = {};
 
 		let mdOption = {
+      html: true,
+      xhtmlOut: true,
 			typographer: true,
 			highlight: function (code, lang, callback) {
 				return _ts.m.highlight.highlightAuto(code).value;

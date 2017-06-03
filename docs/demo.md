@@ -5,7 +5,7 @@
 
 由于微信小程序不能直接渲染`HTML`，因此富文本编辑器生成的`HTML`内容无法直接在小程序中展示。
 
-可能是出于==安全因素==（[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)），即使`WXML`文本在小程序中也是以字符串方式进行渲染。当然，还是期望之后能开放这样的接口。
+或许是出于==安全因素==（[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)），即使`WXML`文本在小程序中也是以字符串方式进行渲染。当然，还是期望之后能开放这样的接口。
 
 
 ## 特色

@@ -5,16 +5,18 @@
 
 由于微信小程序不能直接渲染`HTML`，因此富文本编辑器生成的`HTML`内容无法直接在小程序中展示。
 
-可能是出于安全因素（[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)），即使`WXML`文本在小程序中也是以字符串方式进行渲染。当然，还是期望之后能开放这样的接口。
+可能是出于==安全因素==（[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)），即使`WXML`文本在小程序中也是以字符串方式进行渲染。当然，还是期望之后能开放这样的接口。
 
 
 ## 特色
 
 - 支持代码语法高亮
+- 支持emoji表情:wink:
+- 支持上标、下标、下划线、删除线等常用格式
+- 支持typographer字符替换
 - 多主题动态支持
 - 极致的中文排版优化
-- 可在服务器解析
-- 使用简单
+- 前后端支持
 
 ---
 
@@ -27,12 +29,10 @@
 
 **更多详见** [http://www.markdown.cn/](http://www.markdown.cn/)
 
-下面奉上一些演示示例。
 
+# 图文排列
 
-# 《边城》
-
-`沈从文`著——中篇小说
+**边城`沈从文`著——中篇小说*
 
 > 在川湘交界的茶峒附近，小溪白塔旁边，住着主人公翠翠和她爷爷老船夫。茶峒城里有个船总叫顺顺，他有两个儿子，老大叫天保，老二叫傩送。
 
@@ -61,6 +61,12 @@ class SomeClass:
 ... prompt'''
 ```
 
+### emoji 8-)
+
+> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+>
+> Shortcuts (emoticons): :-) :-( 8-) ;)
+
 ### Table
 
 | Item      |    Value | Qty  |
@@ -70,7 +76,17 @@ class SomeClass:
 | Pipe      |    1 USD | 234  |
 
 
-## Emphasis
+### Typographic replacements
+
+Enable typographer option to see result.
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+test.. test... test..... test?..... test!....
+!!!!!! ???? ,,  -- ---
+"Smartypants, double quotes" and 'single quotes'
+
+
+
+### Emphasis
 
 **This is bold text**
 
@@ -83,14 +99,14 @@ _This is italic text_
 ~~Strikethrough~~
 
 
-## Blockquotes
+### Blockquotes
 
 > Blockquotes can also be nested...
 >> ...by using additional greater-than signs right next to each other...
 > > > ...or with spaces between arrows.
 
 
-## Lists
+### Lists
 
 Unordered
 
@@ -119,19 +135,30 @@ Start numbering with offset:
 1. bar
 
 
-## Links
+### Links
 
 [https://github.com/sbfkcel/towxml](https://github.com/sbfkcel/towxml)
 [https://www.npmjs.com/package/towxml](https://www.npmjs.com/package/towxml)
 
 
-## Subscript/Superscript
+### Subscript/Superscript
+
 - 19^th^
 - H~2~O
 
 
+### ins
+
+++Inserted text++
+
+
+### Mark
+
+==Marked text==
+
+
 ### Video
-<video class="vidoe" src="http://v.mifile.cn/b2c-mimall-media/acdf959034bad716e851ec2f22483661.mp4">视频</video>
+<video class="vidoe" src="http://baobab.kaiyanapp.com/api/v1/playUrl?vid=17129&editionType=normal&source=qcloud">视频</video>
 
 
 ---

@@ -1,23 +1,58 @@
 class towxml{
-	constructor(){
+	constructor(option){
 		const _ts = this;
+		// _ts.config = {
+		// 	emoji_path:'',							//emoji图片路径
+		// 	emoji_type:'svg'						//emoji图片类型
+		// };
+		option = option || {};
+
+		for(let i in option){
+			_ts.config[i] = option[i];
+		};
 
 		_ts.m = {};
 
-		if(global){
-			_ts.m.marked = require('./lib/marked');
-			_ts.m.html2json = require('./lib/html2json');
-			_ts.m.highlight = require('./plugins/hljs/index');
-		}else if(window){
-			_ts.m.marked = window.marked;
-			_ts.m.html2json = window.html2json;
-		};
-
-		_ts.m.marked.setOptions({
+		let mdOption = {
+			typographer: true,
 			highlight: function (code, lang, callback) {
 				return _ts.m.highlight.highlightAuto(code).value;
 			}
-		});
+		};
+
+		if(global){
+			_ts.m.html2json = require('./lib/html2json');
+			_ts.m.highlight = require('./plugins/hljs/index');
+
+			_ts.m.md = require('./lib/markdown-it')(mdOption);
+			_ts.m.md_sub = require('./plugins/markdown-it-sub');
+			_ts.m.md_sup = require('./plugins/markdown-it-sup');
+			_ts.m.md_ins = require('./plugins/markdown-it-ins');
+			_ts.m.md_mark = require('./plugins/markdown-it-mark');
+			_ts.m.md_emoji = require('./plugins/markdown-it-emoji');
+
+		}else if(window){
+			_ts.m.html2json = window.html2json;
+			_ts.m.highlight = window.hljs;
+
+			_ts.m.md = new window.markdownit(mdOption);
+			_ts.m.md_sub = window.markdownitSub;
+			_ts.m.md_sup = window.markdownitSup;
+			_ts.m.md_ins = window.markdownitIns;
+			_ts.m.md_mark = window.markdownitMark;
+			_ts.m.md_emoji = window.markdownitEmoji;
+		};
+
+		_ts.m.md.use(_ts.m.md_sub);
+		_ts.m.md.use(_ts.m.md_sup);
+		_ts.m.md.use(_ts.m.md_ins);
+		_ts.m.md.use(_ts.m.md_mark);
+		_ts.m.md.use(_ts.m.md_emoji);
+
+		_ts.m.md.renderer.rules.emoji = function(token, idx) {
+			// return '<img class="h2w__emoji h2w__emoji--'+token[idx].markup+'" src="'+_ts.config.emoji_path + token[idx].content+'.'+ _ts.config.emoji_type+' "/>';
+			return '<g-emoji class="h2w__emoji h2w__emoji--' + token[idx].markup + '">'+ token[idx].content +'</g-emoji>';
+		};
 
 		_ts.wxmlTag = ['view','video','swiper','block','swiper-item','button','slider','scroll-view','movable-area','movable-view','text','progress','checkbox-group','label','checkbox','form','switch','input','radio-group','radio','picker','picker-view','switch','textarea','navigator','audio','image','map','canvas','contact-button'];
 	}
@@ -25,7 +60,7 @@ class towxml{
 	//markdown转html
 	md2html(mdContent){
 		const _ts = this;
-		return _ts.m.marked(mdContent);
+		return _ts.m.md.render(mdContent);
 	}
 
 	//html转wxml
@@ -52,7 +87,7 @@ class towxml{
 					let delWordBbrackets = word.substr(1,word.length - 2),	//剔除首尾尖括号
 					wordSplit = delWordBbrackets.split(' '),				//得到元素标签与属性
 					labelName = wordSplit[0].toLowerCase(),					//取得tagName
-					className_htmlTag = 'h2w__'+labelName;					
+					className_htmlTag = 'h2w__'+labelName;
 
 					if(_ts.isConversion(labelName)){
 						
@@ -161,6 +196,11 @@ class towxml{
 			case 'i':
 			case 'em':
 			case 'code':
+			case 'sub':
+			case 'sup':
+			case 'g-emoji':
+			case 'mark':
+			case 'ins':
 				temp = 'text';
 			break;
 		};
@@ -195,7 +235,7 @@ class towxml{
           if(typeof json[i].class === 'string'){
             json[i].className = json[i].class;
           }else if(typeof json[i].class === 'object' && json[i].class.length){
-            json[i].className = json[i].class.toString().replace(',',' ');
+						json[i].className = json[i].class.toString().replace(/,/g,' ');
           };						
         };
       };

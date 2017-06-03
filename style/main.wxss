@@ -1,5 +1,5 @@
 .h2w {
-  font-family: "STHeitiTC-Light", "Microsoft YaHei Light", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "STHeitiTC-Light", "Microsoft YaHei Light", "Hiragino Sans GB", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size:32rpx;
   line-height: 1.8;
   word-wrap: break-word;
@@ -221,9 +221,23 @@
 
 .h2w__i,
 .h2w__em {
-    font-style:italic；
+    font-style:italic;
 }
 
+/**文本删除线**/
+.h2w__s,
+.h2w__strike,
+.h2w__del {
+    text-decoration:line-through;
+}
+
+/**文本下划线**/
+.h2w__ins,
+.h2w__u {
+    text-decoration:underline;
+}
+
+/**链接**/
 .h2w__a {
     margin:0 8rpx;
     border-bottom-width:1rpx;
@@ -236,6 +250,30 @@
     margin:40rpx 0;
 }
 
+/**荧光标记**/
+.h2w__mark {
+    background:yellow;
+    color:black;
+}
+
+/**上标、下标**/
+.h2w__sup,
+.h2w__sub {
+    font-size:75%;
+    position:relative;
+}
+.h2w__sup {
+    top:-0.5em;
+}
+.h2w__sub {
+    bottom:-0.25em;
+}
+
+/**emoji表情**/
+.h2w__g-emoji {
+    margin:0 0.1em;
+    font-family:"Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 
 /**内置元素**/
 image,video {

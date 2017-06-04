@@ -2,7 +2,7 @@
 
 ![Towxml](https://cdn.rawgit.com/sbfkcel/towxml/b5dffaf2/docs/logo--horizontal.svg)
 
-由于微信小程序==不允许直接渲染`HTML`==，因此富文本编辑器生成的`HTML`内容无法直接在小程序中展示。
+由于微信小程序==不允许直接渲染==`HTML`，因此富文本编辑器生成的`HTML`内容无法直接在小程序中展示。
 
 **Towxml** 正是为了解决这一切，Towxml是一个可将`HTML`、`markdown`转换为`WXML`(WeiXin Markup Language)的渲染库。
 

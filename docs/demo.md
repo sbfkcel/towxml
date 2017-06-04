@@ -1,11 +1,10 @@
 # Towxml
 
 ![Towxml](https://cdn.rawgit.com/sbfkcel/towxml/b5dffaf2/docs/logo--horizontal.svg)
-**Towxml** 是一个可将`HTML`、`markdown`转换为`WXML`(WeiXin Markup Language)的渲染库。
 
-由于微信小程序不能直接渲染`HTML`，因此富文本编辑器生成的`HTML`内容无法直接在小程序中展示。
+由于微信小程序==不允许直接渲染`HTML`==，因此富文本编辑器生成的`HTML`内容无法直接在小程序中展示。
 
-或许是出于==安全因素==（[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)），即使`WXML`文本在小程序中也是以字符串方式进行渲染。当然，还是期望之后能开放这样的接口。
+**Towxml** 正是为了解决这一切，Towxml是一个可将`HTML`、`markdown`转换为`WXML`(WeiXin Markup Language)的渲染库。
 
 
 ## 特色

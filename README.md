@@ -17,6 +17,14 @@
 - 极致的中文排版优化
 - 前后端支持
 
+
+## 截图
+
+以下截图即`demo`目录编译的效果
+
+![towxml](https://cdn.rawgit.com/sbfkcel/towxml/edc25e97/docs/demo.png)
+
+
 ## 快速上手
 
 **1. 克隆TOWXML到小程序根目录**

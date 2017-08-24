@@ -1,10 +1,6 @@
 class towxml{
 	constructor(option){
 		const _ts = this;
-		// _ts.config = {
-		// 	emoji_path:'',							//emoji图片路径
-		// 	emoji_type:'svg'						//emoji图片类型
-		// };
 		option = option || {};
 
 		for(let i in option){

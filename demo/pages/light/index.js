@@ -12,7 +12,7 @@ Page({
     const _ts = this;
 
     //请求Markdown文件内容
-    app.getText(app.docDir + 'demo.md', (res) => {
+    app.getText(app.docDir + 'demo.md?v=110', (res) => {
       if (res.data) {
 
 	    //将markdown内容转换为towxml数据

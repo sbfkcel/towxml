@@ -141,21 +141,21 @@ class towxml {
 	//markdown转wxml
 	md2wxml(mdContent) {
 		const _ts = this;
-		let html = _ts.md2html(mdContent),
-			wxml = _ts.html2wxml(html),
-			deCode = (str) => {
-				let s = '';
-				if (str.length === 0) {
-					return '';
-				};
-				s = str.replace(/&amp;/g, "&");
-				s = s.replace(/&lt;/g, "<");
-				s = s.replace(/&gt;/g, ">");
-				s = s.replace(/&nbsp;/g, " ");
-				s = s.replace(/&#39;/g, "\'");
-				s = s.replace(/&quot;/g, "\"");
-				return s;
-			};
+    let html = _ts.md2html(mdContent),
+      wxml = _ts.html2wxml(html),
+      deCode = str => {
+        let s = '';
+        if(str.length === 0){
+          return s;
+        };
+        s = str.replace(/&amp;/ig,'&');
+        s = s.replace(/&lt;/ig, "＜");
+        s = s.replace(/&gt;/ig, "＞");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/&quot;/g, "\"");
+        return s;
+      };
 		return deCode(wxml);
 	}
 
@@ -218,15 +218,7 @@ class towxml {
 		if (type === 'markdown') {
 			json = _ts.m.html2json(_ts.md2wxml(content));
 		} else if (type === 'html') {
-			json = _ts.m.html2json(content);
-		} else if (type === 'xml') {
-			//处理xml
-			content = content.replace(/<(.[^"])*:/ig, (item) => {
-				return item.replace(/:/ig, '_')
-			});
-			content = content.replace(/<\?.*>/ig, '');
-			content = content.replace(/<!doctype.*>/ig);
-			json = _ts.m.html2json(content);
+      json = _ts.m.html2json(_ts.html2wxml(content));
 		};
 
 		//遍历json将多个class属性合为一个

@@ -47,6 +47,8 @@
 
 ### Code
 
+python
+
 ``` python
 @requires_authorization
 def somefunc(param1='', param2=0):
@@ -59,6 +61,63 @@ class SomeClass:
 >>> message = '''interpreter
 ... prompt'''
 ```
+
+xml
+
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+	<schema name="doubaSchema" checkSQLschema="false" sqlMaxLimit="100" dataNode="dn1"></schema>
+	
+	<dataNode name="dn1" dataHost="dh1" database="douba" />
+	
+	<dataHost name="dh1" maxCon="500" minCon="20" balance="1" writeType="0" dbType="mysql" dbDriver="native" switchType="2" slaveThreshold="100">
+		<heartbeat>show slave status</heartbeat>
+		
+		<writeHost host="hostM41" url="192.168.2.41:3306" user="root" password="123456" >
+			<readHost host="hostS42" url="192.168.2.42:3306" user="root" password="123456" />
+			<readHost host="hostS43" url="192.168.2.43:3306" user="root" password="123456" />
+		</writeHost>
+	</dataHost>
+</mycat:schema>
+```
+
+html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    content text...
+</body>
+</html>
+```
+
+css
+```css
+html,body {background:white;}
+.box {width:200px; height:200px;}
+```
+
+javascript
+```javascript
+(()=>{
+    const fs = require('fs');
+    
+    let sum = (a,b)=>{
+        return a+b;
+    };
+    
+    console.log(sum(1+2));
+})()
+```
+
 
 ### emoji 8-)
 

@@ -148,12 +148,12 @@ class towxml {
         if(str.length === 0){
           return s;
         };
-        s = str.replace(/&amp;/ig,'&');
+        s = str.replace(/&amp;/ig,'＆');
         s = s.replace(/&lt;/ig, "＜");
         s = s.replace(/&gt;/ig, "＞");
         s = s.replace(/&nbsp;/g, " ");
-        s = s.replace(/&#39;/g, "\'");
-        s = s.replace(/&quot;/g, "\"");
+        s = s.replace(/&#39;/g, "＇");
+        s = s.replace(/&quot;/g, "＂");
         return s;
       };
 		return deCode(wxml);

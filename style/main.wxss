@@ -67,7 +67,7 @@
     background-color:red;
 }
 .h2w__colgroup {
-    display:table-column-group；
+    display:table-column-group;
 }
 .h2w__col {
     display:table-column;

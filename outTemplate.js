@@ -54,13 +54,19 @@ class outwxml{
         const _ts = this;
         
         let s = '',
-            attr = ['class','width','height','data','src','id','style'];
+            attr = ['class','width','height','data','src','id','style','href'];
         attr.forEach((item,index)=>{
-            if(item === 'class'){
-                s += `${item}="{{item.attr.className}}"`;
-            }else{
-                s += `${item}="{{item.attr.${item}}}"`;
-            };                    
+            switch (item) {
+                case 'class':
+                    s += `${item}="{{item.attr.className}}"`;
+                break;
+                case 'href':
+                    s += `url="{{item.attr.${item}}}"`;
+                break;
+                default:
+                    s += `${item}="{{item.attr.${item}}}"`;
+                break;
+            };                   
         });
         return s;
     }

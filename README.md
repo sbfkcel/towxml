@@ -109,40 +109,9 @@ Page({
 OK，大功告成~~
 
 
-## API
-如果为了追求极致的体验，建议将`markdown`、`html`转换为**towxml**数据的过程放在服务器上，在小程序中直接请求数据即可。
-
-**1. 依赖环境**
-
-需要 [Node.js](https://www.nodejs.org/) 环境。（已经安装请忽略）
-
-
-**2. 安装`towxml`**
-```bash
-npm install towxml
-```
-
-**3. 接口使用**
-```javascript
-const Towxml = require('towxml');
-const towxml = new Towxml();
-
-//Markdown转WXML
-let wxml = towxml.md2wxml('# Article title');
-
-//html转WXML
-let wxml = towxml.html2wxml('<h1>Article title</h1>');
-
-//Markdown转towxml数据
-let data = towxml.toJson('# Article title','markdown');
-
-//htm转towxml数据
-let data = towxml.toJson('# Article title');
-```
-
 ## 事件绑定
 
-`towxml`支持以下事件（不支持`bindtap`等事件简写方法）：
+`towxml`支持以下事件绑定，可自行根据需要为内容添加绑定事件。（不支持`bindtap`等事件简写方法）
 
 ```bash
 'bind:touchstart',
@@ -211,6 +180,37 @@ Page({
 'data-data'
 'data-id'
 'data-name'
+```
+
+## API
+如果为了追求极致的体验，建议将`markdown`、`html`转换为**towxml**数据的过程放在服务器上，在小程序中直接请求数据即可。
+
+**1. 依赖环境**
+
+需要 [Node.js](https://www.nodejs.org/) 环境。（已经安装请忽略）
+
+
+**2. 安装`towxml`**
+```bash
+npm install towxml
+```
+
+**3. 接口使用**
+```javascript
+const Towxml = require('towxml');
+const towxml = new Towxml();
+
+//Markdown转WXML
+let wxml = towxml.md2wxml('# Article title');
+
+//html转WXML
+let wxml = towxml.html2wxml('<h1>Article title</h1>');
+
+//Markdown转towxml数据
+let data = towxml.toJson('# Article title','markdown');
+
+//htm转towxml数据
+let data = towxml.toJson('# Article title');
 ```
 
 ## Demo示例

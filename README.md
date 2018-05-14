@@ -156,7 +156,7 @@ Page({
     //自定义事件，格式为`event_`+`绑定类型`+`_`+`事件类型`
     //例如`bind:touchstart`则为：
     this['event_bind_touchstart'] = (event)=>{
-        console.log(event.target.name);
+        console.log(event.target.dataset.name);     // 打印出"button"
     };
 
     //设置文章数据，并清除页面loading

@@ -208,7 +208,7 @@ class towxml {
 	//html2json
 	//content html、markdown字符串
 	//type 'html|markdown|xml'
-	toJson(content, type) {
+	toJson(content, type, app) {
 		const _ts = this;
 		type = type || 'html';
 
@@ -239,6 +239,42 @@ class towxml {
 			};
 		})(json);
 		json.theme = 'light';
+		
+		
+		if(app){
+			[
+				'bind:touchstart',
+                'bind:touchmove',
+                'bind:touchcancel',
+                'bind:touchend',
+                'bind:tap',
+                'bind:longpress',
+                'bind:longtap',
+                'bind:transitionend',
+                'bind:animationstart',
+                'bind:animationiteration',
+                'bind:animationend',
+                'bind:touchforcechange',
+
+                'capture-bind:touchstart',
+                'capture-bind:touchmove',
+                'capture-bind:touchcancel',
+                'capture-bind:touchend',
+                'capture-bind:tap',
+                'capture-bind:longpress',
+                'capture-bind:longtap',
+                'capture-bind:transitionend',
+                'capture-bind:animationstart',
+                'capture-bind:animationiteration',
+                'capture-bind:animationend',
+                'capture-bind:touchforcechange'
+			].forEach(item => {
+				let aItem = item.split(':');
+				app['event_'+aItem[0]+'_'+aItem[1]] = (event)=>{
+					// console.log('元素事件',event);
+				};
+			});
+		};
 
 		return json;
 	}

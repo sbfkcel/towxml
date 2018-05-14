@@ -54,7 +54,35 @@ class outwxml{
         const _ts = this;
         
         let s = '',
-            attr = ['class','width','height','data','src','id','style','href'];
+            attr = [
+                'class','width','height','data','src','id','style','href','data-ename','data-url','data-src','data-alpha','data-data','data-id','data-name',
+                
+                'bind:touchstart',
+                'bind:touchmove',
+                'bind:touchcancel',
+                'bind:touchend',
+                'bind:tap',
+                'bind:longpress',
+                'bind:longtap',
+                'bind:transitionend',
+                'bind:animationstart',
+                'bind:animationiteration',
+                'bind:animationend',
+                'bind:touchforcechange',
+
+                'capture-bind:touchstart',
+                'capture-bind:touchmove',
+                'capture-bind:touchcancel',
+                'capture-bind:touchend',
+                'capture-bind:tap',
+                'capture-bind:longpress',
+                'capture-bind:longtap',
+                'capture-bind:transitionend',
+                'capture-bind:animationstart',
+                'capture-bind:animationiteration',
+                'capture-bind:animationend',
+                'capture-bind:touchforcechange'
+            ];
         attr.forEach((item,index)=>{
             switch (item) {
                 case 'class':
@@ -62,9 +90,15 @@ class outwxml{
                 break;
                 case 'href':
                     s += `url="{{item.attr.${item}}}"`;
+                    s += `data-href="{{item.attr.${item}}}"`;
                 break;
                 default:
-                    s += `${item}="{{item.attr.${item}}}"`;
+                    let aItem = item.split(':');
+                    if(aItem.length > 1){
+                        s += `${item}='event_${aItem[0]}_${aItem[1]}'`;
+                    }else{
+                        s += `${item}="{{item.attr['${item}']}}"`;
+                    };
                 break;
             };                   
         });

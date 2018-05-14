@@ -16,6 +16,7 @@
 - 多主题动态支持
 - 极致的中文排版优化
 - 前后端支持
+- 支持事件绑定（这样允许自行扩展功能哟，例如：点击页面中的某个元素，更新当前页面内容等...）
 
 
 ## 截图
@@ -137,6 +138,79 @@ let data = towxml.toJson('# Article title','markdown');
 
 //htm转towxml数据
 let data = towxml.toJson('# Article title');
+```
+
+## 事件绑定
+
+`towxml`支持以下事件（不支持`bindtap`等事件简写方法）：
+
+```bash
+'bind:touchstart',
+'bind:touchmove',
+'bind:touchcancel',
+'bind:touchend',
+'bind:tap',
+'bind:longpress',
+'bind:longtap',
+'bind:transitionend',
+'bind:animationstart',
+'bind:animationiteration',
+'bind:animationend',
+'bind:touchforcechange',
+
+'capture-bind:touchstart',
+'capture-bind:touchmove',
+'capture-bind:touchcancel',
+'capture-bind:touchend',
+'capture-bind:tap',
+'capture-bind:longpress',
+'capture-bind:longtap',
+'capture-bind:transitionend',
+'capture-bind:animationstart',
+'capture-bind:animationiteration',
+'capture-bind:animationend',
+'capture-bind:touchforcechange'
+```
+
+```javascript
+Page({
+  data: {
+    isloading: true,
+    article: {}
+  },
+  onLoad: function () {
+    const _ts = this;
+
+    //将markdown内容转换为towxml数据，交将当前页面对象传入以创建默认事件对象
+    let articleData = app.towxml.toJson('<div data-name="button" data-id="button1">测试一个可点击的元素</div>', 'html', _ts);
+
+    //自定义事件，格式为`event_`+`绑定类型`+`_`+`事件类型`
+    //例如`bind:touchstart`则为：
+    this['event_bind_touchstart'] = (event)=>{
+        console.log(event.target.name);
+    };
+
+    //设置文章数据，并清除页面loading
+    _ts.setData({
+        article: articleData,
+        isloading: false
+    });
+  }
+})
+
+```
+
+## 支持以下自定义属性
+
+小程序的`data`属性允许从元素`event.target.dataset`中获取，`towxml`提供以下自定义属性，以便于自行处理交互扩展。
+
+```bash
+'data-url'
+'data-src'
+'data-alpha'
+'data-data'
+'data-id'
+'data-name'
 ```
 
 ## Demo示例

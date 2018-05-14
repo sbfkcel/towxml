@@ -211,7 +211,7 @@
 .h2w__strong,
 .h2w__i,
 .h2w__em {
-    display:inline-block;
+    display:inline;
 }
 
 .h2w__b,

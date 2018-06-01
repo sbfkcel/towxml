@@ -1,3 +1,5 @@
+const deCode = require('./deCode');
+
 class towxml {
 	constructor(option) {
 		const _ts = this;
@@ -135,28 +137,15 @@ class towxml {
 
 				return word;
 			});
-		return wxml;
+		return deCode(wxml);
 	}
 
 	//markdown转wxml
 	md2wxml(mdContent) {
 		const _ts = this;
     let html = _ts.md2html(mdContent),
-      wxml = _ts.html2wxml(html),
-      deCode = str => {
-        let s = '';
-        if(str.length === 0){
-          return s;
-        };
-        s = str.replace(/&amp;/ig,'＆');
-        s = s.replace(/&lt;/ig, "＜");
-        s = s.replace(/&gt;/ig, "＞");
-        s = s.replace(/&nbsp;/g, " ");
-        s = s.replace(/&#39;/g, "＇");
-        s = s.replace(/&quot;/g, "＂");
-        return s;
-      };
-		return deCode(wxml);
+    	wxml = _ts.html2wxml(html);
+		return wxml;
 	}
 
 	//检查标签是否需要转换

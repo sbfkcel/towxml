@@ -105,7 +105,7 @@
     border-width:1rpx;
     border-style:solid;
     margin-bottom:40rpx;
-    white-space:pre;
+    white-space:nowrap;
     overflow-x:auto;
 }
 .h2w__pre .h2w__code {
@@ -135,6 +135,9 @@
 .h2w__pre .h2w__em {
   display:inline;
 }
+.h2w__pre .hljs-meta {
+  white-space:pre;
+} 
 
 /**列表**/
 .h2w__ul,

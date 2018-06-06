@@ -55,7 +55,9 @@ class outwxml{
         
         let s = '',
             attr = [
-                'class','width','height','data','src','id','style','href','data-ename','data-url','data-src','data-alpha','data-data','data-id','data-name',
+                // 'class','width','height','data','src','id','style','href','data-ename','data-url','data-src','data-alpha','data-data','data-id','data-name',
+
+                'class','width','height','data','src','id','style','href',
                 
                 'bind:touchstart',
                 'bind:touchmove',
@@ -68,25 +70,25 @@ class outwxml{
                 'bind:animationstart',
                 'bind:animationiteration',
                 'bind:animationend',
-                'bind:touchforcechange',
+                'bind:touchforcechange'
 
-                'capture-bind:touchstart',
-                'capture-bind:touchmove',
-                'capture-bind:touchcancel',
-                'capture-bind:touchend',
-                'capture-bind:tap',
-                'capture-bind:longpress',
-                'capture-bind:longtap',
-                'capture-bind:transitionend',
-                'capture-bind:animationstart',
-                'capture-bind:animationiteration',
-                'capture-bind:animationend',
-                'capture-bind:touchforcechange'
+                // 'capture-bind:touchstart',
+                // 'capture-bind:touchmove',
+                // 'capture-bind:touchcancel',
+                // 'capture-bind:touchend',
+                // 'capture-bind:tap',
+                // 'capture-bind:longpress',
+                // 'capture-bind:longtap',
+                // 'capture-bind:transitionend',
+                // 'capture-bind:animationstart',
+                // 'capture-bind:animationiteration',
+                // 'capture-bind:animationend',
+                // 'capture-bind:touchforcechange'
             ];
-
-        s += `data-tagname="{{item.tag}}"`;
-        s += `data-attr="{{item.attr}}"`;
-        s += `data-child="{{item.child}}"`;
+        // s += `data-el="{{}}"`;
+        s += `data-el_tagname="{{item.tag}}"`;
+        s += `data-el_attr="{{item.attr}}"`;
+        s += `data-el_child="{{item.child}}"`;
         attr.forEach((item,index)=>{
             
             switch (item) {
@@ -100,7 +102,7 @@ class outwxml{
                 default:
                     let aItem = item.split(':');
                     if(aItem.length > 1){
-                        s += `${item}='event_${aItem[0]}_${aItem[1]}'`;
+                        s += `${item}='eventRun_${aItem[0]}_${aItem[1]}'`;
                     }else{
                         s += `${item}="{{item.attr['${item}']}}"`;
                     };

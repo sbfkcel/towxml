@@ -125,20 +125,7 @@ OK，大功告成~~
 'bind:animationstart',
 'bind:animationiteration',
 'bind:animationend',
-'bind:touchforcechange',
-
-'capture-bind:touchstart',
-'capture-bind:touchmove',
-'capture-bind:touchcancel',
-'capture-bind:touchend',
-'capture-bind:tap',
-'capture-bind:longpress',
-'capture-bind:longtap',
-'capture-bind:transitionend',
-'capture-bind:animationstart',
-'capture-bind:animationiteration',
-'capture-bind:animationend',
-'capture-bind:touchforcechange'
+'bind:touchforcechange'
 ```
 
 ```javascript
@@ -151,12 +138,12 @@ Page({
     const _ts = this;
 
     //将markdown内容转换为towxml数据，交将当前页面对象传入以创建默认事件对象
-    let articleData = app.towxml.toJson('<div data-name="button" data-id="button1">测试一个可点击的元素</div>', 'html', _ts);
+    let articleData = app.towxml.toJson('<div name="button" id="button1">测试一个可点击的元素</div>', 'html', _ts);
 
     //自定义事件，格式为`event_`+`绑定类型`+`_`+`事件类型`
     //例如`bind:touchstart`则为：
     this['event_bind_touchstart'] = (event)=>{
-        console.log(event.target.dataset.name);     // 打印出"button"
+        console.log(event.target.dataset.el_attr.name);     // 打印出"button"
     };
 
     //设置文章数据，并清除页面loading
@@ -167,19 +154,6 @@ Page({
   }
 })
 
-```
-
-## 支持以下自定义属性
-
-小程序的`data`属性允许从元素`event.target.dataset`中获取，`towxml`提供以下自定义属性，以便于自行处理交互扩展。
-
-```bash
-'data-url'
-'data-src'
-'data-alpha'
-'data-data'
-'data-id'
-'data-name'
 ```
 
 ## API
@@ -217,6 +191,29 @@ let data = towxml.toJson('# Article title');
 1. 将`towxml/demo`添加为小程序工程
 2. 再克隆`towxml`到`demo`目录
 3. 使用小程序开发工具编译即可
+
+
+## 更新说明
+
+### 1.5.10
+
+- 调整事件绑定策略，剔除`capture-bind`绑定方式
+- 调整自定义事件时获取元素属性的方式
+    - `event.target.dataset.el_arr`元素的所有属性
+    - `event.target.dataset.el_tagname`元素的标签名称
+    - `event.target.dataset.el_child`元素的子元素
+- 剔除`data-url`、`data-src`、`data-alpha`、`data-id`、`data-name`的支持（上一条的元素数据传递方式更全，模版代码更少）
+
+
+### 1.5.7
+
+- 调整代码片段在模拟器上与真机不一至的问题
+
+
+## 1.5.6
+
+- 增加事件绑定方法，允许为元素添加自定义事件
+
 
 ## License
 MIT

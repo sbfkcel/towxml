@@ -6,7 +6,8 @@ const app = getApp();
 Page({
   data: {
     isloading: true,
-    article: {}
+    article: {},
+    timer:undefined
   },
   onLoad: function () {
     const _ts = this;

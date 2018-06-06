@@ -229,7 +229,6 @@ class towxml {
 		})(json);
 		json.theme = 'light';
 		
-		
 		if(app){
 			[
 				'bind:touchstart',
@@ -243,24 +242,38 @@ class towxml {
                 'bind:animationstart',
                 'bind:animationiteration',
                 'bind:animationend',
-                'bind:touchforcechange',
+                'bind:touchforcechange'
 
-                'capture-bind:touchstart',
-                'capture-bind:touchmove',
-                'capture-bind:touchcancel',
-                'capture-bind:touchend',
-                'capture-bind:tap',
-                'capture-bind:longpress',
-                'capture-bind:longtap',
-                'capture-bind:transitionend',
-                'capture-bind:animationstart',
-                'capture-bind:animationiteration',
-                'capture-bind:animationend',
-                'capture-bind:touchforcechange'
+                // 'capture-bind:touchstart',
+                // 'capture-bind:touchmove',
+                // 'capture-bind:touchcancel',
+                // 'capture-bind:touchend',
+                // 'capture-bind:tap',
+                // 'capture-bind:longpress',
+                // 'capture-bind:longtap',
+                // 'capture-bind:transitionend',
+                // 'capture-bind:animationstart',
+                // 'capture-bind:animationiteration',
+                // 'capture-bind:animationend',
+                // 'capture-bind:touchforcechange'
 			].forEach(item => {
-				let aItem = item.split(':');
-				app['event_'+aItem[0]+'_'+aItem[1]] = (event)=>{
-					// console.log('元素事件',event);
+				let aItem = item.split(':'),
+					bindType = aItem[0],		// 事件绑定类型
+					evenType = aItem[1];		// 事件类型
+
+				// 检查，如果有添加自定义事件，则运行该事件
+				app[`eventRun_${bindType}_${evenType}`] = (event)=>{
+					let funName = `event_${bindType}_${evenType}`,
+						timer = `${funName}_timer`,
+						runFun = app[funName];
+					if(typeof runFun === 'function'){
+
+						// 由于小程序的事件绑定方式与冒泡机制问题，此处使用计时器以避免事件被同时多次调用
+						clearTimeout(app[timer]);
+						app[timer] = setTimeout(()=>{
+							runFun(event)
+						});
+					};
 				};
 			});
 		};

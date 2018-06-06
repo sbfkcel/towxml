@@ -83,7 +83,12 @@ class outwxml{
                 'capture-bind:animationend',
                 'capture-bind:touchforcechange'
             ];
+
+        s += `data-tagname="{{item.tag}}"`;
+        s += `data-attr="{{item.attr}}"`;
+        s += `data-child="{{item.child}}"`;
         attr.forEach((item,index)=>{
+            
             switch (item) {
                 case 'class':
                     s += `${item}="{{item.attr.className}}"`;

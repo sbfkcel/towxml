@@ -207,7 +207,7 @@ class towxml {
 		if (type === 'markdown') {
 			json = _ts.m.html2json(_ts.md2wxml(content));
 		} else if (type === 'html') {
-      json = _ts.m.html2json(_ts.html2wxml(content));
+      		json = _ts.m.html2json(_ts.html2wxml(content));
 		};
 
 		//遍历json将多个class属性合为一个
@@ -264,7 +264,6 @@ class towxml {
 				};
 			});
 		};
-
 		return json;
 	}
 };

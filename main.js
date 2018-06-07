@@ -227,6 +227,7 @@ class towxml {
 				};
 			};
 		})(json);
+
 		json.theme = 'light';
 		
 		if(app){
@@ -243,19 +244,6 @@ class towxml {
                 'bind:animationiteration',
                 'bind:animationend',
                 'bind:touchforcechange'
-
-                // 'capture-bind:touchstart',
-                // 'capture-bind:touchmove',
-                // 'capture-bind:touchcancel',
-                // 'capture-bind:touchend',
-                // 'capture-bind:tap',
-                // 'capture-bind:longpress',
-                // 'capture-bind:longtap',
-                // 'capture-bind:transitionend',
-                // 'capture-bind:animationstart',
-                // 'capture-bind:animationiteration',
-                // 'capture-bind:animationend',
-                // 'capture-bind:touchforcechange'
 			].forEach(item => {
 				let aItem = item.split(':'),
 					bindType = aItem[0],		// 事件绑定类型

@@ -200,7 +200,7 @@ let data = towxml.toJson('# Article title');
 - 调整事件绑定策略，剔除`capture-bind`绑定方式
 - 调整自定义事件时获取元素属性的方式
     - `event.target.dataset._el`元素的所有属性
-- 剔除`data-url`、`data-src`、`data-alpha`、`data-id`、`data-name`的支持（上一条的元素数据传递方式更全，模版代码更少）
+- 剔除`data-url`、`data-src`、`data-alpha`、`data-id`、`data-name`的支持（因为元素数据传递方式更全，模版代码更少）
 
 
 ### 1.5.7

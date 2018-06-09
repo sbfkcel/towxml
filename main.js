@@ -91,12 +91,6 @@ class towxml {
 						wordSplit = delWordBbrackets.split(' '), //得到元素标签与属性
 						labelName = wordSplit[0].toLowerCase(), //取得tagName
 						className_htmlTag = 'h2w__' + labelName;
-					
-					if(wordSplit[0] === 'ul' && wordSplit[1] === 'class="contains-task-list"'){
-						// return '<checkbox-group' + newAttrs + '>' + _ts.needClose(labelName);
-						wordSplit[0] = 'todoGroup';
-						labelName = 'todoGroup';
-					};
 
 					if (_ts.isConversion(labelName)) {
 						wordSplit.splice(0, 1); //剔除元素的标签
@@ -135,7 +129,7 @@ class towxml {
 						})();
 
 						// 添加todo事件绑定
-						if(labelName === 'todoGroup'){
+						if(labelName === 'todogroup'){
 							newAttrs += ' bindchange="eventRun_todo_checkboxChange"';
 						};		
 
@@ -204,7 +198,7 @@ class towxml {
 			case 'ins':
 				temp = 'text';
 				break;
-			case 'todoGroup':
+			case 'todogroup':
 				temp = 'checkbox-group';
 				break;
 		};
@@ -281,9 +275,7 @@ class towxml {
 					};
 				};
 			});
-			app[`eventRun_todo_checkboxChange`] = (event)=>{
-
-			}
+			app[`eventRun_todo_checkboxChange`] = (event)=>{};
 		};
 		return json;
 	}

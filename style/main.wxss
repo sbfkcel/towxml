@@ -154,11 +154,8 @@
 }
 
 /**todo**/
-.contains-task-list {
-    padding-left:0;
-}
-.task-list-item {
-    list-style:none;
+.h2w__todogroup {
+    margin-bottom:40rpx;
 }
 
 /**一级ol样式**/

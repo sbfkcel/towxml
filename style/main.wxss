@@ -136,9 +136,8 @@
 .h2w__pre .h2w__em {
     display:inline;
 }
-.h2w__pre .hljs-meta,
 .h2w__pre .h2w__code {
-    white-space:pre;
+    white-space:pre; width:9999px; display:block; font-size:80%;
 }
 
 /**列表**/

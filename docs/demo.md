@@ -141,14 +141,12 @@ $ git status
 # You have unmerged paths.
 ```
 
-
-
-
 ## emoji 8-)
 
 > Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
 >
 > Shortcuts (emoticons): :-) :-( 8-) ;)
+
 
 ## Table
 
@@ -166,7 +164,6 @@ Enable typographer option to see result.
 test.. test... test..... test?..... test!....
 !!!!!! ???? ,,  -- ---
 "Smartypants, double quotes" and 'single quotes'
-
 
 
 ## Emphasis

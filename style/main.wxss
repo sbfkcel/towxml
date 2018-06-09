@@ -125,6 +125,7 @@
     border-style:solid;
     border-radius:8rpx;
     font-size:80%;
+    overflow-x:auto;
 }
 .h2w__pre .h2w__span,
 .h2w__pre .h2w__a,
@@ -133,11 +134,12 @@
 .h2w__pre .h2w__strong,
 .h2w__pre .h2w__i,
 .h2w__pre .h2w__em {
-  display:inline;
+    display:inline;
 }
-.h2w__pre .hljs-meta {
-  white-space:pre;
-} 
+.h2w__pre .hljs-meta,
+.h2w__pre .h2w__code {
+    white-space:pre;
+}
 
 /**列表**/
 .h2w__ul,

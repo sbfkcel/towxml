@@ -85,11 +85,10 @@ class outwxml{
             
             switch (item) {
                 case 'class':
-                    s += `${item}="{{item.attr.className}}"`;
+                    s += `${item}="{{item.attr.class}}"`;
                 break;
                 case 'href':
                     s += `url="{{item.attr.${item}}}"`;
-                    s += `data-href="{{item.attr.${item}}}"`;
                 break;
                 default:
                     let aItem = item.split(':');

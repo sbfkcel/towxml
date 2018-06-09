@@ -151,8 +151,8 @@ class towxml {
 	//markdown转wxml
 	md2wxml(mdContent) {
 		const _ts = this;
-    let html = _ts.md2html(mdContent),
-    	wxml = _ts.html2wxml(html);
+		let html = _ts.md2html(mdContent),
+			wxml = _ts.html2wxml(html);
 		return wxml;
 	}
 

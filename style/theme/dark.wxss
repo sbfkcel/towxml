@@ -43,7 +43,7 @@
 
 /**内连元素**/
 .h2w-dark .h2w__a {
-    color:#1aad16; border-color:#116b0e;
+    color:#1aad16; border-color:#4d804b;
 }
 
 .h2w-dark .h2w__hr {
@@ -53,6 +53,16 @@
 .h2w-dark .h2w__mark {
     background:yellow;
     color:black;
+}
+
+.h2w-dark .h2w__todoCheckbox .wx-checkbox-input {
+    background:#2e2e2e; border-color:#494949;
+}
+.h2w-dark .h2w__todoCheckbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background:green; border-color:#4d804b;
+}
+.h2w-dark .h2w__todoCheckbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    color:white;
 }
 
 /**代码高亮样式**/

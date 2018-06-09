@@ -158,6 +158,9 @@
 .h2w__todogroup {
     margin-bottom:40rpx;
 }
+.h2w__todogroup .h2w__todogroup {
+    padding-left:1.6rem;
+}
 
 /**一级ol样式**/
 .h2w__ol {

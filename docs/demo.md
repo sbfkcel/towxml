@@ -31,7 +31,7 @@
 **更多详见** [http://www.markdown.cn/](http://www.markdown.cn/)
 
 
-## Mrkdown TodoList
+## Markdown TodoList
 
 - [ ] 一起去旅行
 - [ ] 跟同学聚会

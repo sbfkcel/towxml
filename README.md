@@ -149,7 +149,7 @@ Page({
 
     // 给todoList添加监听事件
     this['eventRun_todo_checkboxChange'] = (event)=>{
-        console.log(e.detail);                     // todoList checkbox发生change事件
+        console.log(event.detail);                 // todoList checkbox发生change事件
     };
 
     //设置文章数据，并清除页面loading

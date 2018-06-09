@@ -57,7 +57,7 @@
 
 ## Code
 
-python
+Python
 
 ``` python
 @requires_authorization
@@ -72,7 +72,7 @@ class SomeClass:
 ... prompt'''
 ```
 
-xml
+Xml
 
 ```xml
 <?xml version="1.0"?>
@@ -93,7 +93,8 @@ xml
 </mycat:schema>
 ```
 
-html
+Html
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -109,13 +110,15 @@ html
 </html>
 ```
 
-css
+Css
+
 ```css
 html,body {background:white;}
 .box {width:200px; height:200px;}
 ```
 
-javascript
+Javascript
+
 ```javascript
 (()=>{
     const fs = require('fs');
@@ -127,6 +130,18 @@ javascript
     console.log(sum(1+2));
 })()
 ```
+
+Bash
+
+```bash
+# 查看当前仓库情况
+$ git status
+
+# On branch branch -b
+# You have unmerged paths.
+```
+
+
 
 
 ## emoji 8-)

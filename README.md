@@ -8,7 +8,7 @@
 
 
 
-[使用交流](https://github.com/sbfkcel/towxml/wiki/%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81%E7%BE%A4%EF%BC%88%E5%BE%AE%E4%BF%A1%EF%BC%89)
+[Towxml使用交流群（微信）](https://github.com/sbfkcel/towxml/wiki/%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81%E7%BE%A4%EF%BC%88%E5%BE%AE%E4%BF%A1%EF%BC%89)
 
 
 ## 特色

@@ -37,6 +37,15 @@ class outwxml{
 	        if(item === 'image'){
 		        imgMode = 'mode="widthFix"';
             };
+
+            // todo添加绑定事件
+            if(item === 'checkbox-group'){
+                attr += `bindchange="{{item.attr['bindchange']}}"`;
+            };
+            if(item === 'checkbox'){
+                attr += `value="{{item.attr['value']}}"`;
+            };
+            
             s+= `<${item} wx:if="{{item.node === 'element' && item.tag === '${item}'}}" ${attr} ${imgMode}><block wx:for="{{item.child}}" wx:key="{{item}}"><template is="m${id}" data="{{item}}"/></block></${item}>`;
             // s+= `
             //         <${item} wx:if="{{item.node === 'element' && item.tag === '${item}'}}" ${attr} ${imgMode}>
@@ -56,7 +65,7 @@ class outwxml{
         
         let s = '',
             attr = [
-                'class','width','height','data','src','id','style','href',
+                'class','width','height','data','src','id','style','href','checked',
                 'bind:touchstart',
                 'bind:touchmove',
                 'bind:touchcancel',

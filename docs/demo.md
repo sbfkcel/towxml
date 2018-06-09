@@ -15,6 +15,8 @@
 - 支持typographer字符替换
 - 多主题动态支持
 - 极致的中文排版优化
+- Markdown TodoList
+- 元素事件绑定
 - 前后端支持
 
 ---
@@ -27,6 +29,14 @@
 当然，不仅仅只是这些……
 
 **更多详见** [http://www.markdown.cn/](http://www.markdown.cn/)
+
+
+# Mrkdown TodoList
+
+- [ ] 一起去旅行
+- [ ] 跟同学聚会
+- [x] 晚上十点足球比赛
+- [x] 测试用例撰写
 
 
 # 图文排列

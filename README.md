@@ -7,10 +7,6 @@
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
 
-
-[Towxml使用交流群（微信）](https://github.com/sbfkcel/towxml/wiki/%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81%E7%BE%A4%EF%BC%88%E5%BE%AE%E4%BF%A1%EF%BC%89)
-
-
 ## 特色
 
 - 支持代码语法高亮
@@ -19,8 +15,9 @@
 - 支持typographer字符替换
 - 多主题动态支持
 - 极致的中文排版优化
-- 前后端支持
+- Markdown TodoList
 - 支持事件绑定（这样允许自行扩展功能哟，例如：点击页面中的某个元素，更新当前页面内容等...）
+- 前后端支持
 
 
 ## 截图
@@ -150,6 +147,11 @@ Page({
         console.log(event.target.dataset._el);     // 打印出元素信息
     };
 
+    // 给todoList添加监听事件
+    this['eventRun_todo_checkboxChange'] = (event)=>{
+        console.log(e.detail);                     // todoList checkbox发生change事件
+    };
+
     //设置文章数据，并清除页面loading
     _ts.setData({
         article: articleData,
@@ -199,6 +201,10 @@ let data = towxml.toJson('# Article title');
 
 ## 更新说明
 
+### 1.5.12
+
+- 增加Markdown TodoList 支持
+
 ### 1.5.11
 
 - 调整事件绑定策略，剔除`capture-bind`绑定方式
@@ -215,6 +221,10 @@ let data = towxml.toJson('# Article title');
 ## 1.5.6
 
 - 增加事件绑定方法，允许为元素添加自定义事件
+
+## Towxml使用交流群（微信）
+
+![微信群](https://user-images.githubusercontent.com/5469785/41187302-06d53916-6bd9-11e8-855e-94745c3301b4.png)
 
 
 ## License

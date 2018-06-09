@@ -30,6 +30,7 @@ class towxml {
 			_ts.m.md_ins = require('./plugins/markdown-it-ins');
 			_ts.m.md_mark = require('./plugins/markdown-it-mark');
 			_ts.m.md_emoji = require('./plugins/markdown-it-emoji');
+			_ts.m.md_todo = require('./plugins/markdown-it-todoList');
 
 		} else if (window) {
 			_ts.m.html2json = window.html2json;
@@ -41,6 +42,7 @@ class towxml {
 			_ts.m.md_ins = window.markdownitIns;
 			_ts.m.md_mark = window.markdownitMark;
 			_ts.m.md_emoji = window.markdownitEmoji;
+			_ts.m.md_todo = window.markdownitTaskLists;
 		};
 
 		_ts.m.md.use(_ts.m.md_sub);
@@ -48,6 +50,7 @@ class towxml {
 		_ts.m.md.use(_ts.m.md_ins);
 		_ts.m.md.use(_ts.m.md_mark);
 		_ts.m.md.use(_ts.m.md_emoji);
+		_ts.m.md.use(_ts.m.md_todo);
 
 		_ts.m.md.renderer.rules.emoji = function (token, idx) {
 			// return '<img class="h2w__emoji h2w__emoji--'+token[idx].markup+'" src="'+_ts.config.emoji_path + token[idx].content+'.'+ _ts.config.emoji_type+' "/>';
@@ -88,9 +91,14 @@ class towxml {
 						wordSplit = delWordBbrackets.split(' '), //得到元素标签与属性
 						labelName = wordSplit[0].toLowerCase(), //取得tagName
 						className_htmlTag = 'h2w__' + labelName;
+					
+					if(wordSplit[0] === 'ul' && wordSplit[1] === 'class="contains-task-list"'){
+						// return '<checkbox-group' + newAttrs + '>' + _ts.needClose(labelName);
+						wordSplit[0] = 'todoGroup';
+						labelName = 'todoGroup';
+					};
 
 					if (_ts.isConversion(labelName)) {
-
 						wordSplit.splice(0, 1); //剔除元素的标签
 
 						//检查元素是否已经有className，有的话在原基础上添加新的类名
@@ -126,15 +134,21 @@ class towxml {
 							return s;
 						})();
 
+						// 添加todo事件绑定
+						if(labelName === 'todoGroup'){
+							newAttrs += ' bindchange="eventRun_todo_checkboxChange"';
+						};		
+
 						//如果是图片
 						if (labelName === 'img') {
 							return '<image ' + newAttrs + '></image>'
 						};
 
+						// console.log('标签',labelName,'属性',newAttrs)
+
 						return '<' + _ts.newLabel(labelName) + ' ' + newAttrs + '>' + _ts.needClose(labelName);
 					};
 				};
-
 				return word;
 			});
 		return deCode(wxml);
@@ -189,6 +203,9 @@ class towxml {
 			case 'mark':
 			case 'ins':
 				temp = 'text';
+				break;
+			case 'todoGroup':
+				temp = 'checkbox-group';
 				break;
 		};
 		return temp;
@@ -264,6 +281,9 @@ class towxml {
 					};
 				};
 			});
+			app[`eventRun_todo_checkboxChange`] = (event)=>{
+
+			}
 		};
 		return json;
 	}

@@ -7,6 +7,10 @@
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
 
+
+[使用交流](https://github.com/sbfkcel/towxml/wiki/%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81%E7%BE%A4%EF%BC%88%E5%BE%AE%E4%BF%A1%EF%BC%89)
+
+
 ## 特色
 
 - 支持代码语法高亮

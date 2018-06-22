@@ -6,6 +6,8 @@
 
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
+**[Towxml使用交流群：182874473（点击加入）](https://jq.qq.com/?_wv=1027&k=54KTcZi)**
+
 
 ## 特色
 
@@ -221,11 +223,6 @@ let data = towxml.toJson('# Article title');
 ## 1.5.6
 
 - 增加事件绑定方法，允许为元素添加自定义事件
-
-
-## Towxml使用交流群（微信）
-
-![微信群](https://user-images.githubusercontent.com/5469785/41187302-06d53916-6bd9-11e8-855e-94745c3301b4.png)
 
 
 ## License

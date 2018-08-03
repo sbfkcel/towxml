@@ -13,11 +13,15 @@ Page({
     const _ts = this;
 
     //请求Markdown文件内容
-    app.getText(app.docDir + 'demo.md?v=110', (res) => {
+    app.getText('https://web.4399.com/', (res) => {
       if (res.data) {
 
 	      //将markdown内容转换为towxml数据
-        let articleData = app.towxml.toJson(res.data, 'markdown', _ts);
+        // let articleData = app.towxml.toJson(res.data, 'html', _ts);
+
+        let articleData = app.towxml.toJson2(`<body>adf<div class="a b c">内容</div></body>`, 'html', _ts);
+
+        console.log(articleData)
 
         //自定义事件，格式为`event_`+`绑定类型`+`_`+`事件类型`
         //例如`bind:touchstart`则为：

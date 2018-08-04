@@ -7,22 +7,17 @@ Page({
   data: {
     isloading: true,
     article: {},
-    timer: undefined
+    timer:undefined
   },
   onLoad: function () {
     const _ts = this;
-    
+
     //请求Markdown文件内容
     app.getText(app.docDir + 'demo.txt?v=110', (res) => {
       if (res.data) {
 
-        // res.data = `<div style="background:rgba(255,0,0,.5)">测试</div>`;
-
+	      //将markdown内容转换为towxml数据
         let articleData = app.towxml.toJson(res.data, 'markdown', _ts);
-        console.log('终数据',articleData);
-
-        //将markdown内容转换为towxml数据
-        // let articleData = app.towxml.toJson(res.data, 'markdown', _ts);
 
         articleData.theme = 'light';
 

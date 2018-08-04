@@ -10,7 +10,7 @@ App({
   towxml:new Towxml(),
 
   //声明Markdown文件目录路径
-  docDir: 'https://raw.githubusercontent.com/sbfkcel/towxml/master/docs/',
+  docDir: 'https://www.vvadd.com/wxml_demo/',
   
   //声明一个数据请求方法
   getText: (url, callback) => {

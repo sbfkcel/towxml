@@ -10,8 +10,8 @@
 
 [**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
 
-> 2.0 版本重写了核心转换方法。欢迎体验，见： [**NEXT分支**](https://github.com/sbfkcel/towxml/tree/next)
-> 功能建议在 [issues](https://github.com/sbfkcel/towxml/issues) 或 QQ群中反馈
+> 2.0 版本重写了核心转换方法。欢迎体验，见： [**NEXT分支**](https://github.com/sbfkcel/towxml/tree/next)。
+> 功能建议在 [issues](https://github.com/sbfkcel/towxml/issues)提出
 
 
 ## 特色

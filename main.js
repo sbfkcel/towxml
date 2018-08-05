@@ -1,5 +1,3 @@
-const deCode = require('./deCode');
-
 class towxml {
 	constructor(option) {
 		const _ts = this;

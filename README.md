@@ -10,7 +10,6 @@
 
 [**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
 
-> 2.0 版本重写了核心转换方法。欢迎体验，见： [**NEXT分支**](https://github.com/sbfkcel/towxml/tree/next)。
 > 功能建议在 [issues](https://github.com/sbfkcel/towxml/issues)提出
 
 
@@ -187,17 +186,11 @@ npm install towxml
 const Towxml = require('towxml');
 const towxml = new Towxml();
 
-//Markdown转WXML
-let wxml = towxml.md2wxml('# Article title');
-
-//html转WXML
-let wxml = towxml.html2wxml('<h1>Article title</h1>');
-
 //Markdown转towxml数据
 let data = towxml.toJson('# Article title','markdown');
 
 //htm转towxml数据
-let data = towxml.toJson('# Article title');
+let data = towxml.toJson('<h1>Article title</h1>','html');
 ```
 
 ## Demo示例
@@ -207,6 +200,14 @@ let data = towxml.toJson('# Article title');
 
 
 ## 更新说明
+
+### 2.0.0
+
+- 重写核心转换方法，转换速度更快
+- 修复了诸多转换错误和不完整的问题
+- 精简包文件大小，支持完整的HTML解析
+- 调整了自定义绑定事件时event的数据格式（会更加完整）
+
 
 ### 1.5.12
 

@@ -13,6 +13,7 @@ class towxml {
 			html: true,
 			xhtmlOut: true,
 			typographer: true,
+			breaks: true,
 			highlight: function (code, lang, callback) {
 				return _ts.m.highlight.highlightAuto(code).value;
 			}

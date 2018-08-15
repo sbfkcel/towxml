@@ -9,11 +9,9 @@ class outwxml{
           _ts.config[i] = option[i];
         };
 
-        let Towxml = require('./main');
         _ts.m = {
             fs:require('fs'),
-            path:require('path'),
-            towxml:new Towxml()
+            path:require('path')
         };
     }
     init(){
@@ -30,7 +28,7 @@ class outwxml{
         const _ts = this;
         let s = '',
             attr = _ts.outattr(),
-            wxmlTag = _ts.m.towxml.wxmlTag;
+            wxmlTag = ['view', 'video', 'swiper', 'block', 'swiper-item', 'button', 'slider', 'scroll-view', 'movable-area', 'movable-view', 'text', 'progress', 'checkbox-group', 'label', 'checkbox', 'form', 'input', 'radio-group', 'radio', 'picker', 'picker-view', 'switch', 'textarea', 'navigator', 'audio', 'image', 'map', 'canvas', 'contact-button'];
         
         wxmlTag.forEach((item,index)=>{
 	        let imgMode = ''

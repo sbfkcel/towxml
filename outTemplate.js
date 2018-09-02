@@ -27,11 +27,11 @@ class outwxml{
     outtag(id){
         const _ts = this;
         let s = '',
-            attr = _ts.outattr(),
             wxmlTag = ['view', 'video', 'swiper', 'block', 'swiper-item', 'button', 'slider', 'scroll-view', 'movable-area', 'movable-view', 'text', 'progress', 'checkbox-group', 'label', 'checkbox', 'form', 'input', 'radio-group', 'radio', 'picker', 'picker-view', 'switch', 'textarea', 'navigator', 'audio', 'image', 'map', 'canvas', 'contact-button'];
         
         wxmlTag.forEach((item,index)=>{
-	        let imgMode = ''
+            let imgMode = '',
+                attr = _ts.outattr(item);
 	        if(item === 'image'){
 		        imgMode = 'mode="widthFix"';
             };
@@ -58,12 +58,13 @@ class outwxml{
     }
 
     //生成模版对应属性
-    outattr(){
+    outattr(tagName){
+        tagName = tagName || '';
         const _ts = this;
         
         let s = '',
             attr = [
-                'class','width','height','data','src','id','style','href','checked',
+                'class','width','height','data','id','style',
                 'bind:touchstart',
                 'bind:touchmove',
                 'bind:touchcancel',
@@ -77,6 +78,33 @@ class outwxml{
                 'bind:animationend',
                 'bind:touchforcechange'
             ];
+
+        switch (tagName) {
+            case 'navigator':
+                attr.push('href');
+            break;
+            case 'checkbox':
+            case 'radio':
+            case 'switch':
+                attr.push('checked');
+            break;
+            case 'audio':
+                attr.push('poster');
+                attr.push('src');
+                attr.push('name');
+                attr.push('author');
+                attr.push('loop');
+                // attr.push('controls');
+                s += 'controls="true" ';
+            break;
+            case 'video':
+                attr.push('poster');
+                attr.push('src');
+            break;
+            case 'image':
+                attr.push('src');
+            break;
+        };
 
         s += `data-_el="{{item}}"`;
         attr.forEach((item,index)=>{

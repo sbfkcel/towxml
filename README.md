@@ -2,15 +2,9 @@
 
 # Towxml
 
-**Towxml 2.0** 是一个可将`HTML`、`Markdown`转为微信小程序`WXML`(WeiXin Markup Language)的渲染库。
+**Towxml** 是一个可将`HTML`、`Markdown`转为微信小程序`WXML`(WeiXin Markup Language)的渲染库。
 
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
-
----
-
-[**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
-
-> 功能建议在 [issues](https://github.com/sbfkcel/towxml/issues)提出
 
 
 ## 特色
@@ -52,7 +46,7 @@ App({
 ```
 
 **3. 在小程序页面文件中引入模版**
-```wxml
+```html
 <!--pages/index.wxml-->
 
 <!--引入towxml模版入口文件，并使用模版-->
@@ -186,11 +180,17 @@ npm install towxml
 const Towxml = require('towxml');
 const towxml = new Towxml();
 
+//Markdown转WXML
+let wxml = towxml.md2wxml('# Article title');
+
+//html转WXML
+let wxml = towxml.html2wxml('<h1>Article title</h1>');
+
 //Markdown转towxml数据
 let data = towxml.toJson('# Article title','markdown');
 
 //htm转towxml数据
-let data = towxml.toJson('<h1>Article title</h1>','html');
+let data = towxml.toJson('# Article title');
 ```
 
 ## Demo示例
@@ -201,13 +201,13 @@ let data = towxml.toJson('<h1>Article title</h1>','html');
 
 ## 更新说明
 
+### 2.0.1
+
+- video、audio增加封面支持
+
 ### 2.0.0
 
-- 重写核心转换方法，转换速度更快
-- 修复了诸多转换错误和不完整的问题
-- 精简包文件大小，支持完整的HTML解析
-- 调整了自定义绑定事件时event的数据格式（会更加完整）
-
+- 重写转换核心方法，更小、更快、更全、容错更高
 
 ### 1.5.12
 
@@ -229,6 +229,11 @@ let data = towxml.toJson('<h1>Article title</h1>','html');
 ## 1.5.6
 
 - 增加事件绑定方法，允许为元素添加自定义事件
+
+
+## Towxml使用交流群（微信）
+
+![微信群](https://user-images.githubusercontent.com/5469785/41187302-06d53916-6bd9-11e8-855e-94745c3301b4.png)
 
 
 ## License

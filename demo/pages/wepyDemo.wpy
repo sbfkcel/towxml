@@ -1,4 +1,9 @@
 <style>
+  /**引入主题样式**/
+  @import '/towxml/style/main.wxss';
+  @import '/towxml/style/theme/light.wxss';
+  @import '/towxml/style/theme/dark.wxss';
+
   /**app.wxss**/
   .loading {
     width:100%;
@@ -16,11 +21,6 @@
     width:80rpx;
     height:80rpx;
   }
-
-  /**引入主题样式**/
-  @import '/towxml/style/main.wxss';
-  @import '/towxml/style/theme/light.wxss';
-  @import '/towxml/style/theme/dark.wxss';
 </style>
 
 <template lang="wxml">
@@ -28,7 +28,6 @@
   <view class="loading" wx:if="{{isloading}}">
     <image class="loading__icon" src="/towxml/demo/images/loading.svg"></image>
   </view>
-  <view>fdsfs%3Cd</view>
 
   <!--引入wxml模版-->
   <import src="/towxml/entry.wxml"/>
@@ -38,16 +37,16 @@
 <script>
   import wepy from 'wepy'
 
-  //引入towxml库
+  // 引入towxml库
   import Towxml from 'towxml'
 
   export default class Index extends wepy.page {
     config = {
       navigationBarTitleText: 'Towxml Demo',
-      navigationBarBackgroundColor: "#000",
-      navigationBarTextStyle: "white",
-      backgroundColor:"#000",
-      backgroundTextStyle:"light"
+      navigationBarBackgroundColor: '#000',
+      navigationBarTextStyle: 'white',
+      backgroundColor: '#000',
+      backgroundTextStyle: 'light'
     }
 
     data = {
@@ -56,32 +55,28 @@
     }
 
     onLoad() {
-      const towxml = new Towxml();
-      
-      //请求Markdown内容
-      wx.request({
-        url: 'https://raw.githubusercontent.com/sbfkcel/towxml/master/docs/demo.md',
+      const towxml = new Towxml()
+      let content,
+        data
+
+      // 请求Markdown内容
+      wepy.request({
+        url: 'https://www.vvadd.com/wxml_demo/demo.txt?v=110',
         header: {
           'content-type': 'application/x-www-form-urlencoded'
         },
         success: (res) => {
-          let content = res.data;
+          content = res.data
+          data = towxml.toJson(content, 'markdown')
+          // 设置主题
+          data.theme = 'light'
 
-          //将文件转换成为towxml支持的json数据
-          //let data = towxml.toJson(content, 'markdown');
-          //let data = towxml.toJson('<audio></audio>','html');
-          let data = towxml.toJson('<div>&lt;tml</div>', 'html');
-
-          //设置主题
-          data.theme = 'dark';
-
-          //更新数据并隐藏loading...
-          this.isloading = false;
-          this.article = data;
-          this.$apply();
+          // 更新数据并隐藏loading...
+          this.isloading = false
+          this.article = data
+          this.$apply()
         }
-      });
-
+      })
     }
   }
 </script>

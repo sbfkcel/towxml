@@ -164,6 +164,40 @@ Page({
 
 ```
 
+## 在WePY框架中使用towxml
+
+此处以`wepy 1.7.3`为例，其它版本请参考
+
+```bash
+
+# 初始化一个项目
+wepy init standard myproject
+
+# 切换到项目目录
+cd myproject
+
+# 安装依赖
+npm install
+
+# 安装towxml
+npm install towxml --save
+
+# 切换到src目录
+cd src
+
+# 克隆或下载towxml库到src目录中
+git clone https://github.com/sbfkcel/towxml.git
+
+# 将`towxml/demo/pages/wepyDemo.wpy`内容替换到`src/pages/index.wpy`
+
+# 删除`src/towxml/`目录中未引入的文件（当然，也可不删除。需要保留的文件见上一步wepyDemo.wpy文件中的文件引入依赖）
+
+# 开启实时编译
+wepy build --watch
+
+```
+
+
 ## API
 如果为了追求极致的体验，建议将`markdown`、`html`转换为**towxml**数据的过程放在服务器上，在小程序中直接请求数据即可。
 

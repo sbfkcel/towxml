@@ -136,6 +136,9 @@
 .h2w__pre .h2w__em {
     display:inline;
 }
+.h2w__pre {
+    white-space:pre; display:block;
+}
 .h2w__pre .h2w__code {
     white-space:pre; width:9999px; display:block; font-size:80%;
 }

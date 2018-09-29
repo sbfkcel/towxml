@@ -216,7 +216,7 @@ npm install towxml
 const Towxml = require('towxml');
 const towxml = new Towxml();
 
-//Markdown转WXML
+//Markdown转WXML(2.0+版本已经剔除该API)
 let wxml = towxml.md2wxml('# Article title');
 
 //html转WXML(2.0+版本已经剔除该API)

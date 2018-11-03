@@ -11,6 +11,7 @@
 
 ## 特色
 
+- 可控制的音频播放器（可自行调节样式，解决原生`audio`在部分iPhone上不能自动播放的情况）
 - 支持代码语法高亮
 - 支持emoji表情:wink:
 - 支持上标、下标、下划线、删除线、表格、视频、图片（几乎所有html元素）……
@@ -20,6 +21,8 @@
 - Markdown TodoList
 - 支持事件绑定（这样允许自行扩展功能哟，例如：点击页面中的某个元素，更新当前页面内容等...）
 - 前后端支持
+
+> 音频播放器播放状态设定为每5秒更新一次，否则内容过多会导致性能下降
 
 
 ## 截图
@@ -77,7 +80,11 @@ Page({
             },
             success: (res) => {
                 //将markdown内容转换为towxml数据
-                let data = app.towxml.toJson(res.data,'markdown');
+                let data = app.towxml.toJson(
+                        res.data,               // `markdown`或`html`文本内容
+                        'markdown',             // `markdown`或`html`
+                        _ts                     // 当前页面的`this`（2.1.0或以上的版本该参数不可省略）
+                    );
 
                 //设置文档显示主题，默认'light'
                 data.theme = 'dark';
@@ -122,6 +129,8 @@ OK，大功告成~~
 'bind:touchcancel',
 'bind:touchend',
 'bind:tap',
+
+# 2.1.0或以上的版本不支持以下事件（可自行修改`lib/tagsAndAttrs.js`中的事件解析部分，然后执行`node outTemplate.js`生成新的解析模版）
 'bind:longpress',
 'bind:longtap',
 'bind:transitionend',

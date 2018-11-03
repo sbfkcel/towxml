@@ -1,3 +1,6 @@
+const Audio = require('./lib/Audio'),
+	tagsAndAttrs = require('./lib/tagsAndAttrs');
+
 class towxml {
 	constructor(option) {
 		const _ts = this;
@@ -64,37 +67,56 @@ class towxml {
 			sortOutJson;
 
 		if (type === 'markdown') {
-			json = new _ts.m.toJson(_ts.md2html(content)).getData();
+			json = new _ts.m.toJson(_ts.md2html(content),app).getData();
 		} else if (type === 'html') {
-      		json = new _ts.m.toJson(content).getData();
+      		json = new _ts.m.toJson(content,app).getData();
 		};
 
 		json.theme = 'light';
 
 		if(app){
-			[
-				'bind:touchstart',
-                'bind:touchmove',
-                'bind:touchcancel',
-                'bind:touchend',
-                'bind:tap',
-                'bind:longpress',
-                'bind:longtap',
-                'bind:transitionend',
-                'bind:animationstart',
-                'bind:animationiteration',
-                'bind:animationend',
-                'bind:touchforcechange'
-			].forEach(item => {
+			// 定义播放器点击时的播放与暂停方法
+			if(typeof app.__audioPlayAndPause__ !== 'function'){
+				app.__audioPlayAndPause__ = (event)=>{
+					let currentTarget = event.currentTarget || {},
+						dataset = currentTarget.dataset || {},
+						_el = dataset._el || {},
+						id = _el._id || {},
+						player = typeof app.data.__audioObj__ === 'object' ? app.data.__audioObj__[id] : undefined;
+					// 正在播放中则暂停，否则就播放
+					if(player && player.status !== 'play' && player.status !== 'update'){
+						player.play();
+					}else{
+						player.pause();
+						player.status = 'pause';
+					};
+				};
+			};
+
+
+			tagsAndAttrs.binds.forEach(item => {
 				let aItem = item.split(':'),
 					bindType = aItem[0],		// 事件绑定类型
 					evenType = aItem[1];		// 事件类型
+				
 
 				// 检查，如果有添加自定义事件，则运行该事件
-				app[`eventRun_${bindType}_${evenType}`] = (event)=>{
+				app[`__${bindType}_${evenType}`] = (event)=>{
 					let funName = `event_${bindType}_${evenType}`,
 						timer = `${funName}_timer`,
 						runFun = app[funName];
+
+					// 为audio标签绑定音频播放
+					if(event && 
+						event.type === 'tap' && 
+						event.currentTarget &&
+						event.currentTarget.dataset &&
+						event.currentTarget.dataset._el &&
+						event.currentTarget.dataset._el._e && 
+						event.currentTarget.dataset._el._e.tagName === 'audio'){
+						app.__audioPlayAndPause__(event);
+					};
+
 					if(typeof runFun === 'function'){
 
 						// 由于小程序的事件绑定方式与冒泡机制问题，此处使用计时器以避免事件被同时多次调用
@@ -105,7 +127,7 @@ class towxml {
 					};
 				};
 			});
-			app[`eventRun_todo_checkboxChange`] = (event)=>{};
+			app[`__todo_checkboxChange`] = (event)=>{};
 		};
 
 		return json;

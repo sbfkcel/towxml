@@ -34,7 +34,7 @@ class outwxml{
             let imgMode = '',
                 attr = _ts.outattr(item);
 	        if(item === 'image'){
-		        imgMode = 'mode="widthFix"';
+		        imgMode = `mode="{{item.type === 'audio' ? '' : 'widthFix'}}"`;
             };
 
             // todo添加绑定事件

@@ -231,10 +231,10 @@ let wxml = towxml.md2wxml('# Article title');
 //html转WXML(2.0+版本已经剔除该API)
 let wxml = towxml.html2wxml('<h1>Article title</h1>');
 
-//Markdown转towxml数据
+//Markdown转towxml数据(2.1+版本第3个参数不可省去，为小程序当前页面的this)
 let data = towxml.toJson('# Article title','markdown',this);
 
-//htm转towxml数据
+//htm转towxml数据(2.1+版本第3个参数不可省去，为小程序当前页面的this)
 let data = towxml.toJson('<h1>Article title</h1>','html',this);
 ```
 

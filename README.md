@@ -232,10 +232,10 @@ let wxml = towxml.md2wxml('# Article title');
 let wxml = towxml.html2wxml('<h1>Article title</h1>');
 
 //Markdown转towxml数据
-let data = towxml.toJson('# Article title','markdown');
+let data = towxml.toJson('# Article title','markdown',this);
 
 //htm转towxml数据
-let data = towxml.toJson('<h1>Article title</h1>','html');
+let data = towxml.toJson('<h1>Article title</h1>','html',this);
 ```
 
 ## Demo示例

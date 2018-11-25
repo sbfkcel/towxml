@@ -59,7 +59,7 @@ class towxml {
 	 * @param  {string} type 'html'、'marddown'
 	 * @param  {object} app 小程序对象
 	 */
-	toJson(content, type, app){
+	toJson(content, type){
 		const _ts = this;
 		type = type || 'html';
 
@@ -67,14 +67,74 @@ class towxml {
 			sortOutJson;
 
 		if (type === 'markdown') {
-			json = new _ts.m.toJson(_ts.md2html(content),app).getData();
+			json = new _ts.m.toJson(_ts.md2html(content)).getData();
 		} else if (type === 'html') {
-      		json = new _ts.m.toJson(content,app).getData();
+      		json = new _ts.m.toJson(content).getData();
 		};
 
 		json.theme = 'light';
 
+		return json;
+	}
+
+	/**
+	 * 初始化小程序数据
+	 * @param  {object} data toJson方法解析出来的数据
+	 * @param  {object} option {base:'https://xxx.com',app:pageThis}
+	 */
+	initData(data,option){
+		option = option || {};
+
+		const _ts = this,
+			app = option.app,
+			appData = app.data,
+			base = option.base || '';
+		
+		let eachData,
+			dataId = data.id;
+
 		if(app){
+			(eachData = (data)=>{
+				let child = data.child;
+
+				// 处理所有相对资源的src路径
+				if(
+					base &&
+					data.attr && 
+					data.attr.src && 
+					data.attr.src.indexOf('//') < 0
+				){
+					data.attr.src = `${base}${data.attr.src}`;
+				};
+
+				// 处理音频
+				if(data.type === 'audio'){
+					// 得到音频播放选项
+					let audioOption = data._e.attr,
+						audioId = data._id;
+
+					// 保存当前播放器数据
+					global.__towxmldata__[dataId].audio[audioId] = data;
+
+					//用于保存播放器对象
+					appData.__audioObj__ = appData.__audioObj__ || {};
+					appData.__audioObj__[audioId] = Audio({
+						app:app,                            // 传入APP
+						playerId:audioId,               	// 当前播放器ID
+						dataId:dataId,                      // 数据ID
+						option:audioOption                  // 传入音频选项
+					});
+				}
+
+				// 如果有子级则对子级进行处理
+				else if(child && child.length){
+					for(let i=0,len=child.length; i<len; i++){
+						let childItem = child[i];
+						eachData(childItem);
+					};
+				};
+			})(data);
+
 			// 定义播放器点击时的播放与暂停方法
 			if(typeof app.__audioPlayAndPause__ !== 'function'){
 				app.__audioPlayAndPause__ = (event)=>{
@@ -129,8 +189,8 @@ class towxml {
 			});
 			app[`__todo_checkboxChange`] = (event)=>{};
 		};
-
-		return json;
+		
+		return data;
 	}
 };
 

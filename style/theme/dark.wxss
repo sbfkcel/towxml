@@ -84,4 +84,4 @@
 }
 
 /**代码高亮样式**/
-@import '/towxml/plugins/hljs/style/monokai.wxss';
+@import '../../plugins/hljs/style/monokai.wxss';

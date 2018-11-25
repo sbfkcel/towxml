@@ -13,11 +13,15 @@ Page({
     const _ts = this;
 
     //请求Markdown文件内容
-    app.getText(app.docDir + 'demo.txt?v=110', (res) => {
+    app.getText(app.docDir + 'demo.txt?v=127', (res) => {
       if (res.data) {
-
 	      //将markdown内容转换为towxml数据
-        let articleData = app.towxml.toJson(res.data, 'markdown', _ts);
+        let articleData = app.towxml.toJson(res.data,'markdown');
+        
+        articleData = app.towxml.initData(articleData,{
+          base:'https://www.vvadd.com/',
+          app:_ts
+        });
 
         articleData.theme = 'dark';
 

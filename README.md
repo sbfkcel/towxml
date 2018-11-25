@@ -82,9 +82,14 @@ Page({
                 //将markdown内容转换为towxml数据
                 let data = app.towxml.toJson(
                         res.data,               // `markdown`或`html`文本内容
-                        'markdown',             // `markdown`或`html`
-                        _ts                     // 当前页面的`this`（2.1.0或以上的版本该参数不可省略）
+                        'markdown'              // `markdown`或`html`
                     );
+                
+                //初始化小程序数据（2.1.2新增，如果小程序中无相对资源需要添加`base`根地址，也无`audio`内容该方法可省略）
+                data = app.towxml.initData(data,{
+                    base:'https://xxx.com/',    // 需要解析的内容中相对路径的资源`base`地址
+                    app:_ts                     // 传入小程序页面的`this`对象，以用于音频播放器初始化
+                });
 
                 //设置文档显示主题，默认'light'
                 data.theme = 'dark';

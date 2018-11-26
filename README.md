@@ -85,7 +85,7 @@ Page({
                         'markdown'              // `markdown`或`html`
                     );
                 
-                //初始化小程序数据（2.1.2新增，如果小程序中无相对资源需要添加`base`根地址，也无`audio`内容该方法可省略）
+                //前台初始化小程序数据（2.1.2新增，如果小程序中无相对资源需要添加`base`根地址，也无`audio`内容可无需初始化）
                 data = app.towxml.initData(data,{
                     base:'https://xxx.com/',    // 需要解析的内容中相对路径的资源`base`地址
                     app:_ts                     // 传入小程序页面的`this`对象，以用于音频播放器初始化
@@ -155,7 +155,13 @@ Page({
     const _ts = this;
 
     //将markdown内容转换为towxml数据，交将当前页面对象传入以创建默认事件对象
-    let articleData = app.towxml.toJson('<div name="button" id="button1">测试一个可点击的元素</div>', 'html', _ts);
+    let articleData = app.towxml.toJson('<div name="button" id="button1">测试一个可点击的元素</div>', 'html');
+    
+    //前台初始化小程序数据（2.1.2新增，如果小程序中无相对资源需要添加`base`根地址，也无`audio`内容可无需初始化）
+    articleData = app.towxml.initData(data,{
+        base:'https://xxx.com/',    // 需要解析的内容中相对路径的资源`base`地址
+        app:_ts                     // 传入小程序页面的`this`对象，以用于音频播放器初始化
+    });
 
     //自定义事件，格式为`event_`+`绑定类型`+`_`+`事件类型`
     //例如`bind:touchstart`则为：
@@ -230,17 +236,11 @@ npm install towxml
 const Towxml = require('towxml');
 const towxml = new Towxml();
 
-//Markdown转WXML(2.0+版本已经剔除该API)
-let wxml = towxml.md2wxml('# Article title');
+//Markdown转towxml数据
+let data = towxml.toJson('# Article title','markdown');
 
-//html转WXML(2.0+版本已经剔除该API)
-let wxml = towxml.html2wxml('<h1>Article title</h1>');
-
-//Markdown转towxml数据(2.1+版本第3个参数不可省去，为小程序当前页面的this)
-let data = towxml.toJson('# Article title','markdown',this);
-
-//htm转towxml数据(2.1+版本第3个参数不可省去，为小程序当前页面的this)
-let data = towxml.toJson('<h1>Article title</h1>','html',this);
+//htm转towxml数据
+let data = towxml.toJson('<h1>Article title</h1>','html');
 ```
 
 ## Demo示例

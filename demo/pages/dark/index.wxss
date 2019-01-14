@@ -1,7 +1,0 @@
-/**index.wxss**/
-page {
-  background-color: #000;
-}
-
-/**主题配色**/
-@import '/towxml/style/theme/dark.wxss';

@@ -2,7 +2,6 @@
 .audioForH2w {
     height: 136rpx;
     margin:16rpx 0;
-    background: #f1f1f1;
     position: relative;
 }
 
@@ -19,7 +18,6 @@
 .audioForH2w__cover {
     width: 136rpx;
     height: 136rpx;
-    background: black;
     float: left;
 }
 
@@ -59,6 +57,7 @@
 .audioForH2w__author {
     display: block;
     font-size: 20rpx;
+    color: #1aad19;
     height: 32rpx;
     line-height: 32rpx;
 }
@@ -66,6 +65,7 @@
 .audioForH2w__time {
     display: block;
     font-size: 20rpx;
+    color: #888;
     height: 32rpx;
     line-height: 32rpx;
 }
@@ -84,17 +84,8 @@
 
 /*正文样式*/
 .h2w {
-    font-family: "STHeitiTC-Light", "Microsoft YaHei Light", "Hiragino Sans GB", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 32rpx;
-    line-height: 1.8;
-    word-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.h2w__main {
-    margin: 0 40rpx;
-    padding-top: 40rpx;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 /**标题**/
@@ -105,59 +96,44 @@
 .h2w__h5,
 .h2w__h6 {
     font-weight: bold;
+    margin: 1em 0;
 }
 
 .h2w__h1 {
-    border-bottom-style: double;
-    border-bottom-width: 6rpx;
-    font-size: 42rpx;
-    padding-bottom: 10rpx;
-    margin-bottom: 20rpx;
+    font-size: 175%;
 }
 
 .h2w__h2 {
-    border-bottom-style: solid;
-    border-bottom-width: 1rpx;
-    font-size: 40rpx;
-    padding-bottom: 8rpx;
-    margin-bottom: 18rpx;
+    font-size: 160%;
 }
 
 .h2w__h3 {
-    font-size: 38rpx;
-    padding-bottom: 6rpx;
-    margin-bottom: 12rpx;
+    font-size: 145%;
 }
 
 .h2w__h4 {
-    font-size: 36rpx;
-    padding-bottom: 4rpx;
-    margin-bottom: 12rpx;
+    font-size: 130%;
 }
 
 .h2w__h5 {
-    font-size: 34rpx;
-    padding-bottom: 2rpx;
-    margin-bottom: 12rpx;
+    font-size: 115%;
 }
 
 .h2w__h6 {
-    margin-bottom: 12rpx;
+    font-size: 100%;
 }
 
 
 /**表格**/
 .h2w__table {
-    width: 100%;
+    width: 98%;
     border-collapse: collapse;
     border-spacing: 0;
     display: table;
-    margin-bottom: 40rpx;
+    margin: 1em auto;
+    font-size:80%;
 }
 
-.h2w__table .h2w__tr:nth-child(2n) {
-    background-color: red;
-}
 
 .h2w__colgroup {
     display: table-column-group;
@@ -185,9 +161,8 @@
 
 .h2w__th,
 .h2w__td {
-    padding: 8rpx 16rpx;
-    font-size: 28rpx;
-    border-width: 1rpx;
+    padding: 4px;
+    border-width: 1px;
     border-style: solid;
     display: table-cell;
 }
@@ -199,12 +174,11 @@
 /**代码块**/
 .h2w__pre {
     /*white-space:nowrap;*/
-    padding: 20rpx;
-    font-size: 28rpx;
+    padding: 4px;
+    font-size: 80%;
     word-break: normal;
     border-width: 1rpx;
     border-style: solid;
-    margin-bottom: 40rpx;
     white-space: nowrap;
     overflow-x: auto;
 }
@@ -212,7 +186,6 @@
 .h2w__pre .h2w__code {
     padding: 0;
     border: 0;
-    font-size: 100%;
 }
 
 .h2w__pre,
@@ -221,11 +194,10 @@
 }
 
 .h2w__code {
-    padding: 4rpx 8rpx;
-    margin: 0 4rpx;
+    padding: 4px;
     border-width: 1rpx;
     border-style: solid;
-    border-radius: 8rpx;
+    border-radius: 2px;
     font-size: 80%;
     overflow-x: auto;
 }
@@ -247,34 +219,35 @@
 
 .h2w__pre .h2w__code {
     white-space: pre;
-    width: 9999px;
     display: block;
     font-size: 80%;
+    line-height: 1.5em;
 }
 
 /**列表**/
 .h2w__ul,
 .h2w__ol {
-    margin-bottom: 40rpx;
-    padding-left: 1rem;
+    margin: 1em 0;
+    padding-left: 1em;
 }
 
 .h2w__ul .h2w__ol,
 .h2w__ol .h2w__ul {
-    margin-bottom: 0;
+    margin: 1em 0;
 }
 
 .h2w__li {
     display: list-item;
+    margin-left: 0.5em;
 }
 
 /**todo**/
 .h2w__todogroup {
-    margin-bottom: 40rpx;
+    margin: 1em 0;
 }
 
 .h2w__todogroup .h2w__todogroup {
-    padding-left: 1.6rem;
+    padding-left: 1em;
 }
 
 /**一级ol样式**/
@@ -316,11 +289,12 @@
 }
 
 /**块元素**/
-.h2w__p {
-    margin: 20rpx 0 20rpx 0;
-    /*word-wrap:break-word;
-    word-break:break-all;*/
-    /*text-align:justify;*/
+.h2w__p:not(:first-child) {
+    margin-top: 1em;
+}
+
+.h2w__p:not(:last-child) {
+    margin-bottom: 1em;
 }
 
 .h2w__div {
@@ -328,9 +302,9 @@
 }
 
 .h2w__blockquote {
-    border-left-width: 8rpx;
+    border-left-width: 0.5em;
     border-left-style: solid;
-    padding: 0 20rpx;
+    padding-left: 1em;
 }
 
 /**内连元素**/
@@ -368,20 +342,17 @@
 
 /**链接**/
 .h2w__a {
-    margin: 0 8rpx;
-    border-bottom-width: 1rpx;
-    border-bottom-style: solid;
-    line-height: 1;
+
 }
 
 .h2w__hr {
     height: 8rpx;
-    margin: 40rpx 0;
+    margin: 1em 0;
 }
 
 /**荧光标记**/
 .h2w__mark {
-    border-radius: 4rpx;
+    border-radius: 2px;
 }
 
 /**上标、下标**/
@@ -406,10 +377,9 @@
 }
 
 /**内置元素**/
-image,
-video {
+.h2w image,
+.h2w video {
     width: 100%;
-    margin: 10rpx auto;
 }
 
 image {
@@ -417,5 +387,5 @@ image {
 }
 
 video {
-    height: 220px;
+    height: 360rpx;
 }

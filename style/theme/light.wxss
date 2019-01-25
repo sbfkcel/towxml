@@ -18,7 +18,7 @@
 
 /**表格**/
 .h2w-light .h2w__thead .h2w__tr {
-    background-color:#4d4d4d;
+    background-color:#aaa;
     color: #f8f8f8;
 }
 .h2w-light .h2w__tbody .h2w__tr{
@@ -26,7 +26,7 @@
 }
 .h2w-light .h2w__th,
 .h2w-light .h2w__td {
-    border-color:#aaa;
+    border-color:#ccc;
 }
 
 
@@ -37,14 +37,15 @@
 }
 
 .h2w-light .h2w__code {
-    background-color:#f8f8f8;
+    background-color:#222;
+    color:#ccc;
     border-color:#ccc;
 }
 
 
 /**块元素**/
 .h2w-light .h2w__blockquote {
-    border-left-color:#ccc;
+    border-left-color:#ddd;
     color: #666;
 }
 
@@ -59,4 +60,4 @@
 }
 
 /**代码高亮样式**/
-@import '../../plugins/hljs/style/github.wxss';
+@import '../../plugins/hljs/style/monokai.wxss';

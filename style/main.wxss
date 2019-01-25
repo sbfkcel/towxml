@@ -96,7 +96,6 @@
 .h2w__h5,
 .h2w__h6 {
     font-weight: bold;
-    margin: 1em 0;
 }
 
 .h2w__h1 {
@@ -174,7 +173,7 @@
 /**代码块**/
 .h2w__pre {
     /*white-space:nowrap;*/
-    padding: 4px;
+    padding: 1px;
     font-size: 80%;
     word-break: normal;
     border-width: 1rpx;
@@ -184,13 +183,12 @@
 }
 
 .h2w__pre .h2w__code {
-    padding: 0;
     border: 0;
 }
 
 .h2w__pre,
 .h2w__code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, "STHeitiTC-Light", "Microsoft YaHei Light", -apple-system, system-ui, BlinkMacSystemFont;
+    font-family: "Menlo-Regular", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 .h2w__code {
@@ -289,12 +287,24 @@
 }
 
 /**块元素**/
-.h2w__p:not(:first-child) {
-    margin-top: 1em;
+.h2w__p:not(:first-child),
+.h2w__h1:not(:first-child),
+.h2w__h2:not(:first-child),
+.h2w__h3:not(:first-child),
+.h2w__h4:not(:first-child),
+.h2w__h5:not(:first-child),
+.h2w__h6:not(:first-child) {
+    margin-top: 1.2em;
 }
 
-.h2w__p:not(:last-child) {
-    margin-bottom: 1em;
+.h2w__p:not(:last-child),
+.h2w__h1:not(:last-child),
+.h2w__h2:not(:last-child),
+.h2w__h3:not(:last-child),
+.h2w__h4:not(:last-child),
+.h2w__h5:not(:last-child),
+.h2w__h6:not(:last-child) {
+    margin-bottom: 1.2em;
 }
 
 .h2w__div {
@@ -304,7 +314,15 @@
 .h2w__blockquote {
     border-left-width: 0.5em;
     border-left-style: solid;
-    padding-left: 1em;
+    padding: 0.3em 0 0.3em 1em;
+}
+
+.h2w__blockquote:not(:first-child) {
+    margin-top: 1em;
+}
+
+.h2w__blockquote:not(:last-child) {
+    margin-bottom: 1em;
 }
 
 /**内连元素**/

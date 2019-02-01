@@ -400,10 +400,10 @@
     width: 100%;
 }
 
-image {
+.h2w image {
     height: auto;
 }
 
-video {
+.h2w video {
     height: 360rpx;
 }

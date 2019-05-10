@@ -114,7 +114,7 @@ class towxml {
 					data.attr.src && 
 					data.attr.src.indexOf('//') === 0
 				){
-					data.attr.src = `http:${data.attr.src}`;
+					data.attr.src = `https:${data.attr.src}`;
 				};
 
 				// 处理音频

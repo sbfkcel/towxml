@@ -107,6 +107,16 @@ class towxml {
 					data.attr.src = `${base}${data.attr.src}`;
 				};
 
+				// 处理以 // 开头src路径，手机无法显示
+				if(
+					base &&
+					data.attr && 
+					data.attr.src && 
+					data.attr.src.indexOf('//') === 0
+				){
+					data.attr.src = `http:${data.attr.src}`;
+				};
+
 				// 处理音频
 				if(data.type === 'audio'){
 					// 得到音频播放选项

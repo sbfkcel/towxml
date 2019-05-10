@@ -109,7 +109,6 @@ class towxml {
 
 				// 处理以 // 开头src路径，手机无法显示
 				if(
-					base &&
 					data.attr && 
 					data.attr.src && 
 					data.attr.src.indexOf('//') === 0

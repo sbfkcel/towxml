@@ -1,0 +1,2 @@
+<import src="./render/entry.wxml"/>
+<template is="entry" data="{{...md}}"/>

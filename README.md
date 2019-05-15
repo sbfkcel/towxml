@@ -60,6 +60,7 @@ App({
 ```
 
 **4. 在小程序对应的js中请求数据**
+
 ```javascript
 //pages/index.js
 
@@ -217,16 +218,160 @@ wepy build --watch
 
 ```
 
+##  在mpvue中使用towxml
+
+有两种方案可以在`mpvue`中使用`towxml`
+
+1. 使用 **vue** 组件
+
+   - 在mpvue项目根目录下执行安装 towxml 
+
+     ```shell
+     npm i towxml
+     ```
+
+   - 在需要进行转换的页面，引用组件
+
+     ```shell
+     <template>
+       <div>
+         <Towxml
+           :data='data'
+           mode='markdown'
+           :base='host'
+           theme='light'
+           :init='true'/>
+       </div>
+     </template>
+     
+     <script>
+     import Towxml from 'towxml/vue/index.vue'
+     
+     export default {
+       data () {
+         return {
+           data: null
+         }
+       },
+       components: {
+         Towxml
+       },
+       async onLoad () {
+         // 清空一下数据，避免缓存数据
+         this.data = null
+     		// 假设我有一个请求 markdown 数据的函数
+         let res = await api.getData()
+         this.data = res.data
+       }
+     }
+     </script>
+     ```
+
+   - 参数
+
+     - `data`**String** 必填。需要转换渲染的数据
+     - `mode`**String** 可选。转换模式
+       - `markdown`默认
+       - `html`
+     - `init` **Boolean** 可选。初始化。如果小程序中无相对资源需要添加`base`根地址，也无`audio`内容可无需初始化
+     - `base`**Strin**g 可选。资源路径绝对地址。将渲染的页面中所有相对资源路径转为绝对路径。
+       - `init`为 `true`才起效。
+     - `theme` **Strign** 可选。不填，默认为普通主题（普通主题很难看）
+       - `light`
+       - `dark`
+
+   - 支持 **5** 类事件。事件处理函数，将会收到一个参数，为事件触发目标对象
+
+     ```vue
+         <Towxml
+           :data='data'
+           mode='markdown'
+           :base='host'
+           theme='light'
+           :init='true'
+           @touchstart='touchstart'
+           @touchmove='touchmove'
+           @touchcancel='touchcancel'
+           @touchend='touchend'
+           @tap='tap'
+           />
+     ```
+
+     
+
+2. 使用小程序原生组件
+
+   - 在 **mpvue** 项目根目录下执行安装 **towxml** 
+
+     ```shell
+     npm i towxml
+     ```
+
+   - 将此仓库克隆下载下来
+
+   - 然后将此仓库目录下的 **component** 目录复制
+
+   - 粘贴到你的 **mpvue** 项目目录下的 **static** 目录，并将 **component** 重命名为 **towxml**
+
+   - 然后到需要使用转换功能的页面目录中，创建`main.json`文件，引入原生组件
+
+     ```json
+     {
+     	"usingComponents": {
+     		"towxml": "/static/towml/index"
+       }
+     }
+     ```
+
+   - 在页面`.vue`文件的中，导入`towxml`，使用此文档 **快速上手** 的第 **4** 个说明步骤，得到转换后的数据
+
+     ```vue
+     <script>
+     import Towxml from 'towxml'
+     
+     export default {
+       data () {
+         return {
+           data: null
+         }
+       },
+       async onLoad () {
+         // 清空一下数据，避免缓存数据
+         this.data = null
+     		// 假设我有一个请求 markdown 数据的函数
+         let data = await api.getData()
+         
+         // 创建实例
+         const instance = new Towxml()
+         data = instance.toJson(data, 'markdown') // 转换 markdown (还可支持 html)
+         data = instance.initData(data, {
+           base: 'http://xxx.xxx',  // 资源绝对路径
+           app: this	// 传入mpvue/小程序 this 对象
+         })
+         // 主题 light / dark 
+         data.theme = 'light'
+         this.data = data
+       }
+     }
+     </script>
+     ```
+
+   - 给渲染组件传值
+
+     ```vue
+     <towxml :md='data'/>
+     ```
 
 ## API
+
 如果为了追求极致的体验，建议将`markdown`、`html`转换为**towxml**数据的过程放在服务器上，在小程序中直接请求数据即可。
 
 **1. 依赖环境**
 
 需要 [Node.js](https://www.nodejs.org/) 环境。（已经安装请忽略）
 
-
 **2. 安装`towxml`**
+
 ```bash
 npm install towxml
 ```

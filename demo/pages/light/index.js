@@ -13,7 +13,7 @@ Page({
     const _ts = this;
 
     //请求Markdown文件内容
-    app.getText(app.docDir + 'demo.txt?v=127', (res) => {
+    app.getText(app.docDir + 'demo.txt?v=128', (res) => {
       if (res.data) {
 	      //将markdown内容转换为towxml数据
         let articleData = app.towxml.toJson(res.data,'markdown');

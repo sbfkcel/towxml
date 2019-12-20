@@ -12,6 +12,8 @@
 	"appid": "wx4ee412b182a0d770",
 	"projectname": "Towxml",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

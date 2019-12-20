@@ -1,18 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/light/index",
     "pages/dark/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Towxml Demo",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color":"#fff",
-    "selectedColor":"#fff",
-    "backgroundColor":"#000",
+    "color": "#fff",
+    "selectedColor": "#fff",
+    "backgroundColor": "#000",
     "list": [
       {
         "pagePath": "pages/light/index",
@@ -27,5 +27,6 @@
         "selectedIconPath": "images/moon--current.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

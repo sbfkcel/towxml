@@ -58,9 +58,7 @@ class Build{
         _ts.option = option;
         _ts.line = _ts.option.debug ? `\r\n` : '';
 
-        // _ts.outDir = path.join(os.homedir(),'desktop','test','towxml');
-
-        _ts.outDir = path.join(os.homedir(),'desktop','towxml');
+        _ts.outDir = path.join(os.homedir(),'desktop',_ts.option.debug ? 'test' : '','towxml');
         _ts.tplDir = path.join(__dirname);
     }
     
@@ -173,6 +171,33 @@ class Build{
             fs.writeFileSync(markdownIndex,str);
         };
 
+        // 创建自定义组件配置
+        let obj = {component:true,usingComponents:{decode:`/towxml/decode`}};
+
+        config.components.forEach(item => {
+            obj.usingComponents[item] = `/towxml/${item}/${item}`
+        });
+        fs.writeFileSync(path.join(_ts.outDir,'decode.json'),JSON.stringify(obj,null,2));
+
+        // 如果不启用highlight组件，则注释掉对应的样式
+        if(!config.highlight.length){
+            let styles = (()=>{
+                let files = ['dark.wxss','light.wxss'];
+                files.forEach((item,index) => {
+                    files[index] = path.join(_ts.outDir,'style','theme',item);
+                });
+                return files;
+            })();
+
+            styles.forEach(item => {
+                let re = /@import .*highlight\/style\/.*;/g,
+                    itemStr = fs.readFileSync(item,'utf8');
+
+                itemStr = itemStr.replace(re,'');
+                fs.writeFileSync(item,itemStr);
+            });
+        };
+
         console.log(`构建完成，请将『`,_ts.outDir,`』目录复制到小程序项目目录下`);
     }
 
@@ -283,5 +308,5 @@ class Build{
 };
 
 new Build({
-    debug:false
+    debug:true
 }).init();

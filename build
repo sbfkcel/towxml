@@ -58,6 +58,8 @@ class Build{
         _ts.option = option;
         _ts.line = _ts.option.debug ? `\r\n` : '';
 
+        // _ts.outDir = path.join(os.homedir(),'desktop','test','towxml');
+
         _ts.outDir = path.join(os.homedir(),'desktop','towxml');
         _ts.tplDir = path.join(__dirname);
     }
@@ -123,7 +125,7 @@ class Build{
                 files[itemPath] = 1;
             });
 
-            config.markdown.forEach(item => {
+            [...config.markdown,...config.components].forEach(item => {
                 let itemPath = path.join(markdownPlugins,`${item}.js`);
                 files[itemPath] = 1;
             });

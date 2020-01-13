@@ -1,3 +1,4 @@
+/*正文样式*/
 .h2w-dark {
   color:#ddd;
   background-color:#000;
@@ -66,4 +67,4 @@
 }
 
 /**代码高亮样式**/
-@import '/towxml/plugins/hljs/style/monokai.wxss';
+@import '../../parse/highlight/style/monokai.wxss';

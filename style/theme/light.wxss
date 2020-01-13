@@ -1,3 +1,4 @@
+/*正文样式*/
 .h2w-light {
   color:#333;
   background-color:white;
@@ -55,4 +56,4 @@
 }
 
 /**代码高亮样式**/
-@import '/towxml/plugins/hljs/style/github.wxss';
+@import '../../parse/highlight/style/github.wxss';

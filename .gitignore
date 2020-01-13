@@ -1,5 +1,3 @@
-/demo/towxml/
-/node_modules/
-/.vscode/
+node_modules
+.vscode
 .DS_Store
-project.config.json

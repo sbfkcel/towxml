@@ -12,8 +12,8 @@
     "url": "git+https://github.com/sbfkcel/towxml.git"
   },
   "keywords": [
-  	"html to wxml",
-  	"markdown to wxml",
+    "html to wxml",
+    "markdown to wxml",
     "html2wxml",
     "mark2wxml",
     "wxml"
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/sbfkcel/towxml/issues"
   },
-  "homepage": "https://github.com/sbfkcel/towxml#readme"
+  "homepage": "https://github.com/sbfkcel/towxml#readme",
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  }
 }

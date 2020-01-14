@@ -1,20 +1,3 @@
-/*音频播放器样式*/
-.h2w-dark  .audioForH2w {
-    background: #1f1f1f;
-}
-
-.h2w-dark .audioForH2w__cover {
-    background: black;
-}
-
-.h2w-dark .audioForH2w__schedule {
-    background: rgba(0, 255, 0, 0.2);
-}
-
-.h2w-dark .audioForH2w__icon {
-    border-color: transparent transparent transparent #fff;
-}
-
 /*正文样式*/
 .h2w-dark {
   color:#ddd;
@@ -84,4 +67,4 @@
 }
 
 /**代码高亮样式**/
-@import '../../plugins/hljs/style/monokai.wxss';
+@import '../../parse/highlight/style/monokai.wxss';

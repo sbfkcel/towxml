@@ -1,9 +1,10 @@
 {
   "name": "towxml",
-  "version": "2.1.6",
+  "version": "3.0.0",
   "description": "HTML、Markdown转WXML(WeiXin Markup Language)渲染库",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
+    "build": "node build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,16 +12,19 @@
     "url": "git+https://github.com/sbfkcel/towxml.git"
   },
   "keywords": [
-  	"html to wxml",
-  	"markdown to wxml",
+    "html to wxml",
+    "markdown to wxml",
     "html2wxml",
     "mark2wxml",
     "wxml"
   ],
-  "author": "单炒饭",
+  "author": "sbfkcel@163.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sbfkcel/towxml/issues"
   },
-  "homepage": "https://github.com/sbfkcel/towxml#readme"
+  "homepage": "https://github.com/sbfkcel/towxml#readme",
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  }
 }

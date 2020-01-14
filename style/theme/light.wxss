@@ -1,20 +1,3 @@
-/*音频播放器样式*/
-.h2w-light .audioForH2w {
-    background: #f1f1f1;
-}
-
-.h2w-light .audioForH2w__cover {
-    background: black;
-}
-
-.h2w-light .audioForH2w__schedule {
-    background: rgba(0, 255, 0, 0.1);
-}
-
-.h2w-light .audioForH2w__icon {
-    border-color: transparent transparent transparent #fff;
-}
-
 /*正文样式*/
 .h2w-light {
   color:#333;
@@ -73,4 +56,4 @@
 }
 
 /**代码高亮样式**/
-@import '../../plugins/hljs/style/github.wxss';
+@import '../../parse/highlight/style/github.wxss';

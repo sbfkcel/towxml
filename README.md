@@ -6,13 +6,19 @@
 
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
+
+**Towxml 3.0版本发布啦✨！**，较2.x版本，新版体积更小、速度更快⚡️、支持无限级解析。推荐使用。
+
+如果继续要使用旧版本请切换到 [2.x分支](https://github.com/sbfkcel/towxml/tree/2.x)
+
 [**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
 
 
 ## 特色
-- echarts图表
-- LaTex数学公式
-- yuml流程图
+- ✨echarts图表（3.0新增）
+- ✨LaTex数学公式（3.0新增）
+- ✨yuml流程图（3.0新增）
+- ✨按需构建（3.0新增）
 - 支持代码语法高亮
 - 支持emoji表情:wink:
 - 支持上标、下标、下划线、删除线、表格、视频、图片（几乎所有html元素）……
@@ -28,12 +34,14 @@
 
 以下截图即`demo`目录编译的效果
 
-![towxml](https://cdn.rawgit.com/sbfkcel/towxml/edc25e97/docs/demo.png)
+![Towxml](https://cdn.rawgit.com/sbfkcel/towxml/edc25e97/docs/demo3.x.png)
 
 
 ## 使用文档
 
-[towxml使用文档见wiki](https://github.com/sbfkcel/towxml/wiki)
+切勿直接拉取代码使用，建议自行构建。
+
+[Towxml使用文档见wiki](https://github.com/sbfkcel/towxml/wiki)
 
 
 ## 打赏

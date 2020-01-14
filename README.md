@@ -4,7 +4,7 @@
 
 **Towxml** 是一个可将`HTML`、`Markdown`转为微信小程序`WXML`(WeiXin Markup Language)的渲染库。用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
-**✨✨✨Towxml 3.0版本发布啦！✨✨✨**
+**Towxml 3.0版本发布啦！✨✨✨**
 
 较2.x版本，新版体积更小、速度更快⚡️、支持无限级解析，增加诸多新特性。推荐使用。
 

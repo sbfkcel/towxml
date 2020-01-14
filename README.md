@@ -56,7 +56,7 @@
 
 可以在这里 [提交小程序](https://github.com/sbfkcel/towxml/issues/60) ，将会被不定期更新到这里。
 
-<table style="width:100%;">
+<table style="width:100%; display:table;">
     <tbody>
         <tr>
             <td>

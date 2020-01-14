@@ -6,6 +6,8 @@
 
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
+[**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
+
 
 ## 特色
 - echarts图表
@@ -39,10 +41,6 @@
 如果用着不错，可以『打赏』支持。因为有你，开源更美好。
 
 ![支持开源，微信打赏。](https://www.vvadd.com/wxml_demo/qrcode.png?v=1)
-
-## 官方QQ群
-
-- [**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
 
 
 ## License

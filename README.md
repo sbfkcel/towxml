@@ -39,7 +39,7 @@
 
 ## 使用文档
 
-切勿直接拉取代码使用，建议自行构建。
+切勿直接拉取代码使用，通过自行构建得到最小体积代码。
 
 [Towxml使用文档见wiki](https://github.com/sbfkcel/towxml/wiki)
 
@@ -48,7 +48,9 @@
 
 如果用着不错，可以『打赏』支持。因为有你，开源更美好。
 
-![支持开源，微信打赏。](https://www.vvadd.com/wxml_demo/qrcode.png?v=1)
+|微信打赏|支付宝打赏|
+|:---:|:---:|
+|![支持开源，微信打赏。](https://www.vvadd.com/wxml_demo/qrcode_wechat.png?v=1)|![支持开源，微信打赏。](https://www.vvadd.com/wxml_demo/qrcode_alipay.png?v=1)|
 
 
 ## License

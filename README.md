@@ -7,9 +7,11 @@
 用于解决在微信小程序中`Markdown`、`HTML`不能直接渲染的问题。
 
 
-**Towxml 3.0版本发布啦✨！**，较2.x版本，新版体积更小、速度更快⚡️、支持无限级解析。推荐使用。
+**Towxml 3.0版本发布啦！✨✨✨**
 
-如果继续要使用旧版本请切换到 [2.x分支](https://github.com/sbfkcel/towxml/tree/2.x)
+较2.x版本，新版体积更小、速度更快⚡️、支持无限级解析，增加诸多新特性。推荐使用。
+
+> 如果继续要使用旧版本可切换到 [2.x分支](https://github.com/sbfkcel/towxml/tree/2.x)
 
 [**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
 
@@ -32,9 +34,9 @@
 
 ## 截图
 
-以下截图即`demo`目录编译的效果
+以下截图即`demo`项目编译的效果
 
-![Towxml](https://cdn.rawgit.com/sbfkcel/towxml/edc25e97/docs/demo3.x.png)
+![Towxml](https://raw.githack.com/sbfkcel/blog/gh-pages/wxml_demo/demo3.x.png)
 
 
 ## 使用文档

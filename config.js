@@ -106,7 +106,7 @@ module.exports = {
         'style'
     ],
 
-    // 事件绑定方式（catch或catch），catch 会阻止事件向上冒泡。更多请参考：https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html
+    // 事件绑定方式（catch或bind），catch 会阻止事件向上冒泡。更多请参考：https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html
     bindType:'catch',
 
     // 需要激活的事件

@@ -7,6 +7,7 @@
     "yuml":"./yuml/yuml",
     "table":"./table/table",
     "echarts":"./echarts/echarts",
-    "todogroup":"./todogroup/todogroup"
+    "todogroup":"./todogroup/todogroup",
+    "img":"./img/img"
   }
 }

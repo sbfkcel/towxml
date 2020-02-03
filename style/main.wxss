@@ -338,15 +338,19 @@
 }
 
 /**内置元素**/
-image,
-video {
-    width: 100%;
+image,video {
     max-width: 100%;
+}
+p image,video {
     margin: 10rpx auto;
 }
 
+video {
+    width:100%; margin: 10rpx auto;
+}
+
 image {
-    height: auto;
+    height:auto; vertical-align:middle; margin:4rpx 8rpx;
 }
 
 video {

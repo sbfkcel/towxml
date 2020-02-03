@@ -6,7 +6,6 @@ const parse2 = require('./parse2/index'),
     correspondTag = (()=>{
         let result = {
                 a:'navigator',
-                img:'image',
                 todogroup:'checkbox-group',
                 audio:'audio-player'
             };
@@ -67,7 +66,8 @@ const parse2 = require('./parse2/index'),
 
                     o.attr.class = o.attr.class ? `h2w__${item.name} ${o.attr.class}` : `h2w__${item.name}`;
 
-                    if(o.attr.src && base){             // 处理资源相对路径
+                    // 处理资源相对路径
+                    if(base && o.attr.src){
                         let src = o.attr.src;
                         switch (src.indexOf('//')) {
                             case 0:

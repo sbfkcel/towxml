@@ -94,13 +94,12 @@ module.exports = {
         'table',                    // 表格支持
         'todogroup',                // todo支持
         'yuml',                     // yuml图表支持
+        'img'                       // 图片解析组件
     ],
 
     // 保留原本的元素属性（建议不要变动）
     attrs:[
         'class',
-        'width',
-        'height',
         'data',
         'id',
         'style'
@@ -117,5 +116,8 @@ module.exports = {
         // 'touchend',
         'tap',                      // 用于元素的点击事件
         'change',                   // 用于todoList的change事件
-    ]
+    ],
+
+    // 图片倍数
+    dpr:2
 }

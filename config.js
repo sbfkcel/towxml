@@ -119,5 +119,5 @@ module.exports = {
     ],
 
     // 图片倍数
-    dpr:2
+    dpr:1
 }

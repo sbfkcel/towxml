@@ -11,7 +11,24 @@ const config = require('../../config'),
         };
 
         if(config.highlight.length && hljs){
-            result.highlight = (code,lang,callback) => hljs.highlightAuto(code).value;
+            result.highlight = (code,lang,callback)=>{
+                let lineLen = code.split(/\r|\n/ig).length,
+                    result = hljs.highlightAuto(code).value;
+
+                if(config.showLineNumber){
+                    let lineStr = (()=>{
+                        let str = `<ul class="h2w__lineNum">`;
+                        for(let i=0;i<lineLen-1;i++){
+                            str += `<li class="h2w__lineNumLine">${i+1}</li>`
+                        };
+
+                        str += `</ul>`;
+                        return str;
+                    })();
+                    return lineStr + result;
+                };
+                return result;
+            }
         };
         return result;
     })(),

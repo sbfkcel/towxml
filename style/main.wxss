@@ -367,3 +367,11 @@ video {
 .h2w__yumlView {
     margin:0 auto; padding-bottom:40rpx;
 }
+
+/**代码行号**/
+.h2w__lineNum {
+    text-align:right; float:left; padding:0; margin:0 1em 0 0;
+}
+.h2w__lineNumLine {
+    list-style:none;
+}

@@ -55,5 +55,9 @@
     color:black;
 }
 
+.h2w-light .h2w__lineNum {
+    color:#ccc;
+}
+
 /**代码高亮样式**/
 @import '../../parse/highlight/style/github.wxss';

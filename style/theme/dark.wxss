@@ -65,6 +65,9 @@
 .h2w-dark .h2w__todoCheckbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     color:white;
 }
+.h2w-dark .h2w__lineNum {
+    color:#494949;
+}
 
 /**代码高亮样式**/
 @import '../../parse/highlight/style/monokai.wxss';

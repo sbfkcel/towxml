@@ -119,5 +119,8 @@ module.exports = {
     ],
 
     // 图片倍数
-    dpr:1
+    dpr:1,
+
+    // 代码块显示行号
+    showLineNumber:true
 }

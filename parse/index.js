@@ -51,6 +51,9 @@ const parse2 = require('./parse2/index'),
             _e.child = _e.child || [];
 
             arr.forEach(item => {
+                if(item.type === 'comment'){
+                    return;
+                };
                 let o = {},
                     e = {};
                 o.type = e.type = item.type;

@@ -32,7 +32,9 @@ module.exports = {
         'php',
         'scss',
         'shell',
-
+        // 'c',
+        // 'c-like',
+        // 'rust',
         // 'coffeescript',
         // 'dns',
         // 'dos',

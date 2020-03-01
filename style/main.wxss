@@ -78,12 +78,18 @@
 
 
 /**表格**/
+.h2w__tableParent {
+    width:100%;
+    overflow-x:auto;
+}
+
 .h2w__table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     display: table;
     margin-bottom: 40rpx;
+    white-space: nowrap;
 }
 
 .h2w__table .h2w__tr:nth-child(2n) {

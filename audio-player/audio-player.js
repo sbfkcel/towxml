@@ -88,14 +88,14 @@ Component({
 			const _ts = this,
 				audio = _ts.audio;
 
-			console.log(audio);
+			// console.log(audio);
 
 			audio.isTouch = true;
 			if(audio.status === 'update' || audio.status === 'play'){
-				console.log('pause');
+				// console.log('pause');
 				audio.pause();
 			}else{
-				console.log('play');
+				// console.log('play');
 				audio.play();
 			};
 		}

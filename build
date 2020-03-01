@@ -222,7 +222,7 @@ class Build{
             obj = (()=>{
                 let result = {};
                 config.components.forEach(item => {
-                    result[item] = `${_ts.tab(1)}<block wx:if="{{item.tag==='${tag}'}}">${_ts.line}${_ts.tab(2)}<${item} data="{{item}}"/>${_ts.line}${_ts.tab(1)}</block>${_ts.line}`;
+                    result[item] = `${_ts.tab(1)}<block wx:if="{{item.tag==='${tag}'}}">${_ts.line}${_ts.tab(2)}<${item} data="{{item}}" ${attrs}/>${_ts.line}${_ts.tab(1)}</block>${_ts.line}`;
                 });
                 return result;
             })();
@@ -236,15 +236,31 @@ class Build{
         };
     }
 
+    // 判断是否为自定义组件
+    isComponents(tag){
+        for(let i=0,len=config.components.length; i<len; i++){
+            if(config.components[i] === tag){
+                return true;
+            }
+        };
+        return false;
+    }
+
     // 获取标签所对应的属性
     getAttr(tag){
+        const _ts = this;
         let result = '',
             obj = (()=>{
                 let result = {};
                 result['data-data'] = "{{item}}";
-                config.attrs.forEach(item => {
-                    result[item] = `{{item.attr.${item}}}`
-                });
+
+                // 非自定义组件需要添加style、id、class相关属性
+                if(!_ts.isComponents(tag)){
+                    config.attrs.forEach(item => {
+                        result[item] = `{{item.attr.${item}}}`
+                    });
+                };
+                
                 return result;
             })(),
 

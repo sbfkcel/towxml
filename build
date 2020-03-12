@@ -324,5 +324,5 @@ class Build{
 };
 
 new Build({
-    debug:false
+    debug:true
 }).init();

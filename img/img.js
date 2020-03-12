@@ -45,7 +45,7 @@ Component({
 						let num = parseInt(itemArr[1]) || 0,
 							key = '';
 						// itemArr[1] = num / config.dpr + itemArr[1].replace(num,'');
-						switch (itemArr[1].toLocaleLowerCase()) {
+						switch (itemArr[0].toLocaleLowerCase()) {
 							case 'width':
 								key = 'w';
 							break;
@@ -65,9 +65,9 @@ Component({
 				attr:{
 					src:dataAttr.src,
 					class:dataAttr.class,
-					style:_ts.setStyle(_ts.data.styleObj),
-					size:_ts.data.size
-				}
+					style:_ts.setStyle(_ts.data.styleObj)
+				},
+				size:_ts.data.size
 			});
 		}
 	},
@@ -85,7 +85,7 @@ Component({
 		load:function(e){
 			const _ts = this;
 
-			if(!_ts.data.styleObj.width || !_ts.data.styleObj.height){
+			if(!_ts.data.size.w || !_ts.data.size.h){
 				_ts.setData({
 					size:{
 						w:e.detail.width / config.dpr,

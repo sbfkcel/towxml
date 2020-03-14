@@ -1,1 +1,155 @@
-module.exports=function(e){return{aliases:["md","mkdown","mkd"],contains:[{className:"section",variants:[{begin:"^#{1,6}",end:"$"},{begin:"^.+?\\n[=-]{2,}$"}]},{begin:"<",end:">",subLanguage:"xml",relevance:0},{className:"bullet",begin:"^([*+-]|(\\d+\\.))\\s+"},{className:"strong",begin:"[*_]{2}.+?[*_]{2}"},{className:"emphasis",variants:[{begin:"\\*.+?\\*"},{begin:"_.+?_",relevance:0}]},{className:"quote",begin:"^>\\s+",end:"$"},{className:"code",variants:[{begin:"^```w*s*$",end:"^```s*$"},{begin:"`.+?`"},{begin:"^( {4}|\t)",end:"$",relevance:0}]},{begin:"^[-\\*]{3,}",end:"$"},{begin:"\\[.+?\\][\\(\\[].*?[\\)\\]]",returnBegin:!0,contains:[{className:"string",begin:"\\[",end:"\\]",excludeBegin:!0,returnEnd:!0,relevance:0},{className:"link",begin:"\\]\\(",end:"\\)",excludeBegin:!0,excludeEnd:!0},{className:"symbol",begin:"\\]\\[",end:"\\]",excludeBegin:!0,excludeEnd:!0}],relevance:10},{begin:/^\[[^\n]+\]:/,returnBegin:!0,contains:[{className:"symbol",begin:/\[/,end:/\]/,excludeBegin:!0,excludeEnd:!0},{className:"link",begin:/:\s*/,end:/$/,excludeBegin:!0}]}]}};
+/*
+Language: Markdown
+Requires: xml.js
+Author: John Crepezzi <john.crepezzi@gmail.com>
+Website: https://daringfireball.net/projects/markdown/
+Category: common, markup
+*/
+
+export default function(hljs) {
+  const INLINE_HTML = {
+    begin: '<', end: '>',
+    subLanguage: 'xml',
+    relevance: 0
+  };
+  const HORIZONTAL_RULE = {
+    begin: '^[-\\*]{3,}', end: '$'
+  };
+  const CODE = {
+    className: 'code',
+    variants: [
+      // TODO: fix to allow these to work with sublanguage also
+      { begin: '(`{3,})(.|\\n)*?\\1`*[ ]*', },
+      { begin: '(~{3,})(.|\\n)*?\\1~*[ ]*', },
+      // needed to allow markdown as a sublanguage to work
+      { begin: '```', end: '```+[ ]*$' },
+      { begin: '~~~', end: '~~~+[ ]*$' },
+      { begin: '`.+?`' },
+      {
+        begin: '(?=^( {4}|\\t))',
+        // use contains to gobble up multiple lines to allow the block to be whatever size
+        // but only have a single open/close tag vs one per line
+        contains: [
+          { begin: '^( {4}|\\t)', end: '(\\n)$' }
+        ],
+        relevance: 0
+      }
+    ]
+  };
+  const LIST = {
+    className: 'bullet',
+    begin: '^[ \t]*([*+-]|(\\d+\\.))(?=\\s+)',
+    end: '\\s+',
+    excludeEnd: true
+  };
+  const LINK_REFERENCE = {
+    begin: /^\[[^\n]+\]:/,
+    returnBegin: true,
+    contains: [
+      {
+        className: 'symbol',
+        begin: /\[/, end: /\]/,
+        excludeBegin: true, excludeEnd: true
+      },
+      {
+        className: 'link',
+        begin: /:\s*/, end: /$/,
+        excludeBegin: true
+      }
+    ]
+  };
+  const LINK = {
+    begin: '\\[.+?\\][\\(\\[].*?[\\)\\]]',
+    returnBegin: true,
+    contains: [
+      {
+        className: 'string',
+        begin: '\\[', end: '\\]',
+        excludeBegin: true,
+        returnEnd: true,
+        relevance: 0
+      },
+      {
+        className: 'link',
+        begin: '\\]\\(', end: '\\)',
+        excludeBegin: true, excludeEnd: true
+      },
+      {
+        className: 'symbol',
+        begin: '\\]\\[', end: '\\]',
+        excludeBegin: true, excludeEnd: true
+      }
+    ],
+    relevance: 10
+  };
+  const BOLD = {
+    className: 'strong',
+    contains: [],
+    variants: [
+      {begin: /_{2}/, end: /_{2}/ },
+      {begin: /\*{2}/, end: /\*{2}/ }
+    ]
+  };
+  const ITALIC = {
+    className: 'emphasis',
+    contains: [],
+    variants: [
+      { begin: /\*(?!\*)/, end: /\*/ },
+      { begin: /_(?!_)/, end: /_/, relevance: 0},
+    ]
+  };
+  BOLD.contains.push(ITALIC);
+  ITALIC.contains.push(BOLD);
+
+  var CONTAINABLE = [
+    INLINE_HTML,
+    LINK
+  ];
+
+  BOLD.contains = BOLD.contains.concat(CONTAINABLE);
+  ITALIC.contains = ITALIC.contains.concat(CONTAINABLE);
+
+  CONTAINABLE = CONTAINABLE.concat(BOLD,ITALIC);
+
+  const HEADER = {
+    className: 'section',
+    variants: [
+      {
+        begin: '^#{1,6}',
+        end: '$',
+        contains: CONTAINABLE
+       },
+      {
+        begin: '(?=^.+?\\n[=-]{2,}$)',
+        contains: [
+          { begin: '^[=-]*$' },
+          { begin: '^', end: "\\n", contains: CONTAINABLE },
+        ]
+       }
+    ]
+  };
+
+  const BLOCKQUOTE = {
+    className: 'quote',
+    begin: '^>\\s+',
+    contains: CONTAINABLE,
+    end: '$',
+  };
+
+  return {
+    name: 'Markdown',
+    aliases: ['md', 'mkdown', 'mkd'],
+    contains: [
+      HEADER,
+      INLINE_HTML,
+      LIST,
+      BOLD,
+      ITALIC,
+      BLOCKQUOTE,
+      CODE,
+      HORIZONTAL_RULE,
+      LINK,
+      LINK_REFERENCE
+    ]
+  };
+}

@@ -1,1 +1,80 @@
-module.exports=function(e){var n="action collection component concat debugger each each-in else get hash if input link-to loc log mut outlet partial query-params render textarea unbound unless with yield view",a={illegal:/\}\}/,begin:/[a-zA-Z0-9_]+=/,returnBegin:!0,relevance:0,contains:[{className:"attr",begin:/[a-zA-Z0-9_]+/}]},t=({illegal:/\}\}/,begin:/\)/,end:/\)/,contains:[{begin:/[a-zA-Z\.\-]+/,keywords:{built_in:n},starts:{endsWithParent:!0,relevance:0,contains:[e.QUOTE_STRING_MODE]}}]},{endsWithParent:!0,relevance:0,keywords:{keyword:"as",built_in:n},contains:[e.QUOTE_STRING_MODE,a,e.NUMBER_MODE]});return{case_insensitive:!0,subLanguage:"xml",contains:[e.COMMENT("{{!(--)?","(--)?}}"),{className:"template-tag",begin:/\{\{[#\/]/,end:/\}\}/,contains:[{className:"name",begin:/[a-zA-Z\.\-]+/,keywords:{"builtin-name":n},starts:t}]},{className:"template-variable",begin:/\{\{[a-zA-Z][a-zA-Z\-]+/,end:/\}\}/,keywords:{keyword:"as",built_in:n},contains:[e.QUOTE_STRING_MODE]}]}};
+/*
+Language: HTMLBars
+Requires: xml.js
+Author: Michael Johnston <lastobelus@gmail.com>
+Description: Matcher for HTMLBars
+Website: https://github.com/tildeio/htmlbars
+Category: template
+*/
+
+export default function(hljs) {
+  var BUILT_INS = 'action collection component concat debugger each each-in else get hash if input link-to loc log mut outlet partial query-params render textarea unbound unless with yield view';
+
+  var ATTR_ASSIGNMENT = {
+    illegal: /\}\}/,
+    begin: /[a-zA-Z0-9_]+=/,
+    returnBegin: true,
+    relevance: 0,
+    contains: [
+      {
+        className: 'attr', begin: /[a-zA-Z0-9_]+/
+      }
+    ]
+  };
+
+  var SUB_EXPR = {
+    illegal: /\}\}/,
+    begin: /\)/, end: /\)/,
+    contains: [
+      {
+        begin: /[a-zA-Z\.\-]+/,
+        keywords: {built_in: BUILT_INS},
+        starts: {
+          endsWithParent: true, relevance: 0,
+          contains: [
+            hljs.QUOTE_STRING_MODE,
+          ]
+        }
+      }
+    ]
+  };
+
+  var TAG_INNARDS = {
+    endsWithParent: true, relevance: 0,
+    keywords: {keyword: 'as', built_in: BUILT_INS},
+    contains: [
+      hljs.QUOTE_STRING_MODE,
+      ATTR_ASSIGNMENT,
+      hljs.NUMBER_MODE
+    ]
+  };
+
+  return {
+    name: 'HTMLBars',
+    case_insensitive: true,
+    subLanguage: 'xml',
+    contains: [
+      hljs.COMMENT('{{!(--)?', '(--)?}}'),
+      {
+        className: 'template-tag',
+        begin: /\{\{[#\/]/, end: /\}\}/,
+        contains: [
+          {
+            className: 'name',
+            begin: /[a-zA-Z\.\-]+/,
+            keywords: {'builtin-name': BUILT_INS},
+            starts: TAG_INNARDS
+          }
+        ]
+      },
+      {
+        className: 'template-variable',
+        begin: /\{\{[a-zA-Z][a-zA-Z\-]+/, end: /\}\}/,
+        keywords: {keyword: 'as', built_in: BUILT_INS},
+        contains: [
+          hljs.QUOTE_STRING_MODE
+        ]
+      }
+    ]
+  };
+}

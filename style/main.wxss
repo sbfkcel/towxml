@@ -1,11 +1,12 @@
 /*正文样式*/
 .h2w {
-    font-family: "STHeitiTC-Light", "Microsoft YaHei Light", "Hiragino Sans GB", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+    font-weight:300;
     font-size: 32rpx;
     line-height: 1.8;
     word-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-all;
+    word-break: normal;
+    text-align:justify;
 }
 
 .h2w__main {

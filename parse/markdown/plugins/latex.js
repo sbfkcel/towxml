@@ -142,11 +142,11 @@ function math_block(state, start, end, silent){
 
 module.exports = md => {
     var inlineRenderer = function(tokens, idx){
-      return `<latex value="${encodeURIComponent(tokens[idx].content)}" type="line"></latex>`;
+      return `<latex value="${encodeURIComponent(tokens[idx].content).replace(/'/g,'%27')}" type="line"></latex>`;
     };
 
     var blockRenderer = function(tokens, idx){
-      return `<latex value="${encodeURIComponent(tokens[idx].content)}" type="block"></latex>`;
+      return `<latex value="${encodeURIComponent(tokens[idx].content).replace(/'/g, '%27')}" type="block"></latex>`;
     };
 
     md.inline.ruler.after('escape', 'math_inline', math_inline);

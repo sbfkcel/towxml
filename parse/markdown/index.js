@@ -15,6 +15,8 @@ const config = require('../../config'),
                 let lineLen = code.split(/\r|\n/ig).length,
                     result = hljs.highlightAuto(code).value;
 
+                    result = result.replace(/\r|\n/g,'<br/>').replace(/ /g,'&nbsp;').replace(/\t/g,'&nbsp;&nbsp;&nbsp;&nbsp;');
+
                 if(config.showLineNumber){
                     let lineStr = (()=>{
                         let str = `<ul class="h2w__lineNum">`;

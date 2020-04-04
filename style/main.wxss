@@ -137,7 +137,7 @@
 /**代码块**/
 .h2w__pre {
     /*white-space:nowrap;*/
-    padding: 10rpx;
+    padding: 10rpx 14rpx 10rpx 10rpx;
     font-size: 28rpx;
     word-break: normal;
     border-width: 1rpx;
@@ -185,8 +185,8 @@
 }
 
 .h2w__pre .h2w__code {
-    white-space: pre;
-    width: 9999px;
+    white-space:nowrap;
+    /* width: 9999px; */
     display: block;
     font-size: 80%;
 }
@@ -257,13 +257,6 @@
 /**块元素**/
 .h2w__p {
     margin: 20rpx 0 20rpx 0;
-    /*word-wrap:break-word;
-    word-break:break-all;*/
-    /*text-align:justify;*/
-}
-
-.h2w__div {
-    /*text-align:justify;*/
 }
 
 .h2w__blockquote {

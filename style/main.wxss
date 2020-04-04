@@ -137,7 +137,7 @@
 /**代码块**/
 .h2w__pre {
     /*white-space:nowrap;*/
-    padding: 20rpx;
+    padding: 10rpx;
     font-size: 28rpx;
     word-break: normal;
     border-width: 1rpx;

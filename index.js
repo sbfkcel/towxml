@@ -13,7 +13,6 @@ module.exports = (str,type,option)=>{
         break;
         default:
             throw new Error('Invalid type, only markdown and html are supported');
-        break;
     };
     return result;
 };

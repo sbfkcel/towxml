@@ -10,7 +10,7 @@
 
 > 如果继续要使用旧版本可切换到 [2.x分支](https://github.com/sbfkcel/towxml/tree/2.x)
 
-[**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
+[**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)，进群答案：wiki和issues
 
 
 ## 特色

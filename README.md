@@ -34,7 +34,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 
 ## 截图
 
-以下截图即`demo`项目编译的效果
+以下截图即`demo`项目（文件见wiki）编译的效果
 
 ![Towxml](https://raw.githack.com/sbfkcel/blog/gh-pages/wxml_demo/demo3.x.png)
 

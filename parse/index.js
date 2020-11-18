@@ -10,10 +10,10 @@ const parse2 = require('./parse2/index'),
                 audio:'audio-player'
             };
         
-        // // 该系列的标签都转换为text
-        // ['span','b','strong','i','em','code','sub','sup','g-emoji','mark','ins'].forEach(item => {
-        //     result[item] = 'text';
-        // });
+        // 该系列的标签都转换为text
+        ['span','b','strong','i','em','code','sub','sup','g-emoji','mark','ins','u'].forEach(item => {
+            result[item] = 'text';
+        });
 
         // 该系列小程序原生tag，不需转换
         [...config.wxml,...config.components].forEach(item => {

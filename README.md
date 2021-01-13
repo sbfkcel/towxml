@@ -31,21 +31,20 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 - 极致的中文排版优化
 - 支持前后解析数据
 
+## 如何使用？
+
+**注意：**`3.0`切勿直接拉取代码使用，请根据自行需要构建得到最终的代码。
+
+[Towxml使用文档请移步至wiki](https://github.com/sbfkcel/towxml/wiki)
+
+**使用遇到问题先把  wiki 中的 demo 按步骤完整跑起来。**
+
 
 ## 截图
 
 以下截图即`demo`项目（文件见wiki）编译的效果
 
 ![Towxml](https://raw.githack.com/sbfkcel/blog/gh-pages/wxml_demo/demo3.x.png)
-
-
-## 使用文档
-
-**注意：**`3.0`切勿直接拉取代码使用，请根据自行需要构建得到最终的代码。
-
-[Towxml使用文档见wiki](https://github.com/sbfkcel/towxml/wiki)
-
-**使用遇到问题先把  wiki 中的 demo 按步骤完整跑起来。**
 
 
 ## 打赏

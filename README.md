@@ -45,7 +45,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 
 [Towxml使用文档见wiki](https://github.com/sbfkcel/towxml/wiki)
 
-** 使用遇到问题先把  wiki 中的 demo 按步骤完整跑起来。**
+**使用遇到问题先把  wiki 中的 demo 按步骤完整跑起来。**
 
 
 ## 打赏

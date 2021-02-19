@@ -31,19 +31,20 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 - 极致的中文排版优化
 - 支持前后解析数据
 
+
 ## 截图
 
 以下截图即`demo`项目（文件见wiki）编译的效果
 
 ![Towxml](https://raw.githack.com/sbfkcel/blog/gh-pages/wxml_demo/demo3.x.png)
 
-[**官方交流群：182874473（点击加入）**](https://jq.qq.com/?_wv=1027&k=54KTcZi)
 
 ## 如何使用？
 
 **注意：**`3.0`切勿直接拉取代码使用，请根据自行需要构建得到最终的代码。
 
 > 使用遇到问题先把  wiki 中的 demo 按步骤完整跑起来。
+
 
 ### Towxml3.0文档（beta）
 
@@ -55,6 +56,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 - [3.0 Echarts支持](https://github.com/sbfkcel/towxml/wiki/3.0-Echarts%E6%94%AF%E6%8C%81)
 - [3.0 LaTex数学公式、yuml流程图支持](https://github.com/sbfkcel/towxml/wiki/3.0-%E6%95%B0%E5%AD%97%E5%85%AC%E5%BC%8F&yuml%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%94%AF%E6%8C%81)
 - [3.0 在uniapp中使用towxml（感谢 @anyfar）](https://github.com/sbfkcel/towxml/issues/116)
+
 
 ### FAQ
   - 公式渲染格式不对
@@ -111,6 +113,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
         </tr>
     </tbody>
 </table>
+
 
 ## License
 MIT

@@ -58,7 +58,9 @@ class Build{
         _ts.option = option;
         _ts.line = _ts.option.debug ? `\r\n` : '';
 
-        _ts.outDir = path.join(os.homedir(),'desktop',_ts.option.debug ? 'test' : '','towxml');
+        // _ts.outDir = path.join(os.homedir(),'desktop',_ts.option.debug ? 'test' : '','towxml');
+
+        _ts.outDir = path.join(__dirname,'dist');
         _ts.tplDir = path.join(__dirname);
     }
     

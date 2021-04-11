@@ -78,6 +78,13 @@
     margin-bottom: 12rpx;
 }
 
+/**组件父级容器**/
+.h2w__textParent, .h2w__viewParent {
+    display:inline;
+}
+.h2w__rich-textParent {
+    overflow-x:auto;
+}
 
 /**表格**/
 .h2w__tableParent {

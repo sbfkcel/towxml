@@ -22,7 +22,7 @@ Component({
 	lifetimes:{
 		attached:function(){
 			const _ts = this;
-			let dataAttr = this.data.data.attr;
+			let dataAttr = this.data.data.attrs;
 
 			// 设置公式图片
 			_ts.setData({

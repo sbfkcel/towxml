@@ -42,7 +42,7 @@ Component({
 		attached: function () {
 			const _ts = this;
 
-			let dataAttr = this.data.data.attr,
+			let dataAttr = this.data.data.attrs,
 				obj = JSON.parse(decodeURIComponent(dataAttr.value));
 			obj.option.color = ['#60acfc', '#32d3eb', '#5bc49f', '#feb64d', '#ff7c7c', '#9287e7'];
 			if (obj.height) {

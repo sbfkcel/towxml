@@ -46,50 +46,56 @@ const parse2 = require('./parse2/index'),
 
         // 遍历原始数据，处理成能解析的数据
         let eachFn;
-        (eachFn = (arr,obj,_e) => {
-            obj.child = obj.child || [];
+        (eachFn = (arr,obj,_e,isRichTextContent) => {
+            obj.children = obj.children || [];
             _e.child = _e.child || [];
-
+            let child = obj.children,
+                child_e = _e.child;
+            
             arr.forEach(item => {
                 if(item.type === 'comment'){
                     return;
                 };
-                let o = {},
-                    e = {};
-                o.type = e.type = item.type;
-                o._e = e;
+                let o = {
+                        type:item.type === 'text' ? 'text' : isRichTextContent ? 'node' : item.type
+                    },
+                    e = {},
+                    attrs = o.attrs = item.attribs || {};
                 if(item.type === 'text'){
                     o.text = e.text = item.data;
                 }else{
-                    o.tag = getWxmlTag(item.name);      // 转换之后的标签
-                    // o.tag = o.tag === 'text' ? 'view' : o.tag;
-                    e.tag = item.name;                  // 原始
-                    o.attr = item.attribs;
-                    e.attr = JSON.parse(JSON.stringify(item.attribs));
-
-                    o.attr.class = o.attr.class ? `h2w__${item.name} ${o.attr.class}` : `h2w__${item.name}`;
-
+                    if(isRichTextContent){
+                        o.name = item.name;
+                    }else{
+                        o.tag = getWxmlTag(item.name);      // 转换之后的标签
+                        // o.tag = o.tag === 'text' ? 'view' : o.tag;
+                        e.tag = item.name;                  // 原始
+                        o.attrs = item.attribs;
+                        e.attrs = JSON.parse(JSON.stringify(attrs));
+                    };
+                    attrs.class = attrs.class ? `h2w__${item.name} ${attrs.class}` : `h2w__${item.name}`;
+                    
                     // 处理资源相对路径
-                    if(base && o.attr.src){
-                        let src = o.attr.src;
+                    if(base && attrs.src){
+                        let src = attrs.src;
                         switch (src.indexOf('//')) {
                             case 0:
-                                o.attr.src = `https:${src}`;
+                                attrs.src = `https:${src}`;
                             break;
                             case -1:
-                                o.attr.src = `${base}${src}`;
+                                attrs.src = `${base}${src}`;
                             break;
                         };
                     };
-
-                    if(item.children){
-                        eachFn(item.children,o,e);
-                    };
                 };
-                _e.child.push(e);
-                obj.child.push(o);
+                
+                if(item.children){
+                    eachFn(item.children,o,e,isRichTextContent || item.name === 'rich-text');
+                };
+                child.push(o);
+                child_e.push(e);
             });
-        })(obj,result,result._e);
+        })(obj,result,result._e,false);
         return result;
     };
 

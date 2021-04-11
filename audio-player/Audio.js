@@ -10,7 +10,7 @@ const fillIn = val => `${val < 10 ? '0' : ''}${val}`,
 class Audio{
     constructor(obj){
         const _ts = this,
-            option = _ts.option = obj.attr;
+            option = _ts.option = obj.attrs;
 
         _ts.loop = option.loop === 'true',
         _ts.autoplay = option.autoplay === 'true';

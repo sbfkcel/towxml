@@ -233,6 +233,7 @@ module.exports = {
         'checkbox',
         'radio-group',
         'radio',
+        'rich-text',
 
         // 可以解析的标签（html或markdown中会很少使用）
         // 'canvas',

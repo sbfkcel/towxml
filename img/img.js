@@ -24,7 +24,7 @@ Component({
 	lifetimes:{
 		attached:function(){
 			const _ts = this;
-			let dataAttr = this.data.data.attr;
+			let dataAttr = this.data.data.attrs;
 
 			// 将图片大小处理到对象中
 			if(dataAttr.width){
@@ -62,7 +62,7 @@ Component({
 
 			// 设置公式图片
 			_ts.setData({
-				attr:{
+				attrs:{
 					src:dataAttr.src,
 					class:dataAttr.class,
 					style:_ts.setStyle(_ts.data.styleObj)

@@ -93,7 +93,7 @@
 }
 
 .h2w__table {
-    width: 100%;
+    width: 99.99%;
     border-collapse: collapse;
     border-spacing: 0;
     display: table;

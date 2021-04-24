@@ -155,6 +155,9 @@
     overflow-x: auto;
     tab-size:4;
 }
+.h2w__pre .h2w__p {
+    margin:0;
+}
 
 .h2w__pre .h2w__code {
     padding: 0;

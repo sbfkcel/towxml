@@ -15,7 +15,18 @@ const config = require('../../config'),
                 let lineLen = code.split(/\r|\n/ig).length,
                     result = hljs.highlightAuto(code).value;
 
-                    result = result.replace(/\r|\n/g,'<br/>').replace(/ /g,'&nbsp;').replace(/\t/g,'&nbsp;&nbsp;&nbsp;&nbsp;');
+                    // 代码块多换行的问题
+                    result = result.replace(/(\r|\n){2,}/g, str => {
+                        return new Array(str.length).join("<p>&nbsp;</p>")
+                    });
+                    result = result.replace(/\r|\n/g, str => {
+                        return "<br/>"
+                    });
+
+                    // 代码空格处理
+                    result = result.replace(/>[^<]+</g,str => {
+                        return str.replace(/\s/g,"&nbsp;");
+                    }).replace(/\t/g,new Array(4).join("&nbsp;"));
 
                 if(config.showLineNumber){
                     let lineStr = (()=>{

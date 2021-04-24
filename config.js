@@ -287,5 +287,5 @@ module.exports = {
     dpr:1,
 
     // 代码块显示行号
-    showLineNumber:false
+    showLineNumber:true
 }

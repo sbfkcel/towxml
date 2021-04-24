@@ -1,0 +1,24 @@
+<!--table-->
+<block wx:if="{{data.tag === 'table'}}">
+    <view class="h2w__tableParent">
+        <view class="{{data.attrs.class}}" width="{{data.attrs.width}}" style="{{data.attrs.style}}">
+            <!--thead、tbody、tfoot-->
+            <block wx:if="{{data.children}}" wx:for="{{data.children}}" wx:for-item="item" wx:key="i">
+                <view wx:if="{{item.tag}}" class="{{item.attrs.class}}">
+                    <!--tr-->
+                    <block wx:if="{{item.children}}" wx:for="{{item.children}}" wx:for-item="item" wx:key="i">
+                        <view wx:if="{{item.tag}}" class="{{item.attrs.class}}">
+                            <!--td-->
+                            <block wx:if="{{item.children}}" wx:for="{{item.children}}" wx:for-item="item" wx:key="i">
+                                <view wx:if="{{item.tag}}" class="{{item.attrs.class}}" width="{{data.attrs.width}}" style="{{data.attrs.style}}">
+                                    <!--content-->
+                                    <decode wx:if="{{item.children}}" nodes="{{item}}"/>
+                                </view>
+                            </block>
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>

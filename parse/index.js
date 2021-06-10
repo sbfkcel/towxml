@@ -62,6 +62,10 @@ const parse2 = require('./parse2/index'),
                     e = {},
                     attrs = o.attrs = item.attribs || {};
                 if(item.type === 'text'){
+                    // 不解析无意义的回车换行符
+                    if (item.data && (item.data.toString() === '\n' || item.data.toString() === '\r\n')) {
+                        return;
+                    }
                     o.text = e.text = item.data;
                 }else{
                     if(isRichTextContent){

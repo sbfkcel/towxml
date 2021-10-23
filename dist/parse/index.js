@@ -25,6 +25,9 @@ const parse2 = require('./parse2/index'),
     // 元素与html对应的wxml标签名
     getWxmlTag = tagStr => !tagStr ? undefined : correspondTag[tagStr] || 'view',
 
+    // 依赖父级的元素
+    relyList = ['li'],
+
     // 精简数据，并初始化相关事件等
     initObj = (obj,option)=>{
         const result = {
@@ -88,6 +91,8 @@ const parse2 = require('./parse2/index'),
                         };
                     };
                 };
+
+                o.rely = relyList.indexOf(e.tag) > -1;      // 判断是否不能嵌套其它标签
                 
                 if(item.children){
                     eachFn(item.children,o,e,isRichTextContent || item.name === 'rich-text');

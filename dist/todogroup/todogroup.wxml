@@ -4,7 +4,6 @@
             <block wx:if="{{item.children}}" wx:for="{{item.children}}" wx:for-item="item" wx:key="i">
                 <!--解析选择框-->
                 <checkbox wx:if="{{item.tag === 'checkbox'}}" class="{{item.attrs.class}}" value="{{item.attrs.value}}" data-_e="{{item}}" checked="{{item.attrs.checked}}" disabled="{{item.attrs.disabled}}"/>
-
                 <!--解析文字-->
                 <decode wx:if="{{item.children}}" nodes="{{item}}"/>
             </block>

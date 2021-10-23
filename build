@@ -234,6 +234,9 @@ class Build{
         if(tag && obj[tag]){
             return obj[tag];
         }else if(tag){
+            if(tag === 'view'){
+                return `${_ts.tab(1)}<block wx:if="{{item.tag==='${tag}'}}">${_ts.line}${_ts.tab(2)}<block wx:if="{{item.rely}}">${_ts.line}${_ts.tab(3)}<${tag} ${attrs}>${_ts.line}${_ts.tab(4)}<decode wx:if="{{item.children}}" nodes="{{item}}"/>${_ts.line}${_ts.tab(3)}</${tag}>${_ts.line}${_ts.tab(2)}</block>${_ts.line}${_ts.tab(2)}<block wx:else>${_ts.line}${_ts.tab(3)}<view class="h2w__${tag}Parent">${_ts.line}${_ts.tab(4)}<${tag} ${attrs}>${_ts.line}${_ts.tab(5)}<decode wx:if="{{item.children}}" nodes="{{item}}"/>${_ts.line}${_ts.tab(4)}</${tag}>${_ts.line}${_ts.tab(3)}</view>${_ts.line}${_ts.tab(2)}</block>${_ts.line}${_ts.tab(1)}</block>${_ts.line}`;
+            };
             return `${_ts.tab(1)}<block wx:if="{{item.tag==='${tag}'}}">${_ts.line}${_ts.tab(2)}<view class="h2w__${tag}Parent">${_ts.line}${_ts.tab(3)}<${tag} ${attrs}>${_ts.line}${_ts.tab(4)}<decode wx:if="{{item.children}}" nodes="{{item}}"/>${_ts.line}${_ts.tab(3)}</${tag}>${_ts.line}${_ts.tab(2)}</view>${_ts.line}${_ts.tab(1)}</block>${_ts.line}`;
         }else{
             return `${_ts.tab(1)}<block wx:if="{{item.tag===undefined}}">{{item.text}}</block>${_ts.line}`;

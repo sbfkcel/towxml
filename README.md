@@ -82,52 +82,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 
 ## 应用展示
 
-可以在这里 [提交小程序](https://github.com/sbfkcel/towxml/issues/60) ，将会被不定期更新到这里。
-
-<table style="width:100%; display:table;">
-    <tbody>
-        <tr>
-            <td>
-                <img src="https://user-images.githubusercontent.com/8692455/51429898-b159f400-1c4e-11e9-91a1-59cd1fab5042.png" width="100" height="100"/>
-            </td>
-            <td>
-                <img src="https://user-images.githubusercontent.com/8033615/51673550-39524c00-2009-11e9-9554-4d75cd31ba39.jpg" width="100" height="100"/>
-            </td>
-            <td>
-                <img src="https://raw.githubusercontent.com/yicm/WxComment/master/screenshot/xiaobaiai.jpg" width="100" height="100"/>
-            </td>
-            <td>
-                <img src="https://user-images.githubusercontent.com/10069048/52948413-5681fc80-33b4-11e9-9397-26b7088381e5.jpg" width="100" height="100"/>
-            </td>
-            <td>
-                <img src="https://user-images.githubusercontent.com/10728431/53088139-dd191400-3543-11e9-99b7-a5dfb4dceeff.jpg" width="100" height="100"/>
-            </td>
-            <td>
-                <img src="https://user-images.githubusercontent.com/15965696/47959988-d2864d80-e02c-11e8-8c39-dac879bad3d6.jpg" width="100" height="100"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="https://camo.githubusercontent.com/53a8b2ab22c37ed26919b73a53f5c29da829bb2a412b0b6ef53e01b06a5f7fa1/68747470733a2f2f7777772e777574756f62616e6778696e796f75676f752e636f6d2f696d616765732f71722e6a7067" width="100" height="100"/>
-            </td>
-            <td>
-                <img src="https://user-images.githubusercontent.com/22406024/112100984-e5d7ea80-8be0-11eb-89e3-54aaa03a172d.jpg" width="100" height="100"/>
-            </td>
-          <td>
-                <img src="https://user-images.githubusercontent.com/56532091/110630824-d1f3b800-81e0-11eb-9265-44c0aee31971.jpg" width="100" height="100"/>
-            </td>
-          <td>
-                <img src="https://user-images.githubusercontent.com/35326675/76952634-5a31db00-6948-11ea-8cde-3b63e4e0cdce.jpg" width="100" height="100"/>
-            </td>
-          <td>
-                <img src="https://user-images.githubusercontent.com/38136120/76981626-d42c8900-6975-11ea-803b-82db9152ff68.jpg" width="100" height="100"/>
-            </td>
-          <td>
-                <img src="https://camo.githubusercontent.com/b1365011be49ee39960e1bcb287fcb54c5c95ed3e8706a0dcc063e6b5b855ac9/68747470733a2f2f73312e617831782e636f6d2f323032302f30372f30362f5569747432562e6a7067" width="100" height="100"/>
-            </td>
-        </tr>
-    </tbody>
-</table>
+这些小程序都使用了 towxml， [查看用户提交的案例](https://github.com/sbfkcel/towxml/issues/60) 。
 
 
 ## License

@@ -167,17 +167,49 @@ class Build{
             });
         });
 
-        // 启用highlight扩展
+        // highlight扩展开关处理
         let markdownIndex = path.join(_ts.outDir,'parse','markdown','index.js');
+        let markdownIndexStr;
         if(!config.highlight.length){
-            let str = fs.readFileSync(markdownIndex,'utf8');
-            str = str.replace(/hljs =/g,'\/\/ hljs =');
-            fs.writeFileSync(markdownIndex,str);
+            markdownIndexStr = fs.readFileSync(markdownIndex,'utf8');
+            markdownIndexStr = markdownIndexStr.replace(/hljs =/g,'\/\/ hljs =');
+            fs.writeFileSync(markdownIndex,markdownIndexStr);
+        };
+
+        // 处理微信新版本不能动态require的问题（parse/markdown/index.js）
+        const regMarkdownPluginsStr = (()=>{
+            let result = ``;
+            [...config.markdown,...config.components].forEach(item => {
+                if(!/^audio-player|table|todogroup|img$/.test(item)){
+                    result += `md.use(require('./plugins/${item}'));`
+                };
+            });
+            return result;
+        })();
+        if(regMarkdownPluginsStr && config.highlight.length){
+            markdownIndexStr = fs.readFileSync(markdownIndex,'utf8');
+            markdownIndexStr = markdownIndexStr.replace(/\/\/@regMarkdownPlugins/g,regMarkdownPluginsStr);
+            fs.writeFileSync(markdownIndex,markdownIndexStr);
+        };
+
+        // 处理微信新版本不能动态require的问题（parse/highlight/index.js）
+        let highlightIndex = path.join(_ts.outDir,'parse','highlight','index.js');
+        let highlightIndexStr;
+        let registerLanguageStr = (()=>{
+            let result = ``;
+            config.highlight.forEach(item => {
+                result += `hljs.registerLanguage('${item}', require('./languages/${item}').default);`;
+            });
+            return result;
+        })();
+        if(registerLanguageStr){
+            highlightIndexStr = fs.readFileSync(highlightIndex,'utf8');
+            highlightIndexStr = highlightIndexStr.replace(/\/\/@registerLanguage/g,registerLanguageStr);
+            fs.writeFileSync(highlightIndex,highlightIndexStr);
         };
 
         // 创建自定义组件配置
         let obj = {component:true,usingComponents:{decode:`/towxml/decode`}};
-
         config.components.forEach(item => {
             obj.usingComponents[item] = `/towxml/${item}/${item}`
         });
@@ -202,8 +234,9 @@ class Build{
             });
         };
 
-        console.log(`构建完成，请将『`,_ts.outDir,`』目录复制到小程序项目目录下`);
+        console.log(`构建完成，请将『`,_ts.outDir,`』目录复制到小程序项目目录下${!_ts.option.debug ? '，并改名为『towxml』' : ''}`);
     }
+    
 
     // 输出模版
     writeTpl(){

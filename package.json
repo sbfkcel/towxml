@@ -1,6 +1,6 @@
 {
   "name": "towxml",
-  "version": "3.1.2",
+  "version": "3.2.2",
   "description": "HTML、Markdown转WXML(WeiXin Markup Language)渲染库",
   "main": "./dist/index.js",
   "scripts": {

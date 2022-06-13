@@ -279,6 +279,7 @@
 /**内连元素**/
 .h2w__a,
 .h2w__span,
+.h2w__s,
 .h2w__b,
 .h2w__strong,
 .h2w__i,

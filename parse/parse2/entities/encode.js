@@ -1,2 +1,77 @@
-/*! Project:无, Create:FWS 2020.01.08 21:48, Update:FWS 2020.01.08 21:48 */ 
-"use strict";function getInverseObj(e){return Object.keys(e).sort().reduce(function(r,t){return r[e[t]]="&"+t+";",r},{})}function getInverseReplacer(e){var r=[],t=[];return Object.keys(e).forEach(function(e){return 1===e.length?r.push("\\"+e):t.push(e)}),t.unshift("["+r.join("")+"]"),new RegExp(t.join("|"),"g")}function singleCharReplacer(e){return"&#x"+e.charCodeAt(0).toString(16).toUpperCase()+";"}function astralReplacer(e,r){return"&#x"+(1024*(e.charCodeAt(0)-55296)+e.charCodeAt(1)-56320+65536).toString(16).toUpperCase()+";"}function getInverse(e,r){return function(t){return t.replace(r,function(r){return e[r]}).replace(reAstralSymbols,astralReplacer).replace(reNonASCII,singleCharReplacer)}}function escape(e){return e.replace(reXmlChars,singleCharReplacer).replace(reAstralSymbols,astralReplacer).replace(reNonASCII,singleCharReplacer)}var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var xml_json_1=__importDefault(require("./maps/xml.json")),inverseXML=getInverseObj(xml_json_1["default"]),xmlReplacer=getInverseReplacer(inverseXML);exports.encodeXML=getInverse(inverseXML,xmlReplacer);var entities_json_1=__importDefault(require("./maps/entities.json")),inverseHTML=getInverseObj(entities_json_1["default"]),htmlReplacer=getInverseReplacer(inverseHTML);exports.encodeHTML=getInverse(inverseHTML,htmlReplacer);var reNonASCII=/[^\0-\x7F]/g,reAstralSymbols=/[\uD800-\uDBFF][\uDC00-\uDFFF]/g,reXmlChars=getInverseReplacer(inverseXML);exports.escape=escape;
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.encodeNonAsciiHTML = exports.encodeHTML = void 0;
+var encode_html_js_1 = __importDefault(require("./generated/encode-html.js"));
+var escape_js_1 = require("./escape.js");
+var htmlReplacer = /[\t\n!-,./:-@[-`\f{-}$\x80-\uFFFF]/g;
+/**
+ * Encodes all characters in the input using HTML entities. This includes
+ * characters that are valid ASCII characters in HTML documents, such as `#`.
+ *
+ * To get a more compact output, consider using the `encodeNonAsciiHTML`
+ * function, which will only encode characters that are not valid in HTML
+ * documents, as well as non-ASCII characters.
+ *
+ * If a character has no equivalent entity, a numeric hexadecimal reference
+ * (eg. `&#xfc;`) will be used.
+ */
+function encodeHTML(data) {
+    return encodeHTMLTrieRe(htmlReplacer, data);
+}
+exports.encodeHTML = encodeHTML;
+/**
+ * Encodes all non-ASCII characters, as well as characters not valid in HTML
+ * documents using HTML entities. This function will not encode characters that
+ * are valid in HTML documents, such as `#`.
+ *
+ * If a character has no equivalent entity, a numeric hexadecimal reference
+ * (eg. `&#xfc;`) will be used.
+ */
+function encodeNonAsciiHTML(data) {
+    return encodeHTMLTrieRe(escape_js_1.xmlReplacer, data);
+}
+exports.encodeNonAsciiHTML = encodeNonAsciiHTML;
+function encodeHTMLTrieRe(regExp, str) {
+    var ret = "";
+    var lastIdx = 0;
+    var match;
+    while ((match = regExp.exec(str)) !== null) {
+        var i = match.index;
+        ret += str.substring(lastIdx, i);
+        var char = str.charCodeAt(i);
+        var next = encode_html_js_1.default.get(char);
+        if (typeof next === "object") {
+            // We are in a branch. Try to match the next char.
+            if (i + 1 < str.length) {
+                var nextChar = str.charCodeAt(i + 1);
+                var value = typeof next.n === "number"
+                    ? next.n === nextChar
+                        ? next.o
+                        : undefined
+                    : next.n.get(nextChar);
+                if (value !== undefined) {
+                    ret += value;
+                    lastIdx = regExp.lastIndex += 1;
+                    continue;
+                }
+            }
+            next = next.v;
+        }
+        // We might have a tree node without a value; skip and use a numeric entitiy.
+        if (next !== undefined) {
+            ret += next;
+            lastIdx = i + 1;
+        }
+        else {
+            var cp = (0, escape_js_1.getCodePoint)(str, i);
+            ret += "&#x".concat(cp.toString(16), ";");
+            // Increase by 1 if we have a surrogate pair
+            lastIdx = regExp.lastIndex += Number(cp !== char);
+        }
+    }
+    return ret + str.substr(lastIdx);
+}
+//# sourceMappingURL=encode.js.map

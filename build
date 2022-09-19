@@ -369,7 +369,7 @@ class Build{
 };
 
 new Build({
-    debug:true
+    debug:false
 }).init();
 
 

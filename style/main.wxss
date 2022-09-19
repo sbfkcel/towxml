@@ -36,6 +36,7 @@
 .h2w__g-emoji,
 .h2w__mark,
 .h2w__u,
+.h2w__navigatorParent,
 .h2w__ins {
     display:inline;
 }

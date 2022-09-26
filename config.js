@@ -254,7 +254,7 @@ module.exports = {
     // 自定义组件
     components:[
         'audio-player',             // 音频组件，建议保留，由于小程序原生audio存在诸多问题，towxml解决了原生音频播放器的相关问题
-        // 'echarts',                  // echarts图表支持
+        'echarts',                  // echarts图表支持
         'latex',                    // 数学公式支持
         'table',                    // 表格支持
         'todogroup',                // todo支持

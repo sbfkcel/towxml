@@ -129,6 +129,9 @@
 	<block wx:if="{{item.tag==='audio-player'}}">
 		<audio-player data="{{item}}" data-data="{{item}}" catch:tap="_tap"/>
 	</block>
+	<block wx:if="{{item.tag==='echarts'}}">
+		<echarts data="{{item}}" data-data="{{item}}" catch:tap="_tap"/>
+	</block>
 	<block wx:if="{{item.tag==='latex'}}">
 		<latex data="{{item}}" data-data="{{item}}" catch:tap="_tap"/>
 	</block>

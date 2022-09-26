@@ -69,7 +69,7 @@ Component({
 			_ts.audio.destroy();
 		},
 		detached:()=>{
-
+			_ts.audio.destroy();
 		},
 	},
 	data: {

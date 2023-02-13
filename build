@@ -186,7 +186,7 @@ class Build{
             });
             return result;
         })();
-        if(regMarkdownPluginsStr && config.highlight.length){
+        if(regMarkdownPluginsStr !== ''){
             markdownIndexStr = fs.readFileSync(markdownIndex,'utf8');
             markdownIndexStr = markdownIndexStr.replace(/\/\/@regMarkdownPlugins/g,regMarkdownPluginsStr);
             fs.writeFileSync(markdownIndex,markdownIndexStr);

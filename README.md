@@ -55,9 +55,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 - [3.0 Echarts支持](https://github.com/sbfkcel/towxml/wiki/3.0-Echarts%E6%94%AF%E6%8C%81)
 - [3.0 LaTex数学公式、yuml流程图支持](https://github.com/sbfkcel/towxml/wiki/3.0-%E6%95%B0%E5%AD%97%E5%85%AC%E5%BC%8F&yuml%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%94%AF%E6%8C%81)
 - [3.0 在uniapp中使用towxml（感谢 @anyfar）](https://github.com/sbfkcel/towxml/issues/116)
-
-### 衍生项目
-- [@zhouzxx](https://github.com/zhouzxx) 基于towxml3.0实现的 [流式动态渲染](https://github.com/zhouzxx/towxml-stream-typer)
+- [3.0 流式动态渲染（感谢 @zhouzxx](https://github.com/zhouzxx/towxml-stream-typer)
 
 ### FAQ
   - 公式渲染格式不对

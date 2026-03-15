@@ -76,7 +76,7 @@ Towxml 3.0 完整支持以下功能。当然在构建时可仅保留需要功能
 
 |微信打赏|支付宝打赏|
 |:---:|:---:|
-|![支持开源，微信打赏。](https://www.vvadd.com/wxml_demo/qrcode_wechat.png?v=2)|![支持开源，支付宝打赏。](https://www.vvadd.com/wxml_demo/qrcode_alipay.png?v=2)|
+|![支持开源，微信打赏。](https://www.vvadd.com/wxml_demo/qrcode_wechat.png?v=3)|![支持开源，支付宝打赏。](https://www.vvadd.com/wxml_demo/qrcode_alipay.png?v=3)|
 
 
 ## 应用展示
